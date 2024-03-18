@@ -1,0 +1,54 @@
+/* Forms
+------------------------------------------------------*/
+
+$inputFields: "input[type='text'], input[type='password'], input[type='email'], input[type='search'], input[type='number'], input[type='tel'], input[type='url'], textarea";
+
+#{$inputFields},
+select,
+textarea {
+  @include box-sizing;
+  @include rounded($round);
+  @include shadow(rgba(black,0.2),0px,2px,8px);
+  background: white;
+  border: 1px solid $lightgrey;
+  color: $grey;
+  display: inline-block;
+  font-size: 1.6rem;
+  line-height: 2.0rem;
+  font-family: $font-default;
+  margin: 0px;
+  padding: 1.0rem;
+  width: 100%;
+
+  &:focus {
+    border-color: $grey;
+    outline: 0;
+  }
+}
+
+textarea {
+  height: 10rem;
+}
+
+form {
+  padding: 2.0rem 0 5.0rem;
+}
+
+.formField {
+  margin: 0 0 2rem 0;
+  
+  label {
+    display: inline-block;
+    font-weight: bold;
+    margin: 0 0 1rem 0;
+  }
+}
+
+p.help_text, .help_text p {
+  font-style: italic;
+  color: $grey;
+}
+
+.help_text {
+  margin-top: 1rem;
+}

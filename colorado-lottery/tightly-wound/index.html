@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Tightly Wound</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body class="internal">
+  <div class="adapt">
+  <section class="banner">
+    <div class="inner">
+      <h1>Tightly Wound</h1>
+    </div>
+  </section>
+  <section class="main">
+    <div class="inner">
+      <div class="flexWrap 1-columns">
+        <div class="column">
+
+<!-- Start: Tightly Wound -->
+  <style>
+    html { height: 100%; }
+  </style>
+  <script>
+    document.body.classList.add("tightly-wound-styles");
+    var lang = "en";
+  </script>
+
+  <div id="page">
+
+    <div id="gameIntro">
+      <h1><img class="logo" src="https://static.coloradolottery.com/media/filer_public/16/73/1673da17-1bf4-4d07-b2ad-9b4a3e937944/tightly-wound-logo.png" alt="Tightly Wound"/></h1>
+      <img class="meow" src="https://static.coloradolottery.com/media/filer_public/1f/60/1f6083df-1421-4a5f-9778-cdfe928ed520/welcome-cat.png" alt="Meow!" />
+      <div id="gameInstructions">
+        <div id="gameHelp">
+          <h2>Holidays got you Tightly Wound?</h2>
+          <p>Unwind and chase some frisky kitties for a chance to win Scratch tickets!</p>
+          <p class="buttons"><a class="button start start-lc" href="#">START</a><a class="button button-outline how-to-play" id="introHowToPlay" href="#">HOW TO PLAY</a></p>
+          <p><a href="https://www.coloradolottery.com/en/contests/75:0b3FwaISkwRrZiOmWuULBtUMdc4/" target="_blank">Skip to Contest</a> |
+            <a href="https://www.coloradolottery.com/">Back to ColoradoLottery.com</a> |
+            <a href="https://www.coloradolottery.com/es/tightly-wound/">Español</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div id="gameHowToPlay" class="fadeOut">
+      <div class="inner">
+        <img src="https://static.coloradolottery.com/media/filer_public/34/94/3494b839-bf47-4082-abdc-5189de7a77fe/how-to-play-controls.png" style="max-height: 83px;" alt="Controls: left/right arrows, mouse, or touch" />
+        <p>You’re a feisty ball of lights! Use your mouse, arrow keys, or finger to move around the neighborhood.</p>
+        <img src="https://static.coloradolottery.com/media/filer_public/81/22/8122443a-f700-458f-8c71-cf912b92b41f/how-to-play-powerups.png" style="max-height: 46px;" alt="Power-ups: lights, cats, gifts, and nosy neighbors" />
+        <p>Try collecting as many lights, gifts, frisky kitties, and nosy neighbors as you can. As you earn points, the game will speed up.</p>
+        <img src="https://static.coloradolottery.com/media/filer_public/a8/fd/a8fdef02-04dc-462e-b53b-3a5b91abc0cb/how-to-play-obstacles.png" style="max-height: 100px;" alt="Obstacale: Stormy weather and trees" />
+        <p>Watch out for stormy weather and steer clear of holiday trees!</p>
+        <p>At the end of the game, enter to win a Scratch ticket prize pack. Good luck!</p>
+        <p><a class="button" id="introBack" href="#">BACK</a></p>
+      </div>
+    </div>
+
+    <div id="gameWrapper">
+      <div id="gameOver">
+        <h1><strong>The bad news:</strong> you hit <span id="finalObstacle"></span>.</h1>
+        <h2>Score: <span id="finalScore"></span>, <span style="color:#FFFF22">Level: <span id="finalLevel">1</span></span></h2>
+        <div class="counters">
+          <div style="margin:0 15px 0 0"><img src="https://static.coloradolottery.com/media/filer_public/3b/9c/3b9ce5c4-c33c-48b2-a01f-2216646e2586/stopwatch.png" alt="" /><span id="finalTime">00:00</span></div>
+          <div><img src="https://static.coloradolottery.com/media/filer_public/f5/79/f5790837-1d85-4818-b2ec-27a3ac6a7949/food-light-green-2.png" alt="" /><span id="finalLights">0</span></div>
+          <div style="margin:0 6px 0 14px"><img src="https://static.coloradolottery.com/media/filer_public/fb/03/fb03e7c5-aa6b-4994-a608-0d04bed8787b/food-cat-1.png" alt="" /><span id="finalCats">0</span></div>
+          <div><img src="https://static.coloradolottery.com/media/filer_public/4d/0d/4d0dbcec-e70c-4d87-b0b5-f9de6b4543c2/food-gift.png" alt="" style="margin-right:6px" /><span id="finalGifts">0</span></div>
+          <div><img src="https://static.coloradolottery.com/media/filer_public/c8/fc/c8fceec9-8b24-4b5e-9c8b-626e9276c1a5/food-cousin-eddie.png" alt="" style="margin-right:14px" /><span id="finalEddies">0</span></div>
+        </div>
+        <p><strong>The good news:</strong> You can still enter the contest for your chance to win a Scratch prize pack! You can enter once per day, but play as often as you like!</p>
+        <div class="buttons">
+          <a class="button start start-destroy" href="#">PLAY AGAIN</a>
+          <a class="button" href="https://www.coloradolottery.com/en/contests/75:0b3FwaISkwRrZiOmWuULBtUMdc4/" target="_blank">ENTER TO WIN</a>
+          <a class="button" href="#" id="reset">QUIT</a>
+        </div>
+      </div>
+
+      <div id="gameReady">
+        <h1 id="gameReadyLoading" class="fadeIn">Loading...</h1>
+        <h1 id="gameReadyLoaded">Game Starts in <span id="gameReadyCountdown">3</span>...</h1>
+        <div style="margin-top: 60px; flex: 1 1 auto; display: flex; align-items: center; "><img style="margin: 0 auto; width: auto; height: auto; min-width: 240px; max-width: 600px; max-height: 80%; width: 80%" src="https://static.coloradolottery.com/media/filer_public/73/f3/73f3c299-3b10-4563-9cc2-4c498657bd9e/instructions2x.png" alt="Game Instructions" /></div>
+      </div>
+
+      <div id="game"></div>
+    </div>
+  </div>
+
+  <script src="https://static.coloradolottery.com/media/filer_public/c1/f3/c1f35908-7b94-42f9-acbd-38e02ba5e181/phaser2140min.js"></script>
+  <script data-game="LIVE" src="https://static.coloradolottery.com/media/filer_public/38/69/38696845-c7a2-432d-af29-f2bcff5e6daa/game.js"></script>
+  <!--script data-game="STAGING" src="https://staging-static.coloradolottery.com/media/filer_public/85/1d/851d27e4-790e-4028-9925-2c270ab88a07/game.js"></script-->
+  <!--script data-game="LOCAL" src="src/game.js"></script-->
+  <script src="https://static.coloradolottery.com/media/filer_public/40/26/40262114-a804-4b6b-88ba-899783011d65/snake.js"></script>
+  <script src="https://static.coloradolottery.com/media/filer_public/7f/12/7f12ba36-38b4-4076-849f-f406644e3f06/playersnake.js"></script>
+  <script src="https://static.coloradolottery.com/media/filer_public/16/9c/169c07ed-0a6c-4848-8f15-18d18d9231d0/eye.js"></script>
+  <script src="https://static.coloradolottery.com/media/filer_public/91/21/91217c78-be76-473f-82b2-b1218a4f999a/eyepair.js"></script>
+  <script src="https://static.coloradolottery.com/media/filer_public/12/99/129951a2-355e-42a9-a0c6-2ff8d00742ac/food.js"></script>
+  <script src="https://static.coloradolottery.com/media/filer_public/64/0a/640a66fc-198f-4de8-a6f4-b3c1733b6fe9/obstacle.js"></script>
+  <script src="https://static.coloradolottery.com/media/filer_public/41/5a/415a543b-9825-446d-af21-ae1da35d5cb2/util.js"></script>
+
+<!-- End: Tightly Wound -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <link rel="stylesheet" href="https://static.coloradolottery.com/CACHE/css/0aa44d5a974a.css" type="text/css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+  <link href="css/tightlywound.css" rel="stylesheet">
+</body>
+</html>

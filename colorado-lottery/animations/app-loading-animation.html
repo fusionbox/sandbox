@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>App Loading Animation</title>
+  <script
+  			  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  			  crossorigin="anonymous"></script>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <style>
+    div.phoneFrame {
+      border-radius: 5px;
+      border: 1px solid rgba(0,0,0,0.1);
+      position: relative;
+      margin: 50px auto;
+      height: 667px;
+      width: 375px;
+      overflow: hidden;
+    }
+
+    div.base {
+      background: url('Notifications.png') no-repeat center;
+      background-size: 100% 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+
+    div.background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+      background: linear-gradient(0deg,#1F86B1,#003F56);
+    }
+
+    div.logo {
+      position: absolute;
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      left: calc(50% - 100px);
+      top: calc(50% - 100px);
+      z-index: 3;
+    }
+
+    div.logo img.base {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
+
+    div.logo img.spinner {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 5;
+    }
+
+    div.logo.spin img.spinner {
+      animation: spin 2s cubic-bezier(0.770, 0.100, 0.175, 0.900) infinite;
+    }
+
+    /*
+    img.logo {
+      position: absolute;
+      width: 200px;
+      height: auto;
+      left: calc(50% - 100px);
+      top: calc(50% - 90px);
+      z-index: 2;
+    }
+
+    img.logo.pulse {
+      -webkit-animation-duration: 3s;
+       animation-duration: 3s;
+    }
+    */
+
+    button {
+      border-radius: 5px;
+      border: 0;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+      padding: 10px;
+      width: 375px;
+    }
+
+    button:hover {
+      background: #ddd;
+    }
+
+    /* Override 'pulse' to include slight delay between iterations */
+    @-webkit-keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .pulse {
+      -webkit-animation-name: pulse;
+      animation-name: pulse;
+    }
+
+    /* Override 'pulse' to include slight delay between iterations */
+    @-webkit-keyframes bigZoomOut {
+      0% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+      }
+
+      100% {
+        -webkit-transform: scale3d(10, 10, 10);
+        transform: scale3d(10, 10, 10);
+        opacity: 0;
+      }
+    }
+
+    @keyframes bigZoomOut {
+      0% {
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+        opacity: 1;
+      }
+
+      20% {
+        -webkit-transform: scale3d(0.7, 0.7, 07);
+        transform: scale3d(0.7, 0.7, 07);
+        opacity: 1;
+      }
+
+      100% {
+        -webkit-transform: scale3d(10, 10, 10);
+        transform: scale3d(10, 10, 10);
+        opacity: 0;
+      }
+    }
+
+    .bigZoomOut {
+      -webkit-animation-name: bigZoomOut;
+      animation-name: bigZoomOut;
+      -webkit-animation-timing-function: ease;
+      animation-timing-function: ease;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="phoneFrame">
+    <div class="base"></div>
+    <div class="background"></div>
+    <div class="logo">
+      <img class="base" src="Logo-Base.png" />
+      <img class="spinner" src="Logo-Spinner.png" />
+    </div>
+    <!--img class="logo" src="https://static.coloradolottery.com/static/image/logo.svg?8b7f2606fbea" alt="" /-->
+  </div>
+  <button>Play Animation</button>
+
+  <script>
+    $("button").on('click', function(){
+      $('.background').removeClass('animated fadeOut');
+      $('div.logo').removeClass('animated fadeIn spin infinite bigZoomOut').delay(100).queue(function(next) {
+        $('div.logo').addClass('animated fadeIn'); next();
+      }).delay(1000).queue(function(giggity){
+        $('div.logo').removeClass('fadeIn').addClass('spin infinite'); giggity();
+      }).delay(6000).queue(function(adios){
+        $('div.logo').removeClass('spin infinite').addClass('bigZoomOut');
+        $('.background').addClass('animated fadeOut');
+        adios();
+      });
+    });
+  </script>
+</body>
+</html>

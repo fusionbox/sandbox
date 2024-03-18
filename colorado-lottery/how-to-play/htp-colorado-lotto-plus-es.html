@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <title>Lotto</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+</head>
+<body class="internal simulator-styles">
+  <section class="banner">
+    <div class="inner">
+      <h1>Simulador</h1>
+    </div>
+  </section>
+  <section class="main">
+    <div class="inner">
+      <div class="flexWrap 1-columns">
+        <div class="column">
+
+<!-- Start: Simulator -->
+<script type="text/javascript">
+  document.body.classList.add("simulator-styles");
+  var currentgame = "lotto";
+  var currentlang = "es";
+</script>
+
+<div class="simulator simulator_lotto">
+
+  <form id="simulator_form">
+
+    <div class="simulator_group simulator_group_instruction_area">
+
+      <div class="simulator_header">
+        <div class="title"><span id="dashboard_title">Cómo jugar al Colorado Lotto+</span></div>
+        <div class="steps" id="step_counters"></div>
+        <div class="price">
+          <span class="price_inner">
+            <span class="ticket_price_wrapper">$<span id="ticket_price">0</span></span> Precio del boleto
+          </span>
+        </div>
+        <div class="draws">
+          <span class="draws_inner">
+            <span id="ticket_draws" data-before="OLD" data-after="NEW">1</span>
+            <span>Sorteo<span class="ticket_draw_count_plurality">s</span></span>
+          </span>
+        </div>
+        <div class="prize">
+          <span class="prize_inner">
+            <span id="prize_label">Podría ganar</span>
+            <span id="prize_amount">$</span>
+          </span>
+          <span class="prize_inner" id="plus_prize_inner">
+            <span id="plus_prize_label">Plus</span>
+            <span id="plus_prize_amount" data-before="OLD" data-after="NEW">$</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="step_description_and_actions">
+
+        <div class="step_description active" id="desc0">
+          <div class="intro">
+          <h2>Cómo jugar al Colorado Lotto+</h2>
+          <p>Por tan solo $2, puede jugar al Colorado Lotto+, un juego de Colorado con un premio mayor que empieza en $1 millón y se hace cada vez más grande hasta que alguien lo gana. Los sorteos son los miércoles y&nbsp;sábados.</p>
+          <button class="start" data-show="playslip" data-description="desc1" data-title="Ingrese sus números">APRENDA CÓMO JUGAR AHORA</button>
+          </div>
+        </div>
+        <div class="step_description" id="desc1">
+          <h2>Dos formas de jugar</h2>
+          <p>Elija seis números del 1 al 40 o seleccione Quick Pick (QP) y la terminal elegirá los números por usted al&nbsp;azar.</p>
+        </div>
+        <div class="step_description" id="desc2">
+          <h2>¡No se pierda nunca un sorteo!</h2>
+          <p>Para no perderse nunca un sorteo, compre jugadas en hasta 26 sorteos consecutivos a la vez o 13 semanas por anticipado. Solo marque el casillero de Advance Play en la boleta de juego e informe al vendedor cuántos sorteos desea jugar. Jugará los mismos números en todos los&nbsp;sorteos.</p>
+        </div>
+        <div class="step_description" id="desc3">
+          <h2>Duplique sus posibilidades</h2>
+          <p>Agregue la opción <strong>"Plus"</strong> a su boleto por $1 extra por jugada. Los números elegidos o recibidos de Quick Pick se utilizarán para un sorteo adicional que tiene lugar inmediatamente después del sorteo de Colorado Lotto+. Si sus seis números coinciden con la segunda serie de números sorteados, usted gana un premio mayor de Plus por un valor de&nbsp;$250,000.</p>
+        </div>
+        <div class="step_description" id="desc4">
+          <h2>Más información acerca de su boleto</h2>
+          <p>
+            Así se verá su boleto una vez impreso. En el boleto podrá ver sus números y <span class="conditional cond_advance_play">el rango de fechas</span><span class="conditional cond_single_play">la fecha</span> del sorteo para el cual es elegible.
+            ¡Excelentes noticias! Cuando se imprime su boleto, usted verá sus números y un multiplicador (2X, 3X, 4X o&nbsp;5X) en el boleto. Cualquier premio que no sea el premio mayor se multiplicará por el&nbsp;multiplicador.
+            <span class="conditional cond_plus">Se combinarán las ganancias de los sorteos de Colorado Lotto+ y&nbsp;Plus.</span>
+            <span class="conditional cond_plus">También verá "Plus YES" para confirmar su selección&nbsp;adicional.</span>
+        </div>
+        <div class="step_description" id="desc5">
+          <h2>¡Verifique sus ganancias!</h2>
+          <p>Esto le aparecerá si gana. Las ganancias están representadas en la tabla de pagos disponible en la página <a href="https://www.coloradolottery.com/es/games/lotto/its-easy-to-play/#odds" target="_blank">Jugar es fácil</a> del sitio web de Colorado&nbsp;Lottery.</p>
+          <p><a href="#how-to-check-numbers" rel="modal:open">Cómo verificar sus números &rarr;</a></p>
+          <div id="drawing_container">
+          </div>
+        </div>
+
+        <div class="step" id="step1">
+          <div class="actions">
+            <span class="action_counter" id="current_number_counter"><span id="current_number_count">0</span>/6 Seleccionados</span>
+            <button class="next" data-show="field_advance" data-description="desc2" data-title="Advance Play">SIGUIENTE</button>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="actions">
+            <!--button class="prev" data-show="playslip" data-hide="field_advance" data-description="desc1">BACK</button-->
+            <button class="next" data-show="field_plus" data-description="desc3" data-title="Plus">SIGUIENTE</button>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="actions">
+            <!--button class="prev" data-show="field_advance" data-hide="field_plus" data-description="desc2">BACK</button-->
+            <button class="next" data-show="ticket" data-hide="playslip" data-description="desc4" data-title="Su boleto impreso">SIGUIENTE</button>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="actions">
+            <!--button class="prev" data-show="playslip,field_plus" data-hide="ticket" data-description="desc3">BACK</button-->
+            <button class="next" data-show="letsdraw" data-description="desc5" data-title="Simular sorteo">SIGUIENTE</button>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="actions">
+            <button class="toggle current" data-show="playslip" data-hide="ticket" data-toggle>MOSTRAR<br>BOLETO DE JUEGO</button>
+            <button class="toggle" data-show="ticket" data-hide="playslip" data-toggle>MOSTRAR<br>BOLETO IMPRESO</button>
+            <a class="button" href="https://www.coloradolottery.com/es/retailers/" target="_blank">ENCONTRAR UN<br>VENDEDOR</a>
+            <button class="reset" data-title="Cómo jugar al Colorado Lotto+">SIMULAR<br>OTRA VEZ</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="ball_drop_wrapper">
+        <div id="ball_drops">
+          <p>Resultados del sorteo:</p>
+          <div class="balls"></div>
+        </div>
+        <div id="ball_drops_plus">
+          <p>Resultados del sorteo de <strong>Plus</strong>:</p>
+          <div class="balls"></div>
+        </div>
+      </div>
+
+      <div id="potential_winnings"></div>
+
+    </div>
+    <div class="simulator_group simulator_group_play_area">
+
+      <div class="ticket">
+        <span class="ticket_barcode_wrapper">
+          <span class="tooltip"><span class="tooltip_trigger">i</span><span class="tooltip_content"><strong>Código de barras superior:</strong> Escanee con la aplicación móvil para verificar si ganó y para participar en promociones cuando estén disponibles.</span></span>
+          <img class="ticket_barcode" src="https://static.coloradolottery.com/media/filer_public/0a/ad/0aad1b97-0e6c-46ec-bae4-501b83d24d20/pdf417.gif" alt="" />
+        </span>
+        <p class="ticket_msg">Enter to win! Scan the barcode using the Colorado Lottery mobile app. Download today!</p>
+        <div class="ticket_game_info">
+          <span class="ticket_game">
+            COLORADO<br>LOTTO+
+          </span>
+          <span class="ticket_draws">
+            <span class="ticket_draw_count_wrapper tooltip tooltip_text tooltip_sling_left">
+              <span class="tooltip_content"><strong># de sorteos</strong> (Advance Play)</span>
+              $<span class="ticket_price">0.00</span> -
+              <span class="ticket_draw_count">N</span> DRAW<span class="ticket_draw_count_plurality">S</span>
+            </span>
+            <span class="ticket_draw_dates_wrapper tooltip tooltip_text tooltip_sling_left">
+              <span class="tooltip_content"><strong>Fechas de sorteo:</strong> Fecha del sorteo o rango de fechas del sorteo para las que este boleto es elegible.</span>
+              <span class="ticket_draw_dates">
+                2/22/2022&ndash;2/24/2022
+              </span>
+            </span>
+            <span class="ticket_plus_wrapper tooltip tooltip_text tooltip_sling_left">
+              <span class="tooltip_content"><strong>Plus:</strong> Esto confirma que usted compró la opción Plus.</span>
+              PLUS <span class="ticket_plus">NO</span>
+            </span>
+          </span>
+        </div>
+        <div class="ticket_numbers">
+          <span class="ticket_board">
+            <span class="tooltip"><span class="tooltip_trigger">i</span><span class="tooltip_content"><strong>Letra del tablero:</strong> Un set de números elegidos para uno o más sorteos.</span></span>
+            A
+          </span>
+          <span class="ticket_qp">
+            <span class="tooltip tooltip_sling_left"><span class="tooltip_trigger">i</span><span class="tooltip_content"><strong>QP:</strong> Muestra los números seleccionados por Quick Pick.</span></span>
+            QP
+          </span>
+        </div>
+        <div class="ticket_multiplier">
+          <span class="ticket_multiplier_inner">
+            <span class="tooltip"><span class="tooltip_trigger">i</span><span class="tooltip_content"><strong>Multiplicador:</strong> Los premios que no sean el premio mayor se multiplican por un multiplicador que se determina al momento de la compra del boleto.</span></span>
+            <span class="ticket_multiplier_number"></span> Multiplier
+          </span>
+        </div>
+        <span class="ticket_barcode_wrapper">
+          <span class="tooltip"><span class="tooltip_trigger">i</span><span class="tooltip_content"><strong>Código de barras inferior:</strong> Lo usan los vendedores para verificar el estatus del boleto.</span></span>
+          <img class="ticket_barcode" src="https://static.coloradolottery.com/media/filer_public/cd/21/cd2124d4-8f8c-4100-820b-f656273e3f8b/barcode.gif" alt="" />
+        </span>
+      </div>
+
+      <div class="playslip">
+        <div class="field_group field_group_horizontal">
+          <div class="field field_plus">
+            <input type="checkbox" name="plus" id="plus" value="PLUS">
+            <label for="plus"><span>ADD PLUS<small>For $1 per play</small></span></label>
+          </div>
+        </div>
+        <div class="field_group field_group_horizontal">
+          <div class="field field_advance">
+            <input type="checkbox" name="advance" id="advance" value="AP">
+            <label for="advance"><span>A<br>D<br>V<br>A<br>N<br>C<br>E<br>&nbsp;<br>P<br>L<br>A<br>Y</span></label>
+          </div>
+          <div class="number_matrix_wrapper">
+            <div class="field field_qp">
+              <input type="checkbox" name="number_qp" id="number_qp" value="QP">
+              <label for="number_qp"><span>P<br>I<br>C<br>K<br><br>6<br><br><svg style="width:16px;height:16px;" viewBox="0 0 295 296" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon fill="#FFFFFF" points="295.11 148.33 127.17 0.23 127.17 69.652 0.23 69.652 0.23 224.362 126.51 224.362 126.51 295.768"></polygon></svg><br><br>O<br>R<br><br>Q<br>P</span></label>
+            </div>
+            <div class="number_matrix">
+              <!-- filled via javascript based on game -->
+              <div class="number_matrix_label">
+                <strong>BOARD A $2</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field field_advance_draws">
+          <span class="input">
+            <button class="advance-minus">-</button>
+            <input readonly type="number" name="advance_draws" id="advance_draws" disabled="disabled" value="2" min="2" max="26">
+            <button class="advance-plus">+</button>
+          </span>
+          <label for="advance_draws">¿CUÁNTOS DÍAS DE SORTEOS?</label>
+          <button class="modal-save">GUARDAR</button>
+          <button class="modal-cancel">CANCELAR</button>
+        </div>
+      </div>
+
+    </div>
+
+  </form>
+
+  <div id="how-to-check-numbers" class="modal modal_lotto">
+    <div class="modal_header">
+      <p><strong>Verifique sus números mediante:</strong></p>
+    </div>
+    <div class="modal_content">
+      <ul>
+        <li>La herramienta <a href="https://www.coloradolottery.com/es/games/check-my-numbers/" target="_blank">Verifique sus números</a> en el sitio web</li>
+        <li>La herramienta <a href="https://www.coloradolottery.com/es/games/lotto/drawings/" target="_blank">Números ganadores previos</a> en el sitio web</li>
+        <li>La  <a href="https://www.coloradolottery.com/es/player-tools/colorado-lottery-mobile-app/" target="_blank">aplicación móvil</a> de Colorado Lottery</li>
+        <li>Nuestro canal de Twitter: <a href="https://twitter.com/ColoLottery" target="_blank">@ColoLottery</a></li>
+        <li>El Verificador de boletos de autoservicio en un establecimiento, o <a href="https://www.coloradolottery.com/es/retailers/" target="_blank">pídale al vendedor</a> que revise sus boletos.</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+<!-- End: Simulator -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <link rel="stylesheet" href="https://static.coloradolottery.com/CACHE/css/0aa44d5a974a.css" type="text/css" />
+  <link rel="stylesheet" href="htp-styles.css" type="text/css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+  <script src="jquery.sticky.js" type="text/javascript"></script>
+  <script src="htp-scripts.js" type="text/javascript"></script>
+</body>
+</html>

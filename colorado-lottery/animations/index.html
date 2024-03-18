@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  
+  <title>Colorado Lottery | Animations</title>
+
+  <link rel="stylesheet" type="text/css" href="css/generated/animations.css" />
+  <link rel="stylesheet" type="text/css" href="css/jquery.swipeshow.css" />
+  
+  <script src="js/jquery.min.js"></script>
+  <script src="js/headroom.min.js"></script>
+  <script src="js/jQuery.headroom.js"></script>
+  <script src="js/skrollr.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.splitflap.js"></script>
+  <script src="js/jquery.swipeshow.min.js"></script>
+</head>
+
+<body>
+  <div class="mask"></div>
+  <div class="adapt">
+  <header>
+    <div class="inner">
+      <div class="logo"></div>
+      <div class="navigation"></div>
+    </div>
+  </header>
+
+  <section class="banner" data-0="background-position: center 0px" data-600="background-position: center 300px;" data-smooth-scrolling="off">
+    <div class="inner">
+    </div>
+  </section>
+
+  <section class="main main-games">
+    <div class="inner">
+      <div class="games">
+        <div class="game">
+          <div class="ball"></div>
+          <div class="jackpotWrapper"><div class="jackpotsplitflap">$185,000,000</div></div>
+          <div class="winningNumbers">2 3 13 16 35 27 3</div>
+          <div class="moreInfo">More</div>
+        </div>
+        <div class="game">
+          <div class="ball"></div>
+          <div class="jackpotWrapper"><div class="jackpotsplitflap">$ 15,000,000</div></div>
+          <div class="winningNumbers">5 11 31 50 67 14 2</div>
+          <div class="moreInfo">More</div>
+        </div>
+        <div class="game">
+          <div class="ball"></div>
+          <div class="jackpotWrapper"><div class="jackpotsplitflap">$  1,700,000</div></div>
+          <div class="winningNumbers">20 21 24 33 37 38</div>
+          <div class="moreInfo">More</div>
+        </div>
+        <div class="game">
+          <div class="ball"></div>
+          <div class="jackpotWrapper"><div class="jackpotsplitflap">$     20,000</div></div>
+          <div class="winningNumbers">1 13 20 21 22</div>
+          <div class="moreInfo">More</div>
+        </div>
+        <div class="game">
+          <div class="ball"></div>
+          <div class="jackpotWrapper"><div class="jackpotsplitflap">$      2,500</div></div>
+          <div class="winningNumbers">9 4 2</div>
+          <div class="moreInfo">More</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="main main-check-mylottery">
+    <div class="inner">
+      <div class="checkNumbers">
+        <h2>Check Your Numbers</h2>
+        <span class="btn powerball flyoutTrigger" href="#"><span>POWERBALL</span>
+          <div class="flyout">
+            <a class="close" href="#">X</a>
+            <p><strong>Enter Your Numbers</strong></p>
+            <p>
+              <input type="number" />
+              <input type="number" />
+              <input type="number" />
+              <input type="number" />
+              <input type="number" />
+              <input type="number" />
+            </p>
+            <p>
+              <select><option>Draw Date Range</option></select>
+              <a class="btn block" href="#"><span>CHECK</span></a>
+            </p>
+          </div>
+        </span>
+        <span class="btn mega flyoutTrigger" href="#"><span>MEGA MILLIONS</span>
+          <div class="flyout">
+            <a class="close" href="#">X</a>
+            <p><strong>Enter Your Numbers</strong></p>
+            <p>
+              <input type="number" />
+              <input type="number" />
+              <input type="number" />
+              <input type="number" />
+              <input type="number" />
+              <input type="number" />
+            </p>
+            <p>
+              <select><option>Draw Date Range</option></select>
+              <a class="btn block" href="#"><span>CHECK</span></a>
+            </p>
+          </div>
+        </span>
+        <span class="btn lotto flyoutTrigger" href="#"><span>LOTTO</span>
+          <div class="flyout">
+            <a class="close" href="#">X</a>
+            <p><strong>Enter Your Numbers</strong></p>
+            <p>
+              <input type="number" />
+              <input type="number" />
+              <input type="number" />
+              <input type="number" />
+              <input type="number" />
+              <input type="number" />
+            </p>
+            <p>
+              <select><option>Draw Date Range</option></select>
+              <a class="btn block" href="#"><span>CHECK</span></a>
+            </p>
+          </div>
+        </span>
+        <span class="btn cash5 flyoutTrigger" href="#"><span>CASH 5</span>
+          <div class="flyout">
+            <a class="close" href="#">X</a>
+            <p><strong>Enter Your Numbers</strong></p>
+            <p>
+              <input type="number" />
+              <input type="number" />
+              <input type="number" />
+              <input type="number" />
+              <input type="number" />
+            </p>
+            <p>
+              <select><option>Draw Date Range</option></select>
+              <a class="btn block" href="#"><span>CHECK</span></a>
+            </p>
+          </div>
+        </span>
+        <span class="btn pick3 flyoutTrigger" href="#"><span>PICK 3</span>
+          <div class="flyout">
+            <a class="close" href="#">X</a>
+            <p><strong>Enter Your Numbers</strong></p>
+            <p>
+              <input type="number" />
+              <input type="number" />
+              <input type="number" />
+            </p>
+            <p>
+              <select><option>Draw Date Range</option></select>
+              <a class="btn block" href="#"><span>CHECK</span></a>
+            </p>
+          </div>
+        </span>
+      </div>
+      <div class="myLottery">
+        <h2>MyLottery</h2>
+        <a class="btn block mylottery" href="#"><span>LOG IN</span></a>
+      </div>
+    </div>
+  </section>
+  <section class="main main-scratch-news">
+    <div class="inner">
+      <div class="scratch">
+        <div class="gameInfo">
+          <span class="ball">SCRATCH</span>
+          <div>Game Name</div>
+          <div>Top Prize</div>
+          <div>Prizes Left | Cost</div>
+          <div>Details | 2nd Chance</div>
+        </div>
+        
+        <div class="gameNav">
+          <a href="#" class="prevScratch">&lt;</a>
+          &bull;
+          &bull;
+          &bull;
+          &bull;
+          &bull;
+          <a href="#" class="nextScratch">&gt;</a>
+        </div>
+        
+        <div class="gameCards">
+          <img src="http://www.placehold.it/300x450" alt="" />
+        </div>
+      </div>
+      <div class="news">
+        <h2>Lottery News</h2>
+        <div><img src="http://www.placehold.it/300x165" alt="" /></div>
+        <div><h3>[Story Title]</h3></div>
+        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus rhoncus leo in molestie dapibus. Vivamus vel ipsum elit. <a href="#">Read More &gt;</a></div>
+        <div><a class="btn block" href="#"><span>More News</span></a></div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="mission">
+      <div id="image-carousel" class="swipeshow">
+        <div class="slides">
+          <div class="slide">
+            <h4>FUNDING THE WAY COLORADO PLAYS</h4>
+            <h3><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</em></h3>
+          </div>
+          <div class="slide">
+            <h4>FUNDING THE WAY COLORADO PLAYS</h4>
+            <h3><em>Pellentesque interdum posuere quam nec consectetur.</em></h3>
+          </div>
+          <div class="slide">
+            <h4>FUNDING THE WAY COLORADO PLAYS</h4>
+            <h3><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</em></h3>
+          </div>
+          <div class="slide">
+            <h4>FUNDING THE WAY COLORADO PLAYS</h4>
+            <h3><em>Pellentesque interdum posuere quam nec consectetur.</em></h3>
+          </div>
+          <div class="slide">
+            <h4>FUNDING THE WAY COLORADO PLAYS</h4>
+            <h3><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</em></h3>
+          </div>
+          <div class="slide">
+            <h4>FUNDING THE WAY COLORADO PLAYS</h4>
+            <h3><em>Pellentesque interdum posuere quam nec consectetur.</em></h3>
+          </div>
+          <div class="slide">
+            <h4>FUNDING THE WAY COLORADO PLAYS</h4>
+            <h3><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</em></h3>
+          </div>
+          <div class="slide">
+            <h4>FUNDING THE WAY COLORADO PLAYS</h4>
+            <h3><em>Pellentesque interdum posuere quam nec consectetur.</em></h3>
+          </div>
+        </div>
+      <div class='dots'></div>
+      </div>
+  </section>
+   
+  <footer>
+    <div class="inner">
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </footer> 
+  </div>
+  
+  <script>
+    //|
+    //| Hiding Top Nav
+    //|
+    $("header").headroom({
+      offset: 200
+    });
+  
+    //|
+    //| Banner Sizing & Bubble Peek
+    //|
+    var loadTimeout = setTimeout(function(){
+      $("section.banner").addClass("peek");
+      $("div.ball").addClass("animated bounceInUp");
+    },1000);
+    
+    $(".ball").on("mouseenter", function(){
+      $(this).removeClass("bounceInUp");
+    });
+  
+    //|
+    //| Skrollr (Parallax)
+    //|
+    var s = skrollr.init({
+      smoothScrolling: false,
+      forceHeight: false
+    });
+
+    //|
+    //| Waypoints
+    //|
+    var wp_Sections = $('section.main').waypoint(function(direction) {
+      $(this.element).addClass("scrolled");
+      if ($(this.element).hasClass("main-games")) {
+        //flapNumbers();
+      }
+      if ($(this.element).hasClass("main-scratch-news")) {
+        $("span.ball").addClass("animated bounceInUp");
+        $("div.gameCards img").addClass("animated bounceInUp");
+        $("div.gameNav").addClass("animated fadeInUp");
+      }
+      /*
+      if ($(this.element).hasClass("mission")) {
+        $("section.mission div.slide").addClass("animated bounceInLeft");
+      }
+      */
+    }, {
+      offset: '75%'
+    });
+    
+    var wp_Footer = $('footer').waypoint(function(direction) {
+      $(this.element).addClass("scrolled");
+    }, {
+      offset: '100%'
+    });
+  
+    //|
+    //| Scratch Nav
+    //|
+    $("a.prevScratch").on("click", function(e){
+      e.preventDefault();
+      
+      $("div.gameCards img").removeClass("bounceInUp bounceInDown").css("animation-delay","0s");
+      
+      var scratchTimeout = setTimeout(function(){
+        $("div.gameCards img").addClass("bounceOutUp");
+      },100);
+      
+      var scratchTimeout = setTimeout(function(){
+        $("div.gameCards img").removeClass("bounceOutUp").addClass("bounceInUp");
+      },750);
+    });
+
+    $("a.nextScratch").on("click", function(e){
+      e.preventDefault();
+      
+      $("div.gameCards img").removeClass("bounceInUp bounceInDown").css("animation-delay","0s");
+      
+      var scratchTimeout = setTimeout(function(){
+        $("div.gameCards img").addClass("bounceOutDown");
+      },100);
+      
+      var scratchTimeout = setTimeout(function(){
+        $("div.gameCards img").removeClass("bounceOutDown").addClass("bounceInDown");
+      },750);
+    });
+  
+    //|
+    //| Mission Nav
+    /*
+    $("a.prevMission").on("click", function(e){
+      e.preventDefault();
+      
+      $("section.mission div.slide").removeClass("bounceInLeft bounceInRight").css("animation-delay","0s");
+      
+      var scratchTimeout = setTimeout(function(){
+        $("section.mission div.slide").addClass("bounceOutLeft");
+      },100);
+      
+      var scratchTimeout = setTimeout(function(){
+        $("section.mission div.slide").removeClass("bounceOutLeft").addClass("bounceInRight");
+      },750);
+    });
+
+    $("a.nextMission").on("click", function(e){
+      e.preventDefault();
+      
+      $("section.mission div.slide").removeClass("bounceInLeft").css("animation-delay","0s");
+      
+      var scratchTimeout = setTimeout(function(){
+        $("section.mission div.slide").addClass("bounceInLeft bounceOutRight");
+      },100);
+      
+      var scratchTimeout = setTimeout(function(){
+        $("section.mission div.slide").removeClass("bounceOutRight").addClass("bounceInLeft");
+      },750);
+    });
+    */
+    
+    //|
+    //| Flyout Trigger
+    //|
+    var flyoutOpen = false;
+    $('.flyoutTrigger').click(function(e){
+      
+      // Prevents the default action to be triggered. 
+      e.preventDefault();
+    
+      $(".flyoutTrigger").removeClass("active");
+      $(this).addClass("active");
+      $("body").addClass("show-mask");
+      
+      setTimeout(function(){
+        flyoutOpen = true;
+      }, 500);
+    });
+    
+    $(".flyout a.close").on("click", function(e){
+      e.preventDefault();
+      $(".flyoutTrigger").removeClass("active");
+      $("body").removeClass("show-mask");
+      flyoutOpen = false; 
+      e.stopPropagation();  
+    });
+  
+  
+    //|
+    //| Drag Slideshow
+    //|
+    $("#image-carousel").swipeshow({
+      autostart: false
+    });
+    
+    //|
+    //| Flap Letters
+    /*
+    function flapNumbers() {
+      var ratio = 0.3;
+      $('.jackpotsplitflap')
+      .splitFlap({
+          image: 'image/chars.png',
+          charsMap: '$0123456789, ',
+          charWidth:  50 * ratio,
+          charHeight: 100 * ratio,
+          imageSize:  (650 * ratio) + 'px ' + (100 * ratio) + 'px'
+      });
+    }
+    */
+  </script>
+</body>
+</html>

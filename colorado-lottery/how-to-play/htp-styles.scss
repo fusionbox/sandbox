@@ -1,0 +1,2838 @@
+@import url("https://use.typekit.net/iex7tqp.css");
+
+/* Brand Colors */
+$orange: #EA3F11;
+$green: #66AB44;
+$blue: #003f56;
+
+/* Lottery Theme Overrides */
+
+$powerball: rgb(237, 28, 36);
+$mega: rgb(219, 168, 27);
+$lucky: rgb(233, 128, 36);
+$lotto: rgb(0, 192, 243);
+$cash5: rgb(139, 179, 49);
+$pick3: rgb(89, 50, 131);
+$scratch: rgb(0, 150, 112);
+
+@mixin field_label {
+  cursor: pointer;
+  box-sizing: border-box;
+  display: inline-block;
+  border: 1px solid $orange;
+  background: white;
+  color: $orange;
+  font-size: 24px;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  line-height: 44px;
+  position: relative;
+
+  span {
+    color: white;
+    position: absolute;
+    top: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@mixin vertical_label {
+  font-size: 18px;
+  line-height: 1;
+  font-family: pragmatica, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@mixin htp_bp($point) {
+  $bp-tablet-reverse: "(min-width: 1201px)";
+  $bp-tablet: "(max-width: 1200px)";
+  $bp-mobile-reverse: "(min-width: 641px)";
+  $bp-mobile: "(max-width: 640px)";
+
+  @if $point == mobile-reverse {
+    @media #{$bp-mobile-reverse}  { @content; }
+  }
+  @else if $point == mobile {
+    @media #{$bp-mobile}  { @content; }
+  }
+  @else if $point == tablet-reverse {
+    @media #{$bp-tablet-reverse}  { @content; }
+  }
+  @else if $point == tablet {
+    @media #{$bp-tablet}  { @content; }
+  }
+}
+
+body.simulator-styles section.main div.inner {
+  background: transparent !important;
+}
+
+body.simulator-styles section.main .flexWrap > div.column {
+  padding: 0;
+}
+
+body.simulator-styles {
+  .simulator {
+    padding: 3rem 0;
+
+    #simulator_form {
+      position: relative;
+      padding-bottom: 0;
+
+      @media (max-height: 1000px), (max-width: 800px) {
+        padding-bottom: 0;
+      }
+
+      .simulator_group {
+
+        .sticky-wrapper:not(.is-sticky) {
+          height: auto !important;
+        }
+
+        &.simulator_group_instruction_area {
+          background: white;
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: rgba(0,0,0,0.05) 0px 0px 8px;
+          padding-bottom: 4rem;
+        }
+
+        &.simulator_group_play_area {
+          text-align: center; // center play slip in content area
+        }
+      }
+    }
+
+    .simulator_header {
+      display: flex;
+      align-items: stretch;
+      justify-content: stretch;
+      top: 0;
+      z-index: 1001;
+      background: $blue;
+      padding: 6px;
+      box-sizing: border-box;
+
+      @include htp_bp(tablet) {
+        flex-wrap: wrap;
+      }
+
+      .title,
+      .steps,
+      .price,
+      .draws,
+      .prize {
+        flex: 1 1 auto;
+        padding: 1rem;
+        box-sizing: border-box;
+        margin: 6px;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .title {
+        flex: 1 1 auto;
+        justify-content: center;
+        font-weight: 700;
+        color: white;
+        order: 1;
+
+        @include htp_bp(tablet) {
+          flex: 1 1 calc(50% - 12px);
+          order: 1;
+          justify-content: flex-start;
+        }
+
+        @include htp_bp(mobile) {
+          order: 2;
+          padding-top: 0;
+          justify-content: center;
+        }
+      }
+
+      .steps {
+        justify-content: center;
+        order: 5;
+
+        @include htp_bp(tablet) {
+          justify-content: flex-end;
+          order: 2;
+          flex: 1 1 calc(50% - 12px);
+        }
+
+        @include htp_bp(mobile) {
+          order: 1;
+          flex: 1 1 100%;
+          justify-content: center;
+        }
+
+        .step_marker {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 24px;
+          height: 24px;
+          border-radius: 24px;
+          margin: 0 3px;
+          font-weight: bold;
+          color: rgba(white,0.7);
+          background: rgba(white,0.2);
+
+          &.active {
+            color: white;
+          }
+        }
+      }
+
+      .price, .draws, .prize {
+        padding: 1rem 1.5rem;
+
+        @include htp_bp(tablet) {
+          padding: 0.5rem 1rem;
+          margin: 3px;
+        }
+
+        @include htp_bp(mobile) {
+          flex: 1 1 100%;
+        }
+
+        .ticket_price_wrapper,
+        #ticket_draws,
+        #prize_amount,
+        #plus_prize_amount {
+          font-size: 22px;
+
+          @include htp_bp(tablet) {
+            font-size: 18px;
+          }
+
+          @include htp_bp(mobile) {
+            font-size: 16px;
+          }
+        }
+
+      }
+
+      .price {
+        order: 2;
+        transition: background 0.2s ease 0s;
+
+        @include htp_bp(tablet) {
+          flex: 1 1 calc(30% - 12px);
+          order: 3;
+        }
+
+        @include htp_bp(mobile) {
+          display: flex;
+          order: 3;
+          flex: 1 1 50%;
+        }
+
+        .price_inner {
+          transform-origin: 50% 50%;
+          transform: scale(1);
+          transition: all 0.2s ease 0s;
+          display: inline-flex;
+          white-space: nowrap;
+          align-items: center;
+        }
+        .ticket_price_wrapper {
+          font-weight: bold;
+        }
+      }
+
+      .draws {
+        order: 3;
+        transition: background 0.2s ease 0s;
+
+        @include htp_bp(tablet) {
+          flex: 1 1 calc(10% - 12px);
+          order: 4;
+        }
+
+        @include htp_bp(mobile) {
+          flex: 1 1 30%;
+          display: flex;
+          order: 4;
+        }
+
+        .draws_inner {
+          transform-origin: 50% 50%;
+          transform: scale(1);
+          transition: all 0.2s ease 0s;
+          display: inline-flex;
+          white-space: nowrap;
+          align-items: center;
+        }
+
+        #ticket_draws {
+          font-weight: bold;
+          margin-right: 4px;
+        }
+      }
+
+      .prize {
+        order: 4;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        @include htp_bp(tablet) {
+          flex: 1 1 calc(39% - 12px);
+        }
+
+        @include htp_bp(mobile) {
+          order: 5;
+        }
+
+        .prize_inner {
+          transform-origin: 50% 50%;
+          transform: scale(1);
+          transition: all 0.2s ease 0s;
+          padding: 0 5px;
+          display: inline-flex;
+          align-items: center;
+          white-space: nowrap;
+        }
+
+        #prize_amount,
+        #plus_prize_amount {
+          font-weight: bold;
+          margin-left: 4px;
+        }
+      }
+    }
+
+    .playslip {
+      font-family: pragmatica-condensed, "FSEmericWeb", sans-serif;
+      font-weight: bold;
+      width: auto;
+      display: inline-flex;
+      align-items: stretch;
+      padding: 2rem;
+      margin: 0 auto 2rem auto;
+      top: -3rem;
+      position: relative;
+      background: white;
+      box-shadow: rgba(black,0.2) 3px 6px 12px;
+      max-width: 100%;
+      box-sizing: border-box;
+      //transform: rotate(-1deg);
+
+      &.lockdown {
+        cursor: not-allowed;
+
+        * {
+          pointer-events: none;
+        }
+
+        .field_number label,
+        .field_extra_number label {
+          cursor: not-allowed;
+          /*
+          opacity: 0.2;
+          background: white;
+          color: black;
+          border-color: black;
+          box-shadow: inset white 0px 0px 0px 2px;
+          */
+        }
+
+        /*
+        .field_number.non_match label,
+        .field_extra_number.non_match label {
+          cursor: not-allowed;
+          opacity: 1;
+          background: #555555;
+          color: white;
+          border-color: #555555;
+          box-shadow: inset white 0px 0px 0px 2px;
+        }
+        */
+
+      }
+
+      /*
+      .field_number.match_plus label {
+        background: $green;
+        opacity: 1;
+        color: white;
+        border-color: $green;
+      }
+      */
+    }
+
+    .number_matrix_wrapper {
+      display: flex;
+      flex: 1 1 auto;
+      align-items: stretch;
+    }
+
+    .number_matrix,
+    .extra_number_matrix {
+      align-content: flex-start;
+      margin: 0 -12px 0 12px;
+
+      > div {
+        float: left;
+        margin: 6px;
+      }
+
+      .number_matrix_label {
+        &.fade_me_bro {
+          opacity: 0.2;
+          cursor: default;
+          pointer-events: none;
+        }
+      }
+    }
+
+    .field {
+      transition: all 0.25s ease 0s;
+      &.fade_me_bro {
+        opacity: 0.2;
+        cursor: default;
+        pointer-events: none;
+      }
+    }
+
+    .field_number,
+    .field_extra_number,
+    .field_qp,
+    .field_extra_qp,
+    .field_plus,
+    .field_multiplier,
+    .field_advance {
+      overflow: hidden;
+
+      label {
+        @include field_label;
+      }
+
+      input {
+        position: absolute;
+        left: -999rem;
+
+        &:checked ~ label {
+          background: black;
+          color: white;
+          box-shadow: inset white 0px 0px 0px 2px;
+        }
+
+        &:disabled ~ label {
+          cursor: not-allowed;
+          opacity: 0.2;
+          background: white;
+          color: black;
+          border-color: black;
+        }
+      }
+    }
+
+    .field_number,
+    .field_extra_number {
+      min-width: 44px;
+      max-width: 44px;
+    }
+
+    .field_group {
+       display: flex;
+       flex-direction: column;
+       align-items: stretch;
+       flex: 1 1 auto;
+
+       @media (min-width: 800px) {
+         &.field_group_horizontal {
+           flex-direction: row;
+           align-items: center;
+           justify-content: space-between;
+         }
+       }
+    }
+
+    .field_qp,
+    .field_extra_qp {
+      flex: 0 1 auto;
+      box-sizing: border-box;
+      min-height: 180px;
+      min-width: 56px;
+      width: 56px;
+      padding: 6px;
+      background: rgba($orange,0.15);
+
+      label {
+        span {
+          color: $orange;
+          line-height: 24px;
+        }
+      }
+    }
+
+    .field_plus,
+    .field_multiplier {
+      flex: 1 1 auto;
+      box-sizing: border-box;
+      min-height: 290px;
+      min-width: 56px;
+      width: 56px;
+      padding: 6px;
+      background: $orange;
+
+      label {
+        span {
+          @include vertical_label;
+        }
+      }
+    }
+
+    .field_multiplier {
+      min-height: 310px;
+    }
+
+    .field_advance {
+      border: 1px solid $orange;
+      box-sizing: border-box;
+      min-height: 380px;
+      min-width: 58px;
+      width: 58px;
+      padding: 6px;
+      background: yellow;
+      margin: 24px 0;
+
+      label {
+        span {
+          @include vertical_label;
+          color: red;
+        }
+      }
+    }
+
+    .field_advance_draws {
+      font-family: "FSEmericWeb", sans-serif;
+      display: flex;
+      flex-direction: column;
+      background: white;
+      border: 1px solid $orange;
+      box-shadow: 5px 5px 0px rgba(black,0.3);
+      position: absolute;
+      padding: 24px;
+      top: 25%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+
+      label {
+        order: 1;
+        text-align: center;
+      }
+
+      span.input {
+        order: 2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        button.advance-minus,
+        button.advance-plus {
+          background: none;
+          box-shadow: none;
+          font-size: 44px;
+          line-height: 54px;
+          font-weight: bold;
+          text-align: center;
+          padding: 0.75rem 2rem;
+
+          &:hover, &:focus, &:active {
+            padding: 0.75rem 2rem;
+          }
+
+          &.range_maxed {
+            pointer-events: none;
+            cursor: not-allowed;
+            color: black !important;
+            opacity: 0.2;
+          }
+        }
+      }
+
+      input {
+        font-size: 32px;
+        margin: 8px 0;
+        padding: 12px;
+        height: 54px;
+        width: 68px;
+        text-align: center;
+        cursor: default;
+
+        &:focus, &:active {
+          border: 1px solid #dad6be !important;
+          outline: 0;
+        }
+      }
+
+      input:disabled {
+        opacity: 0.2;
+
+        ~ label {
+          opacity: 0.2;
+        }
+      }
+
+      button.modal-save {
+        order: 3;
+        display: block;
+        width: 100%;
+      }
+
+      button.modal-cancel {
+        order: 4;
+        background-color: gray;
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+      }
+    }
+
+    /* Buttons */
+
+    div.step_description_and_actions {
+      display: flex;
+    }
+
+    div.step {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+
+      div.actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        justify-content: center;
+        background: white;
+        z-index: 1050;
+        bottom: 0;
+        left: 0;
+        box-sizing: border-box;
+        width: 100%;
+        position: fixed;
+        padding: 1rem 1rem;
+        box-shadow: rgba(0,0,0,0.2) 0px -3px 8px;
+
+        @include htp_bp(mobile) {
+          flex-wrap: nowrap;
+          overflow: auto;
+        }
+
+        > * {
+          margin: 6px;
+        }
+
+        span.action_counter {
+          display: flex;
+          align-items: center;
+          font-weight: bold;
+          color: #999;
+
+          @include htp_bp(mobile) {
+            font-size: 12px;
+          }
+
+          #extra_number_check {
+            display: block;
+            border: 1px solid #dad6be;
+            border-radius: 4px;
+            margin-right: 4px;
+            max-width: 18px;
+            min-width: 18px;
+            max-height: 18px;
+            min-height: 18px;
+            position: relative;
+          }
+
+          &.in_progress {
+            color: $blue;
+          }
+
+          &.complete {
+            color: $green;
+
+            #extra_number_check {
+              border-color: $green;
+              &:before {
+                content: "X";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+              }
+            }
+          }
+        }
+
+        button, a {
+          transition: all 0.2s ease 0s;
+
+          @include htp_bp(tablet) {
+            font-size: 1.4rem;
+            min-height: 3.3rem;
+          }
+        }
+
+        button {
+          &.toggle {
+            display: none;
+
+            &.current {
+              display: inline-block;
+            }
+          }
+        }
+
+        a {
+          @include htp_bp(tablet) {
+            padding-top: 1rem;
+            min-height: 3.6rem;
+          }
+          &:hover, &:focus {
+            color: white;
+          }
+        }
+
+        &.hol_up {
+          button, a {
+            background-color: #999999;
+            opacity: 0.3;
+            pointer-events: none;
+          }
+        }
+      }
+    }
+
+    div.step_description {
+      display: none;
+      box-sizing: border-box;
+      padding: 4rem 2rem;
+      max-width: 720px;
+      margin: 0 auto;
+      width: 100%;
+      text-align: center;
+
+      &.active {
+        display: block;
+      }
+
+      h2 {
+        margin-bottom: 0.5rem;
+      }
+
+      div.intro {
+        max-width: 640px;
+        margin: 2rem auto;
+      }
+    }
+
+    /* Ticket View */
+
+    .ticket {
+      display: none;
+      background: linear-gradient(180deg, #eee 0%, white 15%);
+      position: relative;
+      padding: 6rem 4rem;
+      margin: -3rem auto 10rem auto;
+      max-width: 356px;
+
+      * {
+        /*transition: all 0.5s ease 0.25s;*/
+      }
+
+      $ticket_backdrop: #edebdf;
+
+      &:before,
+      &:after {
+        background-position: left bottom;
+        background-repeat: repeat-x;
+        background-size: 16px 16px;
+        content: " ";
+        display: block;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        height: 16px;
+      }
+
+      &:before {
+        background: linear-gradient(-45deg, white 8px, transparent 0), linear-gradient(45deg, white 8px, transparent 0);
+        background-position: right bottom;
+        background-repeat: repeat-x;
+        background-size: 16px 16px;
+        transform: rotate(180deg);
+        bottom: auto;
+        top: 0;
+      }
+
+      &.drawing:before {
+        background-image: linear-gradient(-45deg, $blue 8px, transparent 0), linear-gradient(45deg, $blue 8px, transparent 0);
+      }
+
+      &:after {
+        background: linear-gradient(-45deg, $ticket_backdrop 8px, transparent 0), linear-gradient(45deg, $ticket_backdrop 8px, transparent 0);
+        background-position: left bottom;
+        background-repeat: repeat-x;
+        background-size: 16px 16px;
+      }
+
+      .ticket_msg {
+        font-size: 1.1rem;
+        text-align: center;
+        margin: 12px 0;
+      }
+
+      .ticket_game_info {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin: 16px 0;
+
+        .ticket_game {
+          font-size: 2.8rem;
+          line-height: 1;
+          font-weight: bold;
+
+          @include htp_bp(mobile) {
+            font-size: 2rem;
+          }
+        }
+
+        .ticket_draws {
+          text-align: right;
+          font-size: 1.4rem;
+          > span {
+            position: relative;
+            display: block;
+            line-height: 1.1;
+            margin-bottom: 8px;
+          }
+        }
+
+        .ticket_draw_dates {
+          white-space: nowrap;
+        }
+      }
+
+      .ticket_numbers {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        @include htp_bp(mobile) {
+          font-size: 1.4rem;
+        }
+
+        .ticket_board {
+          margin-left: 0;
+          margin-right: 8px;
+        }
+
+        .ticket_number {
+          margin-left: 8px;
+          min-width: 30px;
+          max-width: 30px;
+          min-height: 30px;
+          max-height: 30px;
+          line-height: 30px;
+          text-align: center;
+          border-radius: 50%;
+          border: 2px solid transparent;
+          transition: border 0.25s ease 0.3s;
+
+          @include htp_bp(mobile) {
+            min-width: 24px;
+            max-width: 24px;
+            min-height: 24px;
+            max-height: 24px;
+            line-height: 24px;
+          }
+        }
+
+        .ticket_extra_label {
+          margin-left: 16px;
+
+          + .ticket_number {
+            margin: 0 4px;
+          }
+        }
+
+        .ticket_qp {
+          margin-left: 12px;
+        }
+
+        .ticket_bet_type {
+          margin-left: 12px;
+          line-height: 1.1;
+        }
+
+        .ticket_bet_amount {
+          margin-left: 12px;
+          line-height: 1.1;
+        }
+
+        .ticket_bet_type #ticket_bet_type,
+        .ticket_bet_amount .ticket_price {
+          min-height: 30px;
+          max-height: 30px;
+          line-height: 24px;
+
+          @include htp_bp(mobile) {
+            min-height: 24px;
+            max-height: 24px;
+            line-height: 24px;
+          }
+        }
+      }
+
+      .ticket_draw_times_and_dates {
+        font-size: 1.3rem;
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        position: relative;
+
+        .ticket_draw_time {
+          span.tooltip {
+            right: auto;
+            left: -32px;
+            top: -7px;
+          }
+        }
+
+        .ticket_draw_dates_wrapper {
+          span.tooltip {
+            top: -7px;
+          }
+        }
+      }
+
+      .ticket_times {
+        color: #666;
+        text-align: center;
+        margin: 18px 0;
+      }
+
+      .ezmatch_numbers {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin: 2rem 0 0 0;
+
+        span.tooltip {
+          right: calc(50% + 55px);
+          transform: translateX(50%);
+          top: 0;
+        }
+
+        &::before {
+          content: "EZ Match";
+          font-weight: bold;
+          display: block;
+          margin-bottom: 1rem;
+        }
+
+        p {
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+        }
+
+        .num {
+          min-width: 60px;
+          text-align: right;
+          margin-right: 8px;
+        }
+
+        .prz {
+          min-width: 60px;
+          text-align: left;
+          margin-left: 8px;
+        }
+      }
+
+      &.drawing {
+        .ticket_numbers .ticket_number.match_plus,
+        .ezmatch_numbers p.match {
+          background: rgba($green,0.33);
+        }
+      }
+    }
+
+    .ball_drop_wrapper {
+      background: $blue;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      position: relative;
+      top: 4rem;
+
+      &.drawing {
+        margin-top: -4rem;
+      }
+
+      p {
+        font-weight: bold;
+        color: white;
+        text-align: center;
+      }
+    }
+
+    #ball_drops,
+    #ball_drops_plus {
+      flex: 0 1 auto;
+      padding: 2rem;
+      margin: 0 1rem 2rem 1rem;
+      min-width: 348px;
+      min-height: 82px;
+
+      .balls {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        @include htp_bp(mobile) {
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+      }
+
+      .drawn_number {
+        width: 44px;
+        height: 44px;
+        line-height: 44px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 12px;
+        text-align: center;
+        font-weight: bold;
+        position: relative;
+        top: -15px;
+        opacity: 0;
+        animation: balldrop 0.5s ease 0s forwards;
+        font-family: pragmatica-condensed, "FSEmericWeb", sans-serif;
+        font-weight: bold;
+        font-size: 26px;
+
+        @include htp_bp(mobile) {
+          width: 34px;
+          height: 34px;
+          line-height: 34px;
+          margin-right: 4px;
+          font-size: 22px;
+        }
+
+        &.drawn_extra_number {
+          color: white;
+
+          &:after {
+            content: "EXTRA BALL";
+            font-size: 11px;
+            line-height: 1;
+            position: absolute;
+            top: calc(100% + 10px);
+            width: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+
+        &.drawn_number_multiplier {
+          margin-left: 18px;
+          font-size: 30px;
+          border: 0 !important;
+          color: white !important;
+          background: transparent !important;
+
+          @include htp_bp(mobile) {
+            flex: 1 1 100%;
+            margin-top: 18px;
+          }
+
+          &:after {
+            content: "MULTIPLIER";
+            font-size: 11px;
+            line-height: 1;
+            position: absolute;
+            top: calc(100% + 10px);
+            width: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    #ball_drops_plus {
+      margin: 0 1rem 4rem 1rem;
+
+      @include htp_bp(mobile) {
+        margin-top: -2rem;
+      }
+
+      .drawn_number {
+        border: 2px solid white;
+        color: darken($green,10%);
+        background: white;
+
+        &.drawn_extra_number_plus {
+          border-style: solid;
+          color: white;
+          background: $green;
+        }
+      }
+    }
+
+    #potential_winnings {
+      padding: 2rem;
+      text-align: center;
+      font-size: 2.4rem;
+      transition: all 0.3s ease 0s;
+      opacity: 1;
+      position: fixed;
+      left: 0;
+      width: 100%;
+      top: 100%;
+      transform: translateY(-100%);
+      background: #02502E;
+      background-image: linear-gradient(-45deg, #02502E 0%, #6CB43F 100%);
+      color: white;
+      padding-bottom: 11rem;
+      z-index: 1020;
+      box-sizing: border-box;
+      box-shadow: rgba(0,0,0,0.2) 0px -2px 3px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      @include htp_bp(tablet) {
+        font-size: 1.9rem;
+      }
+
+      @include htp_bp(tablet) {
+        padding-bottom: 10rem;
+      }
+
+      h3 {
+        color: white;
+        font-weight: bold;
+
+        @include htp_bp(tablet) {
+          font-size: 1.7rem;
+        }
+
+        small {
+          color: white;
+          display: block;
+        }
+      }
+
+      &:empty {
+        padding: 0;
+        bottom: 0;
+        opacity: 0;
+        z-index: 0;
+      }
+
+      p {
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        background: white;
+        border-radius: 6px;
+        padding: 12px 20px;
+        color: #666;
+
+        strong {
+          color: darken($green,10%);
+          font-size: 110%;
+
+          &.dollars {
+            letter-spacing: -1px;
+          }
+        }
+
+        small {
+          font-size: 1.2rem;
+          display: block;
+        }
+
+        &.plus_winnings {
+          font-size: 1.8rem;
+          line-height: 1.3;
+
+          @include htp_bp(tablet) {
+            font-size: 1.5rem;
+          }
+        }
+      }
+
+      .trigger {
+        cursor: pointer;
+        background: transparent url('https://static.coloradolottery.com/media/filer_public/79/74/79748a60-9c47-4126-aee1-29ff4f92a011/arrow.svg') center no-repeat;
+        background-size: 75% 75%;
+        width: 34px;
+        height: 34px;
+        display: block;
+        margin: 0 auto 2rem auto;
+        transform: rotate(0deg);
+        transition: all 0.3s ease 0s;
+      }
+
+      &.hidey {
+        bottom: auto;
+        top: calc(100% - 16rem);
+        transform: translateY(0%);
+
+        @include htp_bp(tablet) {
+          top: calc(100% - 14.5rem);
+        }
+
+        .trigger {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    .ticket_numbers ~ .ticket_barcode_wrapper {
+      margin-top: 32px;
+      display: block;
+    }
+  }
+
+
+  /* Sticky Header */
+
+  .simulator .is-sticky {
+    .simulator_header {
+      z-index: 1001 !important;
+      width: 100% !important;
+      left: 0;
+      top: 42.5px !important;
+
+      @media (max-width: 1100px) {
+        top: 45px !important;
+      }
+
+      @include htp_bp(tablet) {
+        flex-wrap: nowrap;
+
+        .title {
+          flex: 1 1 auto;
+          justify-content: center;
+        }
+
+        .steps {
+          display: none;
+          margin: 0;
+          padding: 0;
+          max-height: 0;
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+
+      @include htp_bp(mobile) {
+        flex-wrap: wrap;
+
+        .title {
+          flex: 1 1 100%;
+          padding-bottom: 0;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  /* Ticket Tooltips */
+
+  span.tooltip {
+    cursor: help;
+
+    &:not(.tooltip_text) {
+      position: absolute;
+      top: 0;
+      right: -32px;
+      width: 22px;
+      height: 22px;
+      padding: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease 0s;
+    }
+
+    &.tooltip_text {
+      position: relative;
+      top: auto !important;
+      bottom: auto !important;
+      left: auto !important;
+      right: auto !important;
+      border-bottom: dotted 1px $green;
+
+      &:hover {
+        color: $green;
+      }
+    }
+
+    &:hover {
+      z-index: 100;
+
+      span.tooltip_trigger {
+        background: lighten($green,20%);
+      }
+
+      span.tooltip_content {
+        opacity: 1;
+        visibility: visible;
+        z-index: 100;
+        bottom: 32px;
+      }
+    }
+
+    span.tooltip_trigger {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: serif;
+      font-style: italic;
+      font-size: 17px;
+      font-weight: bold;
+      background: $green;
+      color: white;
+      border: 2px solid white;
+      width: 18px;
+      height: 18px;
+      border-radius: 24px;
+    }
+
+    span.tooltip_content {
+      color: #454545;
+      transition: all 0.2s ease 0s;
+      position: absolute;
+      bottom: 28px;
+      left: 18px;
+      max-width: 240px;
+      height: auto;
+      min-width: 120px;
+      text-align: left;
+      border-radius: 12px;
+      padding: 12px;
+      font-size: 14px;
+      font-family: "FSEmericWeb", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      background: white;
+      box-shadow: rgba(0,0,0,0.2) 0px 4px 12px;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &.tooltip_sling_left {
+      span.tooltip_content {
+        left: auto;
+        right: 18px;
+      }
+    }
+  }
+
+  .ticket.drawing {
+    span.tooltip:not(.tooltip_text) {
+      display: none;
+    }
+    span.tooltip.tooltip_text {
+      border: 0 !important;
+      color: #454545 !important;
+      pointer-events: none;
+    }
+  }
+
+  .playslip,
+  .ticket:not(.drawing) {
+
+    .ticket_barcode_wrapper {
+      display: block;
+      position: relative;
+
+      span.tooltip {
+        top: calc(50% - 5px);
+        left: 50%;
+        transform: translate(-50%,-50%);
+      }
+    }
+
+    .ticket_game {
+      position: relative;
+
+      span.tooltip {
+        left: -30px;
+      }
+    }
+
+    .ticket_draws {
+      span.tooltip {
+        top: -10px;
+      }
+    }
+
+    .ticket_numbers {
+      > span {
+        position: relative;
+      }
+      span.tooltip {
+        top: calc(100% - 10px);
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .ticket_multiplier {
+      .ticket_multiplier_inner {
+        position: relative;
+      }
+      span.tooltip {
+        top: -9px;
+        left: -32px;
+      }
+    }
+  }
+
+
+  /* Flash! */
+
+  #prize_amount, #plus_prize_amount, #ticket_draws, .ticket_price_wrapper {
+    transform: translateY(0) !important;
+    position: relative;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &:before {
+      color: white;
+      content: attr(data-before);
+      position: absolute;
+      transform: translate(-50%,-50%) !important;
+      top: 50%;
+      left: 50%;
+      opacity: 1;
+      white-space: nowrap;
+    }
+
+    &:after {
+      color: white;
+      content: attr(data-after);
+      position: absolute;
+      transform: translate(-50%,0%) !important;
+      top: 50%;
+      left: 50%;
+      opacity: 0;
+      white-space: nowrap;
+    }
+  }
+
+  #prize_amount,
+  #plus_prize_amount,
+  #ticket_draws {
+    letter-spacing: -1px;
+    &:before, &:after {
+      letter-spacing: -1px;
+    }
+  }
+
+  .ticket_price_wrapper {
+    background: white;
+    border-radius: 50px;
+    box-shadow: rgba(0,0,0,0.2) 0px 3px 6px;
+    padding: 4px 8px;
+    margin-right: 4px;
+    letter-spacing: -2px;
+
+    @include htp_bp(tablet) {
+      padding: 2px 6px;
+      margin: -4px 4px -4px 0;
+    }
+
+    &:before, &:after {
+      color: black;
+      letter-spacing: -2px;
+    }
+  }
+
+  .flash {
+    transform: scale(1.3) !important;
+    //color: $green;
+    transition: color transform 0.1s ease 0s;
+
+    #prize_amount, #plus_prize_amount, #ticket_draws, .ticket_price_wrapper {
+      &:before {
+        //color: $green;
+        animation: rollupA 0.25s ease 0s 1 forwards;
+      }
+
+      &:after {
+        //color: $green;
+        animation: rollupB 0.25s ease 0.25s 1 forwards;
+      }
+    }
+  }
+
+  .modal {
+    padding: 0 !important;
+
+    .modal_header {
+      padding: 2rem;
+      color: white;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .modal_content {
+      padding: 2rem;
+
+      ul, ol {
+        padding-left: 2rem;
+        li {
+          padding: 0.5rem 0;
+        }
+      }
+    }
+  }
+
+  /* Color Themes */
+
+  .simulator.simulator_powerball {
+
+    .playslip {
+      flex-direction: column;
+    }
+
+    .field_number,
+    .field_extra_number,
+    .field_qp,
+    .field_extra_qp,
+    .field_plus,
+    .field_multiplier,
+    .field_advance {
+      label {
+        border-radius: 50%;
+      }
+    }
+
+    .field_advance,
+    .field_multiplier,
+    .field_plus {
+      @include field_label;
+      background: transparent;
+      border: 0;
+      overflow: visible;
+      min-height: 0;
+      height: auto;
+      margin: 0;
+      padding: 12px;
+      line-height: 1.2;
+
+      span {
+        top: 50%;
+        left: 100%;
+        transform: translate(6px,-50%);
+        writing-mode: unset;
+        text-orientation: unset;
+        color: $orange;
+        line-height: 1.2;
+        letter-spacing: 0;
+        white-space: nowrap;
+      }
+
+      small {
+        display: block;
+        font-weight: normal;
+        font-size: 90%;
+        line-height: 1.2;
+      }
+    }
+
+    .field_plus {
+      padding: 12px;
+      border: 1px solid $orange;
+      background: $orange;
+      margin-bottom: 6px;
+      align-items: center;
+      display: flex;
+      justify-content: flex-start;
+      max-width: 310px;
+      min-width: 310px;
+
+      @media (max-width: 799px) {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      label {
+        color: white;
+      }
+
+      span {
+        white-space: nowrap;
+        color: white;
+        text-align: left;
+      }
+
+    }
+
+    .number_matrix_wrapper {
+      max-width: 910px;
+    }
+
+    .number_matrix,
+    .extra_number_matrix {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 6px;
+      border: 1px solid $orange;
+
+      .number_matrix_label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-width: 156px;
+        max-width: 156px;
+        min-height: 44px;
+        max-height: 44px;
+        color: $orange;
+
+        strong {
+          background: $orange;
+          color: white;
+          width: 100%;
+          text-align: center;
+        }
+
+        span {
+          width: 100%;
+          text-align: center;
+        }
+
+        small {
+          display: inline;
+        }
+      }
+    }
+
+    .extra_number_matrix {
+      background: rgba($orange,0.15);
+      border-top: 0;
+
+      .number_matrix_label {
+        min-width: 100px;
+        max-width: 100px;
+      }
+    }
+
+    .field_qp,
+    .field_extra_qp {
+      @include field_label;
+      padding: 0;
+      border: 0;
+      min-height: 0;
+      min-width: 44px;
+      min-height: 44px;
+      order: 999;
+      margin-left: calc(44px + 6px + 6px + 6px);
+      background: transparent;
+
+      label {
+        background: white;
+      }
+
+      span {
+        position: static;
+        color: $orange;
+      }
+
+      input:checked ~ label {
+        span {
+          color: white;
+        }
+      }
+    }
+
+    @include htp_bp(mobile-reverse) {
+      #ball_drops {
+        min-width: 422px;
+      }
+    }
+
+    /* Colors */
+
+    .flash_container {
+      animation: container_powerball 2s ease 0s 1 forwards;
+    }
+
+    .steps .step_marker.active {
+      background: $powerball;
+    }
+
+    .ticket .ticket_numbers .ticket_number.match {
+      border-color: lighten($powerball,5%);
+    }
+
+    .price, .draws, .prize {
+      border: 0;
+      background: $powerball;
+      color: white;
+    }
+
+    #prize_amount, #plus_prize_amount, #ticket_draws {
+      color: $powerball;
+    }
+
+    .field_advance_draws span.input button.advance-minus,
+    .field_advance_draws span.input button.advance-plus {
+      color: $powerball;
+    }
+
+    .field_advance_draws button.modal-save {
+      background-color: $powerball;
+    }
+
+    #ball_drops {
+      .drawn_number {
+        background: white;
+        color: darken($powerball,10%);
+        border: 2px solid white;
+        &.drawn_extra_number {
+          background: $powerball;
+          color: white;
+          &:after {
+            content: "POWERBALL";
+            color: lighten($powerball,10%);
+          }
+        }
+        &.drawn_number_multiplier:after {
+          content: "POWER PLAY";
+          color: lighten($powerball,10%);
+        }
+      }
+    }
+  }
+
+  .modal.modal_powerball {
+    .modal_header {
+      background-color: darken($powerball,10%);
+    }
+  }
+
+  .simulator.simulator_megamillions {
+
+    .number_matrix,
+    .extra_number_matrix {
+      display: block;
+      margin: 0;
+      padding: 6px;
+
+      .number_matrix_label {
+        display: flex;
+        align-items: center;
+        min-height: 44px;
+        max-height: 44px;
+        color: $orange;
+        white-space: nowrap;
+
+        strong, span {
+          padding: 0 12px;
+        }
+
+        strong {
+          background: $orange;
+          color: white;
+          width: 100%;
+          text-align: center;
+        }
+
+        small {
+          display: inline;
+        }
+      }
+    }
+
+    .number_matrix_wrapper {
+      //max-width: 404px;
+      max-width: 910px;
+    }
+
+    .number_matrix {
+      background: rgba($orange,0.15);
+
+      .number_matrix_label {
+        min-width: 262px;
+        max-width: 318px;
+        justify-content: space-between;
+      }
+    }
+
+    .extra_number_matrix {
+      .number_matrix_label {
+        min-width: 206px;
+        max-width: 206px;
+        justify-content: flex-start;
+      }
+    }
+
+    .field_qp,
+    .field_extra_qp {
+      @include field_label;
+      padding: 0;
+      border: 0;
+      min-height: 0;
+      min-width: 44px;
+      min-height: 44px;
+      order: 0;
+      margin-left: 12px;
+      background: transparent;
+
+      label {
+        background: white;
+      }
+
+      span {
+        position: static;
+        color: $orange;
+      }
+
+      input:checked ~ label {
+        span {
+          color: white;
+        }
+      }
+
+      + .field_number,
+      + .field_extra_number {
+        clear: left;
+      }
+    }
+
+    .playslip > .field_group:first-of-type {
+      background: $orange;
+    }
+
+    .field_advance {
+      border: 0;
+      min-width: 56px;
+      width: 56px;
+      background: $orange;
+      margin: 0;
+
+      label {
+        span {
+          color: white;
+        }
+      }
+    }
+
+    .drawing.ball_drop_wrapper {
+      padding-bottom: 3rem;
+    }
+
+    @include htp_bp(mobile-reverse) {
+      #ball_drops {
+        min-width: 422px;
+      }
+    }
+
+    /* Colors */
+
+    .flash_container {
+      animation: container_megamillions 0.5s ease 0s 1 forwards;
+    }
+
+    .steps .step_marker.active {
+      background: $mega;
+    }
+
+    .ticket .ticket_numbers .ticket_number.match {
+      border-color: lighten($mega,10%);
+    }
+
+    .price, .draws, .prize {
+      border: 0;
+      background: darken($mega,5%);
+      color: white;
+    }
+
+    #prize_amount, #plus_prize_amount, #ticket_draws {
+      color: darken($mega,5%);
+    }
+
+    .field_advance_draws span.input button.advance-minus,
+    .field_advance_draws span.input button.advance-plus {
+      color: $mega;
+    }
+
+    .field_advance_draws button.modal-save {
+      background-color: $mega;
+    }
+
+    #ball_drops {
+      .drawn_number {
+        background: white;
+        color: darken($mega,15%);
+        border: 2px solid white;
+        &.drawn_extra_number {
+          background: $mega;
+          color: white;
+          &:after {
+            content: "MEGA BALL";
+            color: lighten($mega,10%);
+          }
+        }
+        &.drawn_number_multiplier:after {
+          content: "MEGAPLIER";
+          color: lighten($mega,10%)
+        }
+      }
+    }
+  }
+
+  .modal.modal_megamillions {
+    .modal_header {
+      background-color: darken($mega,5%);
+    }
+  }
+
+  .simulator.simulator_luckyforlife {
+
+    .simulator_header .price {
+      @include htp_bp(tablet) {
+        flex: 1 1 calc(30% - 12px);
+      }
+    }
+
+    .number_matrix,
+    .extra_number_matrix {
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      margin: 0;
+
+      .number_matrix_sidebar {
+        box-sizing: border-box;
+        line-height: 1;
+        width: 44px;
+        position: absolute;
+        left: -6px;
+        top: -6px;
+        height: 100%;
+        background: $orange;
+        color: white;
+        text-align: center;
+
+        span {
+          @include vertical_label;
+          font-size: 16px;
+        }
+      }
+    }
+
+    .number_matrix_wrapper {
+      //max-width: 404px;
+      max-width: 910px;
+    }
+
+    .number_matrix {
+      padding: 36px 12px 12px 56px;
+
+      .number_matrix_sidebar {
+        padding-top: 44px;
+      }
+
+      .number_matrix_label {
+        box-sizing: border-box;
+        margin: 0 0 12px 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: $orange;
+        color: white;
+        text-align: center;
+      }
+    }
+
+    .extra_number_matrix {
+      padding: 12px 12px 12px 56px;
+      background: rgba($orange,0.15);
+      min-height: 130px;
+
+      .number_matrix_sidebar {
+        padding-top: 24px;
+        min-height: 130px;
+      }
+
+      .number_matrix_label {
+        display: flex;
+        align-items: center;
+        min-height: 44px;
+        max-height: 44px;
+        min-width: 100px;
+        max-width: 100px;
+        color: $orange;
+        white-space: nowrap;
+
+        strong, span {
+          padding: 0 12px;
+        }
+
+        small {
+          display: inline;
+        }
+      }
+    }
+
+    .field_qp,
+    .field_extra_qp {
+      @include field_label;
+      padding: 0;
+      border: 0;
+      min-height: 0;
+      min-width: 44px;
+      min-height: 44px;
+      order: 999;
+      //margin-left: calc(44px + 6px + 6px + 6px);
+      background: transparent;
+
+      label {
+        background: white;
+      }
+
+      span {
+        position: static;
+        color: $orange;
+      }
+
+      input:checked ~ label {
+        span {
+          color: white;
+        }
+      }
+    }
+
+    .field_advance {
+      border: 0;
+      min-width: 56px;
+      width: 56px;
+      background: $orange;
+      margin: 12px 12px 12px 0;
+
+      label {
+        span {
+          color: white;
+        }
+      }
+    }
+
+    .drawing.ball_drop_wrapper {
+      padding-bottom: 3rem;
+    }
+
+    /* Colors */
+
+    .flash_container {
+      animation: container_luckyforlife 0.5s ease 0s 1 forwards;
+    }
+
+    .steps .step_marker.active {
+      background: $lucky;
+    }
+
+    .ticket .ticket_numbers .ticket_number.match {
+      border-color: lighten($lucky,10%);
+    }
+
+    .price, .draws, .prize {
+      border: 0;
+      background: darken($lucky,5%);
+      color: white;
+    }
+
+    #prize_amount, #plus_prize_amount, #ticket_draws {
+      color: darken($lucky,5%);
+    }
+
+    .field_advance_draws span.input button.advance-minus,
+    .field_advance_draws span.input button.advance-plus {
+      color: $lucky;
+    }
+
+    .field_advance_draws button.modal-save {
+      background-color: $lucky;
+    }
+
+    #ball_drops {
+      .drawn_number {
+        background: white;
+        color: darken($lucky,15%);
+        border: 2px solid white;
+        &.drawn_extra_number {
+          background: $lucky;
+          color: white;
+          &:after {
+            content: "LUCKY BALL";
+            color: lighten($lucky,5%);
+          }
+        }
+      }
+    }
+  }
+
+  .modal.modal_luckyforlife {
+    .modal_header {
+      background-color: darken($lucky,5%);
+    }
+  }
+
+  .simulator.simulator_lotto {
+
+    .playslip {
+      flex-direction: column;
+    }
+
+    @media (max-width: 799px) {
+      .field_group.field_group_horizontal {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .field_advance {
+      align-self: flex-start;
+    }
+
+    .field_plus {
+      @include field_label;
+      background: transparent;
+      border: 1px solid $orange;
+      overflow: visible;
+      min-height: 0;
+      height: auto;
+      margin: 0 0 12px 0;
+      padding: 0 12px;
+      line-height: 1.2;
+
+      padding: 12px;
+      align-items: center;
+      display: flex;
+      justify-content: flex-start;
+
+      @media (max-width: 799px) {
+        width: 100%;
+        max-width: 100%;
+      }
+
+      label {
+        border-radius: 50%;
+      }
+
+      span {
+        top: 50%;
+        left: 100%;
+        transform: translate(6px,-50%);
+        writing-mode: unset;
+        text-orientation: unset;
+        color: $orange;
+        line-height: 1.2;
+        white-space: nowrap;
+        text-align: left;
+        letter-spacing: 0;
+      }
+
+      small {
+        display: block;
+        font-weight: normal;
+        font-size: 90%;
+        line-height: 1.2;
+      }
+    }
+
+    .field_qp {
+      background: $orange;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-top: 310px;
+      min-height: 312px;
+      min-width: 57px;
+      width: 57px;
+
+      .field_qp_sidebar {
+        text-align: center;
+        padding-top: 12px;
+
+        span {
+          @include vertical_label;
+          color: white;
+        }
+      }
+
+      label {
+        span {
+          @include vertical_label;
+          color: white;
+          top: -154px;
+          white-space: nowrap;
+          transform: translate(-50%,-50%);
+        }
+      }
+    }
+
+    .number_matrix_wrapper {
+      //max-width: 405px;
+      max-width: 462px;
+    }
+
+    .number_matrix {
+      margin: -6px 0 auto 12px;
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+
+      .number_matrix_label {
+        max-height: 24px;
+        box-sizing: border-box;
+        margin: 6px;
+        order: 999;
+        width: 100%;
+        background: #EA3F11;
+        color: white;
+        text-align: center;
+      }
+    }
+
+    .ticket_multiplier {
+      color: #666;
+      margin: 18px auto;
+    }
+
+    /* Colors */
+
+    .flash_container {
+      animation: container_lotto 0.5s ease 0s 1 forwards;
+    }
+
+    .steps .step_marker.active {
+      background: $lotto;
+    }
+
+    .ticket .ticket_numbers .ticket_number.match {
+      border-color: lighten($lotto,10%);
+    }
+
+    .price, .draws, .prize {
+      border: 0;
+      background: darken($lotto,10%);
+      color: white;
+    }
+
+    #prize_amount, #plus_prize_amount, #ticket_draws {
+      color: darken($lotto,10%);
+    }
+
+    .field_advance_draws span.input button.advance-minus,
+    .field_advance_draws span.input button.advance-plus {
+      color: $lotto;
+    }
+
+    .field_advance_draws button.modal-save {
+      background-color: $lotto;
+    }
+
+    #ball_drops {
+      .drawn_number {
+        background: white;
+        color: darken($lotto,15%);
+        border: 2px solid white;
+      }
+    }
+  }
+
+  .modal.modal_lotto {
+    .modal_header {
+      background-color: darken($lotto,10%);
+    }
+  }
+
+  .simulator.simulator_cash5 {
+
+    .field_qp {
+      background: $orange;
+      display: flex;
+      flex-direction: column;
+      align-self: stretch;
+      justify-content: flex-start;
+      padding-top: 310px;
+      min-height: 320px;
+
+      .field_qp_sidebar {
+        text-align: center;
+        padding-top: 12px;
+
+        span {
+          @include vertical_label;
+          color: white;
+        }
+      }
+
+      label {
+        span {
+          @include vertical_label;
+          color: white;
+          top: -154px;
+          white-space: nowrap;
+          transform: translate(-50%,-50%);
+        }
+      }
+    }
+
+    .number_matrix_wrapper {
+      max-width: 416px;
+      align-items: flex-start;
+      border: 1px solid $orange;
+    }
+
+    .number_matrix {
+      margin: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    .field_advance {
+      border-right: 0;
+    }
+
+    .field_plus {
+      @include field_label;
+      flex: 0 0 212px;
+      padding: 0;
+      border: 0;
+      min-height: 0;
+      min-width: 180px;
+      min-height: 44px;
+      order: 999;
+      margin-left: 6px;
+      background: $orange;
+      border-radius: 6px 0 0 6px;
+
+      @include htp_bp(mobile) {
+        min-width: 156px;
+        flex: 0 0 156px;
+      }
+
+      label {
+        float: right;
+        span {
+          font-style: italic;
+          color: white;
+          writing-mode: unset;
+          text-orientation: unset;
+          letter-spacing: 0;
+          top: 50%;
+          left: auto;
+          right: calc(100% + 36px);
+          transform: translateY(-50%);
+
+          @include htp_bp(mobile) {
+            font-size: 16px;
+            right: calc(100% + 18px);
+          }
+        }
+      }
+
+      input:checked ~ label {
+        span {
+          color: white;
+        }
+      }
+    }
+
+    #ball_drops,
+    #ball_drops_plus {
+      min-width: 288px;
+    }
+
+    .ticket_plus_wrapper {
+      display: inline-block;
+      margin-bottom: 2rem;
+      position: relative;
+
+      span.tooltip {
+        top: -3px;
+      }
+    }
+
+    .drawing.ball_drop_wrapper {
+      padding-bottom: 3rem;
+    }
+
+    /* Colors */
+
+    .flash_container {
+      animation: container_cash5 0.5s ease 0s 1 forwards;
+    }
+
+    .steps .step_marker.active {
+      background: $cash5;
+    }
+
+    .ticket .ticket_numbers .ticket_number.match {
+      border-color: lighten($cash5,10%);
+    }
+
+    .price, .draws, .prize {
+      border: 0;
+      background: darken($cash5,10%);
+      color: white;
+    }
+
+    #prize_amount, #plus_prize_amount, #ticket_draws {
+      color: darken($cash5,10%);
+    }
+
+    .field_advance_draws span.input button.advance-minus,
+    .field_advance_draws span.input button.advance-plus {
+      color: $cash5;
+    }
+
+    .field_advance_draws button.modal-save {
+      background-color: $cash5;
+    }
+
+    #ball_drops {
+      .drawn_number {
+        background: white;
+        color: darken($cash5,15%);
+        border: 2px solid white;
+      }
+    }
+  }
+
+  .modal.modal_cash5 {
+    .modal_header {
+      background-color: darken($cash5,10%);
+    }
+  }
+
+
+  .simulator.simulator_pick3 {
+
+    .field:not(.field_advance):not(.field_advance_draws) {
+      position: relative;
+    }
+
+    .field_advance {
+      border: 1px solid $orange;
+      background: rgba($orange,0.15);
+      color: $orange;
+      width: auto;
+      min-width: 0;
+      min-height: 106px;
+      padding: 12px 6px;
+      margin-top: 0;
+
+      label {
+        span {
+          font-family: pragmatica-condensed, "FSEmericWeb", sans-serif;
+          font-weight: bold;
+          font-size: 16px;
+          letter-spacing: 0;
+          writing-mode: unset;
+          text-orientation: unset;
+        }
+      }
+    }
+
+    .field_group.field_group_board {
+      border-right: 1px solid $orange;
+    }
+
+    .field_group.field_group_advance_time {
+      margin-right: 12px;
+      min-width: 80px;
+    }
+
+    .field_group.field_group_horizontal {
+      align-items: stretch;
+    }
+
+    .field_group.field_group_type_amount {
+      align-content: flex-start;
+      align-items: flex-start;
+      border-right: 1px solid $orange;
+      margin-right: 6px;
+    }
+
+    .field_group.field_group_draw_time {
+      border: 1px solid $orange;
+      background: rgba($orange,0.15);
+      color: $orange;
+      padding-top: 12px;
+    }
+
+    .field.field_label {
+      line-height: 20px;
+      margin-bottom: 12px;
+    }
+
+    .field_draw_time {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 12px auto 48px auto;
+
+      label {
+        @include field_label;
+        text-align: left;
+
+        span {
+          color: $orange;
+          font-family: pragmatica-condensed, "FSEmericWeb", sans-serif;
+          font-weight: bold;
+          font-size: 16px;
+          letter-spacing: 0;
+          writing-mode: unset;
+          text-orientation: unset;
+          width: auto;
+          height: auto;
+          line-height: 16px;
+
+          position: absolute;
+          top: calc(100% + 12px);
+          left: 50%;
+          transform: translate(-50%,0%);
+        }
+      }
+
+      input {
+        position: absolute;
+        left: -999rem;
+
+        &:checked ~ label {
+          background: black;
+          color: white;
+          box-shadow: inset white 0px 0px 0px 2px;
+        }
+
+        &:disabled ~ label {
+          cursor: not-allowed;
+          opacity: 0.2;
+          background: white;
+          color: black;
+          border-color: black;
+        }
+      }
+    }
+
+    .field_bet_type,
+    .field_bet_amount {
+      padding-right: 12px;
+      display: flex;
+      flex-direction: row-reverse;
+      min-width: 130px;
+      max-width: 130px;
+      margin-bottom: 6px;
+
+      span.tooltip {
+        right: auto;
+        left: 46px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        span.tooltip_content {
+          min-width: 220px;
+          max-width: 300px;
+
+          img {
+            display: block;
+            margin: 0 auto 8px auto;
+            max-height: 44px;
+          }
+        }
+      }
+
+      label {
+        @include field_label;
+        text-align: left;
+
+        span {
+          color: $orange;
+          font-family: pragmatica-condensed, "FSEmericWeb", sans-serif;
+          font-weight: bold;
+          font-size: 16px;
+          letter-spacing: 0;
+          writing-mode: unset;
+          text-orientation: unset;
+          width: auto;
+          max-width: 50px;
+          height: auto;
+          line-height: 16px;
+
+          position: absolute;
+          top: 50%;
+          left: -86px;
+          transform: translate(0%,-50%);
+        }
+      }
+
+      input {
+        position: absolute;
+        left: -999rem;
+
+        &:checked ~ label {
+          background: black;
+          color: white;
+          box-shadow: inset white 0px 0px 0px 2px;
+        }
+
+        &:disabled ~ label {
+          cursor: not-allowed;
+          opacity: 0.2;
+          background: white;
+          color: black;
+          border-color: black;
+        }
+      }
+    }
+
+    .field_qp {
+      @include field_label;
+      padding: 0;
+      border: 0;
+      min-height: 0;
+      min-width: 44px;
+      min-height: 44px;
+      order: 999;
+      margin-left: 6px;
+      background: transparent;
+
+      label {
+        background: white;
+      }
+
+      span {
+        position: static;
+        color: $orange;
+      }
+
+      input:checked ~ label {
+        span {
+          color: white;
+        }
+      }
+    }
+
+    .number_matrix_wrapper {
+      align-items: flex-start;
+      padding-right: 6px;
+    }
+
+    .number_matrix {
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .number_matrix > div {
+      margin: 0 6px 12px 6px;
+    }
+
+    .number_matrix_label {
+      color: white;
+      background: $orange;
+      margin-bottom: 12px;
+      width: 100%;
+    }
+
+    .field_bet_type + .number_matrix_label {
+      margin-top: 24px;
+    }
+
+    #ball_drops {
+      min-width: 168px;
+    }
+
+    .drawing.ball_drop_wrapper {
+      padding-bottom: 3rem;
+    }
+
+    /* Colors */
+
+    .flash_container {
+      animation: container_pick3 0.5s ease 0s 1 forwards;
+    }
+
+    .steps .step_marker.active {
+      background: $pick3;
+    }
+
+    .ticket .ticket_numbers .ticket_number.match {
+      border-color: lighten($pick3,15%);
+    }
+
+    .price, .draws, .prize {
+      border: 0;
+      background: lighten($pick3,15%);
+      color: white;
+    }
+
+    #prize_amount, #plus_prize_amount, #ticket_draws {
+      color: darken($pick3,10%);
+    }
+
+    .field_advance_draws span.input button.advance-minus,
+    .field_advance_draws span.input button.advance-plus {
+      color: $pick3;
+    }
+
+    .field_advance_draws button.modal-save {
+      background-color: $pick3;
+    }
+
+    #ball_drops {
+      .drawn_number {
+        background: white;
+        color: darken($pick3,15%);
+        border: 2px solid white;
+      }
+    }
+  }
+
+  .modal.modal_pick3 {
+    .modal_header {
+      background-color: lighten($pick3,15%);
+    }
+  }
+
+}
+
+/* Background Animations */
+
+@keyframes container_powerball {
+  0% {
+    background: mix($powerball,white,15%);
+  }
+  100% {
+    background: $powerball;
+  }
+}
+
+@keyframes container_megamillions {
+  0% {
+    background: mix(darken($mega,5%),white);
+  }
+  100% {
+    background: darken($mega,5%);
+  }
+}
+
+@keyframes container_luckyforlife {
+  0% {
+    background: mix(darken($lucky,5%),white);
+  }
+  100% {
+    background: darken($lucky,5%);
+  }
+}
+
+@keyframes container_lotto {
+  0% {
+    background: mix(darken($lotto,10%),white);
+  }
+  100% {
+    background: darken($lotto,10%);
+  }
+}
+
+@keyframes container_cash5 {
+  0% {
+    background: mix(darken($cash5,10%),white);
+  }
+  100% {
+    background: darken($cash5,10%);
+  }
+}
+
+@keyframes container_pick3 {
+  0% {
+    background: mix(lighten($pick3,15%),white);
+  }
+  100% {
+    background: lighten($pick3,15%);
+  }
+}
+
+@keyframes balldrop {
+  0% {
+    top: -15px;
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  70% {
+    top: 6px;
+    opacity: 1;
+  }
+  90%,100% {
+    top: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes rollupA {
+  0% {
+    transform: translate(-50%,-50%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%,-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes rollupB {
+  0% {
+    transform: translate(-50%,0%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%,-50%);
+    opacity: 1;
+  }
+}

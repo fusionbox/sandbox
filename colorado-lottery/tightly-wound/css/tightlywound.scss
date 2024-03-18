@@ -1,0 +1,398 @@
+body.tightly-wound-styles {
+  width: 100% !important;
+  height: 100% !important;
+  background: #0A1E40;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+  overflow: hidden;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  header,
+  section.banner,
+  footer {
+    display: none !important;
+  }
+
+  div.adapt {
+    height: 100% !important;
+  }
+
+  section.main {
+    &, & div.inner, & div.inner .flexWrap, & div.inner .flexWrap > div.column {
+      background: transparent !important;
+      padding: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+    }
+    div.inner {
+      &::after {
+        display: none !important;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 36px;
+    line-height: 1.2;
+    color: white;
+    text-align: center;
+    padding: 60px auto;
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 22px;
+    line-height: 1.2;
+    color: white;
+    text-align: center;
+    padding: 20px auto;
+    margin-bottom: 20px;
+  }
+  h3 {
+    font-weight: bold;
+  }
+  p {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+  }
+
+  // Buttons
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .buttons a.button {
+    margin: 8px;
+  }
+  a.button,
+  a.button {
+    background: #16E199;
+    color: #12254E;
+    border-radius: 3px;
+    padding: 14px 20px 10px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 auto;
+    display: block;
+    max-width: 320px;
+    text-align: center;
+
+    &.button-outline {
+      background: transparent;
+      border: 1px solid #16E199;
+      color: #16E199;
+    }
+
+    &:hover, &:focus, &:active {
+      background: white;
+      color: #12254E;
+    }
+  }
+
+  // Game Container
+  #page {
+    width: 100%;
+    height: 100%;
+    background: url('https://static.coloradolottery.com/media/filer_public/b9/c6/b9c60910-36f5-4957-ba98-fd5dbcde2cbc/welcome-bg.png') no-repeat center;
+    background-size: cover;
+    //background: url('https://static.coloradolottery.com/media/filer_public/e3/ed/e3edee74-8b83-4a0b-9c70-13e67730fec8/bg-neighborhood.png') 0px 0px;
+    //animation: background-glide 15s linear infinite;
+    overflow: auto;
+  }
+
+  // Game Wrapper
+  #gameWrapper {
+    border-radius: 6px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  #game {
+    width: 100%;
+    height: 100%;
+  }
+  @media (max-width: 897px), (max-height: 600px) {
+    #game {
+      height: 100%;
+    }
+  }
+
+  // How to Play
+  #gameHowToPlay {
+    position: fixed;
+    padding: 60px;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition: all 0.2s ease 0s;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(#182C58,0.95);
+    color: white;
+    text-align: center;
+    overflow: auto;
+
+    .inner {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    &.fadeOut {
+      opacity: 0;
+      visibility: hidden;
+      overflow: hidden;
+    }
+
+    p {
+      margin: 30px 0;
+
+      &:first-child {
+        padding-top: 60px;
+      }
+
+      &:last-child {
+        padding-bottom: 60px;
+      }
+    }
+  }
+
+  // Welcome/Intro
+
+  #gameIntro {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 100%;
+    opacity: 1;
+    transition: all 0.2s ease 0s;
+    position: relative;
+    z-index: 100;
+    max-height: none;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+
+    &.fadeOut {
+      opacity: 0;
+      visibility: hidden;
+      max-height: 100vh;
+      overflow: hidden;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    .logo {
+      min-width: 240px;
+      width: 70vh;
+      max-width: 80%;
+    }
+
+    .meow {
+      position: absolute;
+      left: 5%;
+      top: 60%;
+      transform: translate(0%,-50%);
+      z-index: 100;
+      width: 20%;
+      max-width: 150px;
+      min-width: 100px;
+
+      @media (max-width: 600px) {
+        top: 50%;
+        transform: translate(-50%,-50%);
+      }
+    }
+  }
+  #gameInstructions {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    font-weight: bold;
+    position: relative;
+    z-index: 260;
+    h2 {
+      margin-bottom: 10px;
+      + p {
+        margin-bottom: 20px;
+      }
+    }
+    h2, p {
+      text-shadow: rgba(0,0,0,0.2) 0px 1px 4px
+    }
+  }
+  @media (max-width: 800px) {
+    #gameInstructions {
+      flex-direction: column;
+    }
+  }
+  #gameInstructions #gameHelp,
+  #gameInstructions #gameControls {
+    margin: 10px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    line-height: 1.4;
+  }
+  #gameInstructions #gameHelp p {
+    margin: 0 0 10px 0;
+
+    &:last-child {
+      margin-top: 20px;
+    }
+  }
+  @media (max-width: 800px) {
+    #gameInstructions #gameHelp {
+      order: 1;
+    }
+  }
+  @media (max-width: 800px) {
+    #gameInstructions #gameControls {
+      order: 2;
+    }
+  }
+  #gameInstructions #gameControls img {
+    max-width: 100%;
+  }
+  #gameInstructions #gameHelp a:not(.button) {
+    font-size: 13px;
+    color: white;
+    opacity: 0.7;
+  }
+  #gameInstructions #gameHelp a:not(.button):hover,
+  #gameInstructions #gameHelp a:not(.button):focus {
+    color: white;
+    opacity: 1;
+  }
+
+  // Game Ready
+  #gameReady {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(9,18,39,0.7);
+    top: 0;
+    left: 0;
+    padding: 60px;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    color: white;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.2s ease 0s;
+  }
+  #gameReady.fadeIn {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  #gameReady h1,
+  #gameReady h2 {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.2s ease 0s;
+    visibility: hidden;
+    opacity: 0;
+  }
+  #gameReady h1.fadeIn,
+  #gameReady h2.fadeIn {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  #gameReady h1 {
+    top: 40px;
+  }
+  #gameReady h1 a.button {
+    margin: 0;
+  }
+
+  #gameReady h2 {
+    top: 100px;
+  }
+  #gameReady h2 a.button {
+    margin: 0;
+  }
+
+  // Game Over
+  #gameOver {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(9,18,39,0.7);
+    top: 0;
+    left: 0;
+    padding: 60px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease 0s;
+    z-index: 10;
+    color: white;
+    text-align: center;
+  }
+  #gameOver.fadeIn {
+    visibility: visible;
+    opacity: 1;
+  }
+  #gameOver .counters {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  #gameOver .counters div {
+    text-align: center;
+  }
+  #gameOver .counters div img,
+  #gameOver .counters div span.image {
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    line-height: 1;
+    margin: 0 auto 4px;
+  }
+
+}
+
+/*
+@keyframes background-glide {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: -548px -582px;
+  }
+}
+*/
+
+
+

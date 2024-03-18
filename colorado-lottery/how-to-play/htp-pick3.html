@@ -1,0 +1,362 @@
+<!doctype html>
+<html>
+<head>
+  <title>Pick 3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
+</head>
+<body class="internal simulator-styles">
+  <section class="banner">
+    <div class="inner">
+      <h1>Simulator</h1>
+    </div>
+  </section>
+  <section class="main">
+    <div class="inner">
+      <div class="flexWrap 1-columns">
+        <div class="column">
+
+<!-- Start: Simulator -->
+<script type="text/javascript">
+  document.body.classList.add("simulator-styles");
+  var currentgame = "pick3";
+</script>
+
+<div class="simulator simulator_pick3">
+
+  <form id="simulator_form">
+
+    <div class="simulator_group simulator_group_instruction_area">
+
+      <div class="simulator_header">
+        <div class="title"><span id="dashboard_title">How to Play Pick 3</span></div>
+        <div class="steps" id="step_counters"></div>
+        <div class="price">
+          <span class="price_inner">
+            <span class="ticket_price_wrapper">$<span id="ticket_price">0</span></span> Ticket Price
+          </span>
+        </div>
+        <div class="draws">
+          <span class="draws_inner">
+            <span id="ticket_draws" data-before="OLD" data-after="NEW">1</span>
+            <span>Draw<span class="ticket_draw_count_plurality">s</span></span>
+          </span>
+        </div>
+        <div class="prize">
+          <span class="prize_inner">
+            <span id="prize_label">I Could Win</span>
+            <span id="prize_amount">$</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="step_description_and_actions">
+
+        <div class="step_description active" id="desc0">
+          <div class="intro">
+          <h2>How to Play Pick 3</h2>
+          <p>Pick 3 is a daily game, drawn twice a day, where players pick their own three numbers and choose how to play them.</p>
+          <button class="start" data-show="playslip" data-description="desc1" data-title="Select Your Numbers">LEARN HOW TO PLAY NOW</button>
+          </div>
+        </div>
+        <div class="step_description" id="desc1">
+          <h2>Pick Your Numbers, and Bet Wager</h2>
+          <p>Select three numbers from 0 through 9. The numbers selected can be three separate numbers or may be duplicated in a single play. For example: '537' or '339' or '777'. You can also choose Quick Pick (QP) to have the terminal pick your numbers for you&nbsp;randomly.</p>
+          <p><strong>Bet Wagers</strong></p>
+          <p>Pick 3 is the only Jackpot game from the Colorado Lottery where you can choose how much you want to bet on each play. The more you wager, the more money you can win! Place a wager of 50&cent;*, $1, $2, or $5 (*minimum&nbsp;$1&nbsp;wager&nbsp;on&nbsp;Exact&nbsp;Order&nbsp;+&nbsp;Any&nbsp;Order&nbsp;bet&nbsp;type).</p>
+          <p><strong>Bet Types</strong></p>
+          <p>The bet type you choose determines how you want your numbers to appear in the drawing. Learn more about the bet types&nbsp;below.</p>
+        </div>
+        <div class="step_description" id="desc2">
+          <h2>Draw Time</h2>
+          <p>You can select Midday, Evening, or Both.</p>
+        </div>
+        <div class="step_description" id="desc3">
+          <h2>Never Miss a Drawing</h2>
+          <p>Never miss a drawing by playing up to 28 drawings for just Midday or just Evening drawings. If you play both, you can play up to 56 drawings. The retailer will ask you how many drawings you want to play. You will play the same numbers for all&nbsp;drawings.</p>
+        </div>
+        <div class="step_description" id="desc4">
+          <h2>More About Your Ticket</h2>
+          <p>
+            This is how your ticket will look once printed.
+            Your ticket will show your numbers and the <span class="conditional cond_advance_play">range of </span>draw date<span class="conditional cond_advance_play">s</span> for which it is eligible. It will also show whether the drawing is for Midday, Evening, or Both. Your bet type will appear next to your numbers along with the wager&nbsp;cost.
+          </p>
+        </div>
+        <div class="step_description" id="desc5">
+          <h2>Check Your Winnings!</h2>
+          <p>
+            Here's what it will look like if you win. Winnings are represented in the payout table on the <a href="https://www.coloradolottery.com/en/games/pick3/its-easy-to-play/#odds" target="_blank">It's Easy to Play</a> page of the Colorado Lottery&nbsp;website.</p>
+          <p><a href="#how-to-check-numbers" rel="modal:open">How to check your numbers &rarr;</a></p>
+          <div id="drawing_container">
+          </div>
+        </div>
+
+        <div class="step" id="step1">
+          <div class="actions">
+            <span class="action_counter" id="current_number_counter"><span id="current_number_count">0</span>/3 Selected</span>
+            <button class="next" data-show="field_group_advance_time,field_group_draw_time" data-description="desc2" data-step="step2" data-title="Draw Time">NEXT</button>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="actions">
+            <!--button class="prev" data-show="playslip" data-hide="field_advance" data-description="desc1">BACK</button-->
+            <button class="next" data-show="field_advance" data-description="desc3" data-title="Advance Play">NEXT</button>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="actions">
+            <!--button class="prev" data-show="field_plus" data-hide="playslip,field_multiplier" data-description="desc3">BACK</button-->
+            <button class="next" data-show="ticket" data-hide="playslip" data-description="desc4" data-title="Your Printed Ticket">NEXT</button>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="actions">
+            <!--button class="prev" data-show="playslip,field_plus" data-hide="ticket" data-description="desc4">BACK</button-->
+            <button class="next" data-show="letsdraw" data-description="desc5" data-title="Simulate Drawing">NEXT</button>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="actions">
+            <button class="toggle current" data-show="playslip" data-hide="ticket" data-toggle>SHOW<br>PLAYSLIP</button>
+            <button class="toggle" data-show="ticket" data-hide="playslip" data-toggle>SHOW<br>TICKET</button>
+            <a class="button" href="https://www.coloradolottery.com/en/retailers/" target="_blank">FIND A<br>RETAILER</a>
+            <button class="reset" data-title="How to Play Pick 3">SIMULATE<br>AGAIN</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="ball_drop_wrapper">
+        <div id="ball_drops">
+          <p>Drawing Results:</p>
+          <div class="balls"></div>
+        </div>
+      </div>
+
+      <div id="potential_winnings"></div>
+
+    </div>
+    <div class="simulator_group simulator_group_play_area">
+
+      <div class="ticket">
+        <span class="ticket_barcode_wrapper">
+          <span class="tooltip"><span class="tooltip_trigger">i</span><span class="tooltip_content"><strong>Top Barcode:</strong> Scan using the mobile app to check winning status and to enter promotions when available</span></span>
+          <img class="ticket_barcode" src="https://static.coloradolottery.com/media/filer_public/0a/ad/0aad1b97-0e6c-46ec-bae4-501b83d24d20/pdf417.gif" alt="" />
+        </span>
+        <p class="ticket_msg">Enter to win! Scan the barcode using the Colorado Lottery mobile app. Download today!</p>
+        <div class="ticket_game_info">
+          <span class="ticket_game">
+            PICK 3
+          </span>
+          <span class="ticket_draws">
+            <span class="ticket_draw_count_wrapper tooltip tooltip_text tooltip_sling_left">
+              <span class="tooltip_content"><strong># of Draws</strong> (Advance Play)</span>
+              $<span class="ticket_price">0.00</span> -
+              <span class="ticket_draw_count">N</span> DRAW<span class="ticket_draw_count_plurality">S</span>
+            </span>
+          </span>
+        </div>
+
+        <div class="ticket_numbers">
+          <span class="ticket_board">
+            <span class="tooltip"><span class="tooltip_trigger">i</span><span class="tooltip_content"><strong>Board letter:</strong> One set of numbers chosen for one or more drawings</span></span>
+            A
+          </span>
+          <span class="ticket_bet_type">
+            <span class="tooltip"><span class="tooltip_trigger">i</span><span class="tooltip_content"><strong>Bet Type:</strong> Exact, Any, Front Pair, Back Pair</span></span>
+            <span id="ticket_bet_type">TYPE</span>
+          </span>
+          <span class="ticket_bet_amount">
+            <span class="tooltip"><span class="tooltip_trigger">i</span><span class="tooltip_content"><strong>Bet Amount:</strong> $0.50-$5.00</span></span>
+            $<span class="ticket_price">0.00</span>
+          </span>
+          <span class="ticket_qp">
+            <span class="tooltip"><span class="tooltip_trigger">i</span><span class="tooltip_content"><strong>QP:</strong> Shows numbers selected by Quick Pick</span></span>
+            QP
+          </span>
+        </div>
+        <div class="ticket_draw_times_and_dates">
+          <div class="ticket_draw_time">
+            <span class="tooltip"><span class="tooltip_trigger">i</span><span class="tooltip_content"><strong>Draw Times:</strong> If you selected midday, evening, or both</span></span>
+            <span id="ticket_draw_time"></span>
+          </div>
+          <span class="ticket_draw_dates_wrapper">
+            <span class="tooltip"><span class="tooltip_trigger">i</span><span class="tooltip_content"><strong>Draw Dates:</strong> Draw date or range of draw dates for which this ticket is eligible</span></span>
+            <span class="ticket_draw_dates">
+              2/22/2022&ndash;2/24/2022
+            </span>
+          </span>
+        </div>
+        <span class="ticket_barcode_wrapper">
+          <span class="tooltip"><span class="tooltip_trigger">i</span><span class="tooltip_content"><strong>Bottom Barcode:</strong> Used by retailers to check ticket status</span></span>
+          <img class="ticket_barcode" src="https://static.coloradolottery.com/media/filer_public/cd/21/cd2124d4-8f8c-4100-820b-f656273e3f8b/barcode.gif" alt="" />
+        </span>
+      </div>
+
+      <div class="playslip">
+
+        <div class="field_group field_group_advance_time">
+          <div class="field field_advance">
+            <input type="checkbox" name="advance" id="advance" value="AP">
+            <label for="advance"><span>ADVANCE<br>PLAY</span></label>
+          </div>
+
+          <div class="field_group field_group_draw_time">
+            <div class="field field_label">
+              DRAW<br>TIME
+            </div>
+            <div class="field field_draw_time">
+              <input type="radio" name="draw_time" id="draw_time_midday" value="midday">
+              <label for="draw_time_midday"><span>MIDDAY</span></label>
+            </div>
+            <div class="field field_draw_time">
+              <input type="radio" name="draw_time" id="draw_time_evening" value="evening">
+              <label for="draw_time_evening"><span>EVENING</span></label>
+            </div>
+            <div class="field field_draw_time">
+              <input type="radio" name="draw_time" id="draw_time_both" value="both">
+              <label for="draw_time_both"><span>BOTH</span></label>
+            </div>
+          </div>
+        </div>
+
+        <div class="field_group field_group_board">
+
+          <div class="number_matrix_label">
+            <strong>BOARD A</strong>
+          </div>
+
+          <div class="field_group field_group_horizontal">
+
+            <div class="field_group field_group_type_amount">
+              <div class="number_matrix_label">
+                <strong>BET TYPE</strong>
+              </div>
+              <div class="field field_bet_type">
+                <span class="tooltip"><span class="tooltip_trigger">i</span><span class="tooltip_content"><img src="https://static.coloradolottery.com/media/filer_public/c7/1b/c71bf3ab-4cd6-4afb-b39f-57be0e8d55f8/567-exact.png" alt="567 Exact Order" /><strong>Exact Order:</strong> Players select three numbers and must match all three numbers in the exact order drawn.</span></span>
+                <input type="radio" name="bet_type" id="bet_type_exact" value="exact">
+                <label for="bet_type_exact"><span>Exact Order</span></label>
+              </div>
+              <div class="field field_bet_type">
+                <span class="tooltip"><span class="tooltip_trigger">i</span><span class="tooltip_content"><img src="https://static.coloradolottery.com/media/filer_public/8a/3f/8a3f2aa3-cf74-4fe8-8a86-2de3e263ecba/567-any.png" alt="567 Any Order" /><strong>Any Order:</strong> Players select three unique numbers (0-9), and when all three numbers match in any order drawn, it's a win. You can also select three numbers where two are the same (5-9-9). When you match all three numbers in any order drawn, it's a win.</span></span>
+                <input type="radio" name="bet_type" id="bet_type_any" value="any">
+                <label for="bet_type_any"><span>Any Order</span></label>
+              </div>
+              <div class="field field_bet_type">
+                <span class="tooltip"><span class="tooltip_trigger">i</span><span class="tooltip_content"><img src="https://static.coloradolottery.com/media/filer_public/2a/5b/2a5b2e4d-d350-4367-83f5-45fc4b63cc3b/567-exact-any-h.png" alt="567 Exact + Any Order" /><strong>Exact + Any Order:</strong> Players select three unique numbers (0-9) or three numbers with two of the same number (5-9-9). If all three numbers match in Exact Order, it's a big win as you'll also win the Any Order wager. If your numbers are drawn but are not in the exact order drawn, it's still a win. (Minimum $1.00 wager)</span></span>
+                <input type="radio" name="bet_type" id="bet_type_exact_any" value="exact_any">
+                <label for="bet_type_exact_any"><span>Exact / Any</span></label>
+              </div>
+              <div class="field field_bet_type">
+                <span class="tooltip"><span class="tooltip_trigger">i</span><span class="tooltip_content"><img src="https://static.coloradolottery.com/media/filer_public/6f/73/6f730420-1bef-4b66-a95f-7aceddf35af0/567-front-pair.png" alt="567 Front Pair" /><strong>Front Pair:</strong> A player selects two numbers in positions one and two. The numbers can be different or the same. To win, the numbers drawn must match exactly in both number and position.</span></span>
+                <input type="radio" name="bet_type" id="bet_type_front" value="front">
+                <label for="bet_type_front"><span>Front Pair</span></label>
+              </div>
+              <div class="field field_bet_type">
+                <span class="tooltip"><span class="tooltip_trigger">i</span><span class="tooltip_content"><img src="https://static.coloradolottery.com/media/filer_public/c8/ac/c8ac0194-055e-487a-ac45-0173eaac139f/567-back-pair.png" alt="567 Back Pair" /><strong>Back Pair:</strong> A player selects two numbers in positions two and three. The numbers can be different or the same. To win, the numbers drawn must match exactly in both number and position.</span></span>
+                <input type="radio" name="bet_type" id="bet_type_back" value="back">
+                <label for="bet_type_back"><span>Back Pair</span></label>
+              </div>
+
+              <div class="number_matrix_label">
+                <strong>AMOUNT</strong>
+              </div>
+              <div class="field field_bet_amount">
+                <input type="radio" name="bet_amount" id="bet_amount_50" value="50">
+                <label for="bet_amount_50"><span>$0.50</span></label>
+              </div>
+              <div class="field field_bet_amount">
+                <input type="radio" name="bet_amount" id="bet_amount_100" value="100">
+                <label for="bet_amount_100"><span>$1.00</span></label>
+              </div>
+              <div class="field field_bet_amount">
+                <input type="radio" name="bet_amount" id="bet_amount_200" value="200">
+                <label for="bet_amount_200"><span>$2.00</span></label>
+              </div>
+              <div class="field field_bet_amount">
+                <input type="radio" name="bet_amount" id="bet_amount_500" value="500">
+                <label for="bet_amount_500"><span>$5.00</span></label>
+              </div>
+            </div>
+
+            <div class="field_group">
+              <div class="number_matrix_wrapper">
+                <div class="number_matrix number_matrix_pick3 number_matrix_left">
+                  <!-- filled via javascript based on game -->
+                </div>
+                <div class="number_matrix number_matrix_pick3 number_matrix_middle">
+                  <!-- filled via javascript based on game -->
+                </div>
+                <div class="number_matrix number_matrix_pick3 number_matrix_right">
+                  <!-- filled via javascript based on game -->
+                  <div class="field field_qp">
+                    <input type="checkbox" name="number_qp" id="number_qp" value="QP">
+                    <label for="number_qp"><span>QP</span></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field field_advance_draws">
+          <span class="input">
+            <button class="advance-minus">-</button>
+            <input readonly type="number" name="advance_draws" id="advance_draws" disabled="disabled" value="2" min="2" max="91">
+            <button class="advance-plus">+</button>
+          </span>
+          <label for="advance_draws">HOW MANY DRAWING DAYS?</label>
+          <button class="modal-save">SAVE</button>
+          <button class="modal-cancel">CANCEL</button>
+        </div>
+      </div>
+
+    </div>
+
+  </form>
+
+  <div id="pick3-any-order" class="modal modal_pick3">
+    <div class="modal_header">
+      <p><strong>"Any Order" Betting</strong></p>
+    </div>
+    <div class="modal_content">
+      <p>Selecting three of the same number (4-4-4) automatically changes <strong>"Any Order"</strong> bet types to <strong>"Exact Order."</strong></p>
+    </div>
+  </div>
+
+  <div id="how-to-check-numbers" class="modal modal_pick3">
+    <div class="modal_header">
+      <p><strong>Check your numbers by using:</strong></p>
+    </div>
+    <div class="modal_content">
+      <ul>
+        <li>The <a href="https://www.coloradolottery.com/en/games/check-my-numbers/" target="_blank">Check Your Numbers Tool</a> on the website</li>
+        <li>The <a href="https://www.coloradolottery.com/en/games/pick3/drawings/" target="_blank">Past Winning Numbers Tool</a> on the website</li>
+        <li>The Colorado Lottery <a href="https://www.coloradolottery.com/en/player-tools/colorado-lottery-mobile-app/" target="_blank">mobile app</a></li>
+        <li>Our Twitter channel: <a href="https://twitter.com/ColoLottery" target="_blank">@ColoLottery</a></li>
+        <li>The self-service Ticket Checker at a <a href="https://www.coloradolottery.com/en/retailers/" target="_blank">retail location</a>, or, ask the retailer to check your ticket for you.</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+<!-- End: Simulator -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <link rel="stylesheet" href="https://static.coloradolottery.com/CACHE/css/0aa44d5a974a.css" type="text/css" />
+  <link rel="stylesheet" href="htp-styles.css" type="text/css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+  <script src="jquery.sticky.js" type="text/javascript"></script>
+  <script src="htp-scripts.js" type="text/javascript"></script>
+</body>
+</html>

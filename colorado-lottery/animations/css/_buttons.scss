@@ -1,0 +1,195 @@
+/* Buttons
+------------------------------------------------------*/
+
+@mixin button {
+  @include box-sizing;
+  @include transition;
+  @include rounded($round);
+  background-color: $red;
+  border: 0;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $font-default;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  line-height: 2.0rem;
+  height: auto;
+  letter-spacing: 0px;
+  margin: 0px;
+  outline: 0px;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  width: auto;
+  
+  &:hover {
+    background: lighten($red,10%);
+    color: white;
+  }
+  
+  &:after {
+    content: "\f0a9";
+    font-family: FontAwesome;
+    margin-left: 4px;
+    font-size: 1.7rem;
+    position: relative;
+    top: .1rem;
+  }
+  
+  &.block {
+    display: block;
+  }
+    
+  &.small {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    padding: 6px 15px;
+  }
+  
+  &.blue {
+    background: $blue;
+    
+    &:hover {
+      background: lighten($blue,15%);
+    }
+  }
+}
+
+a.button, button:not(.dot-item), input[type='submit'], input[type='button'] {
+  @include button;
+}
+
+input[type='submit'] {
+  height: 4.2rem;
+}
+
+input.block {
+  width: 100%;
+}
+
+a.close {
+  @include transition;
+  background: white;
+  color: black;
+  font-size: 2rem;
+  text-align: center;
+  line-height: 30px;
+  height: 30px;
+  width: 30px;
+  text-decoration: none;
+}
+
+/* General button style (reset) */
+.btn {
+  @include box-sizing;
+  @include shadow(rgba(black,0.3), 0px, 3px, 0px);
+  @include lottery-gradient(lighten(black,10%), lighten(black,30%),25deg);
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: white;
+  cursor: pointer;
+  padding: 20px 20px 10px 20px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 15px;
+  height: 55px;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  
+  span {
+    position: relative;
+    z-index: 10;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+    width: 120%;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    background: #fff;
+    opacity: 1;
+    -webkit-transform: translateX(-50%) translateY(-50%) rotate(25deg);
+    -moz-transform: translateX(-50%) translateY(-50%) rotate(25deg);
+    -ms-transform: translateX(-50%) translateY(-50%) rotate(25deg);
+    transform: translateX(-50%) translateY(-50%) rotate(25deg);
+  }
+  
+  &:hover,
+  &:active {
+    color: black;
+    @include shadow(rgba(black,0.2), 0px, 1px, 8px);
+  }
+
+  &:hover:after {
+    height: 500%;
+    opacity: 1;
+  }
+  
+  &.active {
+    background: white;
+    color: black;
+    > span { color: black; }
+    
+    &:after {
+      display: none;
+    }
+  }
+  
+  &.mega {
+    padding-top: 14px;
+  }
+  
+  &.block {
+    display: block;
+  }
+  
+  /*
+  &.powerball {
+    @include lottery-gradient($powerball, lighten($powerball,10%),25deg);
+    &:hover { color: $powerball; }
+  }
+  
+  &.mega {
+    @include lottery-gradient($mega, lighten($mega,10%),25deg);
+    padding-top: 14px;
+    &:hover { color: $mega; }
+  }
+  
+  &.lotto {
+    @include lottery-gradient($lotto, lighten($lotto,10%),25deg);
+    &:hover { color: $lotto; }
+  }
+  
+  &.cash5 {
+    @include lottery-gradient($cash5, lighten($cash5,10%),25deg);
+    &:hover { color: $cash5; }
+  }
+  
+  &.pick3 {
+    @include lottery-gradient($pick3, lighten($pick3,10%),25deg);
+    &:hover { color: $pick3; }
+  }
+  
+  &.mylottery {
+    @include lottery-gradient($blue, lighten($blue,10%),25deg);
+  }
+  */
+}
+

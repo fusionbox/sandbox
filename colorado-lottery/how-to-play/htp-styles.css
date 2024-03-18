@@ -1,0 +1,2167 @@
+@import url("https://use.typekit.net/iex7tqp.css");
+/* Brand Colors */
+/* Lottery Theme Overrides */
+body.simulator-styles section.main div.inner {
+  background: transparent !important; }
+
+body.simulator-styles section.main .flexWrap > div.column {
+  padding: 0; }
+
+body.simulator-styles {
+  /* Sticky Header */
+  /* Ticket Tooltips */
+  /* Flash! */
+  /* Color Themes */ }
+  body.simulator-styles .simulator {
+    padding: 3rem 0;
+    /* Buttons */
+    /* Ticket View */ }
+    body.simulator-styles .simulator #simulator_form {
+      position: relative;
+      padding-bottom: 0; }
+      @media (max-height: 1000px), (max-width: 800px) {
+        body.simulator-styles .simulator #simulator_form {
+          padding-bottom: 0; } }
+      body.simulator-styles .simulator #simulator_form .simulator_group .sticky-wrapper:not(.is-sticky) {
+        height: auto !important; }
+      body.simulator-styles .simulator #simulator_form .simulator_group.simulator_group_instruction_area {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 8px;
+        padding-bottom: 4rem; }
+      body.simulator-styles .simulator #simulator_form .simulator_group.simulator_group_play_area {
+        text-align: center; }
+    body.simulator-styles .simulator .simulator_header {
+      display: flex;
+      align-items: stretch;
+      justify-content: stretch;
+      top: 0;
+      z-index: 1001;
+      background: #003f56;
+      padding: 6px;
+      box-sizing: border-box; }
+      @media (max-width: 1200px) {
+        body.simulator-styles .simulator .simulator_header {
+          flex-wrap: wrap; } }
+      body.simulator-styles .simulator .simulator_header .title,
+      body.simulator-styles .simulator .simulator_header .steps,
+      body.simulator-styles .simulator .simulator_header .price,
+      body.simulator-styles .simulator .simulator_header .draws,
+      body.simulator-styles .simulator .simulator_header .prize {
+        flex: 1 1 auto;
+        padding: 1rem;
+        box-sizing: border-box;
+        margin: 6px;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+      body.simulator-styles .simulator .simulator_header .title {
+        flex: 1 1 auto;
+        justify-content: center;
+        font-weight: 700;
+        color: white;
+        order: 1; }
+        @media (max-width: 1200px) {
+          body.simulator-styles .simulator .simulator_header .title {
+            flex: 1 1 calc(50% - 12px);
+            order: 1;
+            justify-content: flex-start; } }
+        @media (max-width: 640px) {
+          body.simulator-styles .simulator .simulator_header .title {
+            order: 2;
+            padding-top: 0;
+            justify-content: center; } }
+      body.simulator-styles .simulator .simulator_header .steps {
+        justify-content: center;
+        order: 5; }
+        @media (max-width: 1200px) {
+          body.simulator-styles .simulator .simulator_header .steps {
+            justify-content: flex-end;
+            order: 2;
+            flex: 1 1 calc(50% - 12px); } }
+        @media (max-width: 640px) {
+          body.simulator-styles .simulator .simulator_header .steps {
+            order: 1;
+            flex: 1 1 100%;
+            justify-content: center; } }
+        body.simulator-styles .simulator .simulator_header .steps .step_marker {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 24px;
+          height: 24px;
+          border-radius: 24px;
+          margin: 0 3px;
+          font-weight: bold;
+          color: rgba(255, 255, 255, 0.7);
+          background: rgba(255, 255, 255, 0.2); }
+          body.simulator-styles .simulator .simulator_header .steps .step_marker.active {
+            color: white; }
+      body.simulator-styles .simulator .simulator_header .price, body.simulator-styles .simulator .simulator_header .draws, body.simulator-styles .simulator .simulator_header .prize {
+        padding: 1rem 1.5rem; }
+        @media (max-width: 1200px) {
+          body.simulator-styles .simulator .simulator_header .price, body.simulator-styles .simulator .simulator_header .draws, body.simulator-styles .simulator .simulator_header .prize {
+            padding: 0.5rem 1rem;
+            margin: 3px; } }
+        @media (max-width: 640px) {
+          body.simulator-styles .simulator .simulator_header .price, body.simulator-styles .simulator .simulator_header .draws, body.simulator-styles .simulator .simulator_header .prize {
+            flex: 1 1 100%; } }
+        body.simulator-styles .simulator .simulator_header .price .ticket_price_wrapper,
+        body.simulator-styles .simulator .simulator_header .price #ticket_draws,
+        body.simulator-styles .simulator .simulator_header .price #prize_amount,
+        body.simulator-styles .simulator .simulator_header .price #plus_prize_amount, body.simulator-styles .simulator .simulator_header .draws .ticket_price_wrapper,
+        body.simulator-styles .simulator .simulator_header .draws #ticket_draws,
+        body.simulator-styles .simulator .simulator_header .draws #prize_amount,
+        body.simulator-styles .simulator .simulator_header .draws #plus_prize_amount, body.simulator-styles .simulator .simulator_header .prize .ticket_price_wrapper,
+        body.simulator-styles .simulator .simulator_header .prize #ticket_draws,
+        body.simulator-styles .simulator .simulator_header .prize #prize_amount,
+        body.simulator-styles .simulator .simulator_header .prize #plus_prize_amount {
+          font-size: 22px; }
+          @media (max-width: 1200px) {
+            body.simulator-styles .simulator .simulator_header .price .ticket_price_wrapper,
+            body.simulator-styles .simulator .simulator_header .price #ticket_draws,
+            body.simulator-styles .simulator .simulator_header .price #prize_amount,
+            body.simulator-styles .simulator .simulator_header .price #plus_prize_amount, body.simulator-styles .simulator .simulator_header .draws .ticket_price_wrapper,
+            body.simulator-styles .simulator .simulator_header .draws #ticket_draws,
+            body.simulator-styles .simulator .simulator_header .draws #prize_amount,
+            body.simulator-styles .simulator .simulator_header .draws #plus_prize_amount, body.simulator-styles .simulator .simulator_header .prize .ticket_price_wrapper,
+            body.simulator-styles .simulator .simulator_header .prize #ticket_draws,
+            body.simulator-styles .simulator .simulator_header .prize #prize_amount,
+            body.simulator-styles .simulator .simulator_header .prize #plus_prize_amount {
+              font-size: 18px; } }
+          @media (max-width: 640px) {
+            body.simulator-styles .simulator .simulator_header .price .ticket_price_wrapper,
+            body.simulator-styles .simulator .simulator_header .price #ticket_draws,
+            body.simulator-styles .simulator .simulator_header .price #prize_amount,
+            body.simulator-styles .simulator .simulator_header .price #plus_prize_amount, body.simulator-styles .simulator .simulator_header .draws .ticket_price_wrapper,
+            body.simulator-styles .simulator .simulator_header .draws #ticket_draws,
+            body.simulator-styles .simulator .simulator_header .draws #prize_amount,
+            body.simulator-styles .simulator .simulator_header .draws #plus_prize_amount, body.simulator-styles .simulator .simulator_header .prize .ticket_price_wrapper,
+            body.simulator-styles .simulator .simulator_header .prize #ticket_draws,
+            body.simulator-styles .simulator .simulator_header .prize #prize_amount,
+            body.simulator-styles .simulator .simulator_header .prize #plus_prize_amount {
+              font-size: 16px; } }
+      body.simulator-styles .simulator .simulator_header .price {
+        order: 2;
+        transition: background 0.2s ease 0s; }
+        @media (max-width: 1200px) {
+          body.simulator-styles .simulator .simulator_header .price {
+            flex: 1 1 calc(30% - 12px);
+            order: 3; } }
+        @media (max-width: 640px) {
+          body.simulator-styles .simulator .simulator_header .price {
+            display: flex;
+            order: 3;
+            flex: 1 1 50%; } }
+        body.simulator-styles .simulator .simulator_header .price .price_inner {
+          transform-origin: 50% 50%;
+          transform: scale(1);
+          transition: all 0.2s ease 0s;
+          display: inline-flex;
+          white-space: nowrap;
+          align-items: center; }
+        body.simulator-styles .simulator .simulator_header .price .ticket_price_wrapper {
+          font-weight: bold; }
+      body.simulator-styles .simulator .simulator_header .draws {
+        order: 3;
+        transition: background 0.2s ease 0s; }
+        @media (max-width: 1200px) {
+          body.simulator-styles .simulator .simulator_header .draws {
+            flex: 1 1 calc(10% - 12px);
+            order: 4; } }
+        @media (max-width: 640px) {
+          body.simulator-styles .simulator .simulator_header .draws {
+            flex: 1 1 30%;
+            display: flex;
+            order: 4; } }
+        body.simulator-styles .simulator .simulator_header .draws .draws_inner {
+          transform-origin: 50% 50%;
+          transform: scale(1);
+          transition: all 0.2s ease 0s;
+          display: inline-flex;
+          white-space: nowrap;
+          align-items: center; }
+        body.simulator-styles .simulator .simulator_header .draws #ticket_draws {
+          font-weight: bold;
+          margin-right: 4px; }
+      body.simulator-styles .simulator .simulator_header .prize {
+        order: 4;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap; }
+        @media (max-width: 1200px) {
+          body.simulator-styles .simulator .simulator_header .prize {
+            flex: 1 1 calc(39% - 12px); } }
+        @media (max-width: 640px) {
+          body.simulator-styles .simulator .simulator_header .prize {
+            order: 5; } }
+        body.simulator-styles .simulator .simulator_header .prize .prize_inner {
+          transform-origin: 50% 50%;
+          transform: scale(1);
+          transition: all 0.2s ease 0s;
+          padding: 0 5px;
+          display: inline-flex;
+          align-items: center;
+          white-space: nowrap; }
+        body.simulator-styles .simulator .simulator_header .prize #prize_amount,
+        body.simulator-styles .simulator .simulator_header .prize #plus_prize_amount {
+          font-weight: bold;
+          margin-left: 4px; }
+    body.simulator-styles .simulator .playslip {
+      font-family: pragmatica-condensed, "FSEmericWeb", sans-serif;
+      font-weight: bold;
+      width: auto;
+      display: inline-flex;
+      align-items: stretch;
+      padding: 2rem;
+      margin: 0 auto 2rem auto;
+      top: -3rem;
+      position: relative;
+      background: white;
+      box-shadow: rgba(0, 0, 0, 0.2) 3px 6px 12px;
+      max-width: 100%;
+      box-sizing: border-box;
+      /*
+      .field_number.match_plus label {
+        background: $green;
+        opacity: 1;
+        color: white;
+        border-color: $green;
+      }
+      */ }
+      body.simulator-styles .simulator .playslip.lockdown {
+        cursor: not-allowed;
+        /*
+        .field_number.non_match label,
+        .field_extra_number.non_match label {
+          cursor: not-allowed;
+          opacity: 1;
+          background: #555555;
+          color: white;
+          border-color: #555555;
+          box-shadow: inset white 0px 0px 0px 2px;
+        }
+        */ }
+        body.simulator-styles .simulator .playslip.lockdown * {
+          pointer-events: none; }
+        body.simulator-styles .simulator .playslip.lockdown .field_number label,
+        body.simulator-styles .simulator .playslip.lockdown .field_extra_number label {
+          cursor: not-allowed;
+          /*
+          opacity: 0.2;
+          background: white;
+          color: black;
+          border-color: black;
+          box-shadow: inset white 0px 0px 0px 2px;
+          */ }
+    body.simulator-styles .simulator .number_matrix_wrapper {
+      display: flex;
+      flex: 1 1 auto;
+      align-items: stretch; }
+    body.simulator-styles .simulator .number_matrix,
+    body.simulator-styles .simulator .extra_number_matrix {
+      align-content: flex-start;
+      margin: 0 -12px 0 12px; }
+      body.simulator-styles .simulator .number_matrix > div,
+      body.simulator-styles .simulator .extra_number_matrix > div {
+        float: left;
+        margin: 6px; }
+      body.simulator-styles .simulator .number_matrix .number_matrix_label.fade_me_bro,
+      body.simulator-styles .simulator .extra_number_matrix .number_matrix_label.fade_me_bro {
+        opacity: 0.2;
+        cursor: default;
+        pointer-events: none; }
+    body.simulator-styles .simulator .field {
+      transition: all 0.25s ease 0s; }
+      body.simulator-styles .simulator .field.fade_me_bro {
+        opacity: 0.2;
+        cursor: default;
+        pointer-events: none; }
+    body.simulator-styles .simulator .field_number,
+    body.simulator-styles .simulator .field_extra_number,
+    body.simulator-styles .simulator .field_qp,
+    body.simulator-styles .simulator .field_extra_qp,
+    body.simulator-styles .simulator .field_plus,
+    body.simulator-styles .simulator .field_multiplier,
+    body.simulator-styles .simulator .field_advance {
+      overflow: hidden; }
+      body.simulator-styles .simulator .field_number label,
+      body.simulator-styles .simulator .field_extra_number label,
+      body.simulator-styles .simulator .field_qp label,
+      body.simulator-styles .simulator .field_extra_qp label,
+      body.simulator-styles .simulator .field_plus label,
+      body.simulator-styles .simulator .field_multiplier label,
+      body.simulator-styles .simulator .field_advance label {
+        cursor: pointer;
+        box-sizing: border-box;
+        display: inline-block;
+        border: 1px solid #EA3F11;
+        background: white;
+        color: #EA3F11;
+        font-size: 24px;
+        width: 44px;
+        height: 44px;
+        text-align: center;
+        line-height: 44px;
+        position: relative; }
+        body.simulator-styles .simulator .field_number label span,
+        body.simulator-styles .simulator .field_extra_number label span,
+        body.simulator-styles .simulator .field_qp label span,
+        body.simulator-styles .simulator .field_extra_qp label span,
+        body.simulator-styles .simulator .field_plus label span,
+        body.simulator-styles .simulator .field_multiplier label span,
+        body.simulator-styles .simulator .field_advance label span {
+          color: white;
+          position: absolute;
+          top: 48px;
+          left: 50%;
+          transform: translateX(-50%); }
+      body.simulator-styles .simulator .field_number input,
+      body.simulator-styles .simulator .field_extra_number input,
+      body.simulator-styles .simulator .field_qp input,
+      body.simulator-styles .simulator .field_extra_qp input,
+      body.simulator-styles .simulator .field_plus input,
+      body.simulator-styles .simulator .field_multiplier input,
+      body.simulator-styles .simulator .field_advance input {
+        position: absolute;
+        left: -999rem; }
+        body.simulator-styles .simulator .field_number input:checked ~ label,
+        body.simulator-styles .simulator .field_extra_number input:checked ~ label,
+        body.simulator-styles .simulator .field_qp input:checked ~ label,
+        body.simulator-styles .simulator .field_extra_qp input:checked ~ label,
+        body.simulator-styles .simulator .field_plus input:checked ~ label,
+        body.simulator-styles .simulator .field_multiplier input:checked ~ label,
+        body.simulator-styles .simulator .field_advance input:checked ~ label {
+          background: black;
+          color: white;
+          box-shadow: inset white 0px 0px 0px 2px; }
+        body.simulator-styles .simulator .field_number input:disabled ~ label,
+        body.simulator-styles .simulator .field_extra_number input:disabled ~ label,
+        body.simulator-styles .simulator .field_qp input:disabled ~ label,
+        body.simulator-styles .simulator .field_extra_qp input:disabled ~ label,
+        body.simulator-styles .simulator .field_plus input:disabled ~ label,
+        body.simulator-styles .simulator .field_multiplier input:disabled ~ label,
+        body.simulator-styles .simulator .field_advance input:disabled ~ label {
+          cursor: not-allowed;
+          opacity: 0.2;
+          background: white;
+          color: black;
+          border-color: black; }
+    body.simulator-styles .simulator .field_number,
+    body.simulator-styles .simulator .field_extra_number {
+      min-width: 44px;
+      max-width: 44px; }
+    body.simulator-styles .simulator .field_group {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      flex: 1 1 auto; }
+      @media (min-width: 800px) {
+        body.simulator-styles .simulator .field_group.field_group_horizontal {
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between; } }
+    body.simulator-styles .simulator .field_qp,
+    body.simulator-styles .simulator .field_extra_qp {
+      flex: 0 1 auto;
+      box-sizing: border-box;
+      min-height: 180px;
+      min-width: 56px;
+      width: 56px;
+      padding: 6px;
+      background: rgba(234, 63, 17, 0.15); }
+      body.simulator-styles .simulator .field_qp label span,
+      body.simulator-styles .simulator .field_extra_qp label span {
+        color: #EA3F11;
+        line-height: 24px; }
+    body.simulator-styles .simulator .field_plus,
+    body.simulator-styles .simulator .field_multiplier {
+      flex: 1 1 auto;
+      box-sizing: border-box;
+      min-height: 290px;
+      min-width: 56px;
+      width: 56px;
+      padding: 6px;
+      background: #EA3F11; }
+      body.simulator-styles .simulator .field_plus label span,
+      body.simulator-styles .simulator .field_multiplier label span {
+        font-size: 18px;
+        line-height: 1;
+        font-family: pragmatica, sans-serif;
+        font-weight: 700;
+        font-style: normal; }
+    body.simulator-styles .simulator .field_multiplier {
+      min-height: 310px; }
+    body.simulator-styles .simulator .field_advance {
+      border: 1px solid #EA3F11;
+      box-sizing: border-box;
+      min-height: 380px;
+      min-width: 58px;
+      width: 58px;
+      padding: 6px;
+      background: yellow;
+      margin: 24px 0; }
+      body.simulator-styles .simulator .field_advance label span {
+        font-size: 18px;
+        line-height: 1;
+        font-family: pragmatica, sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        color: red; }
+    body.simulator-styles .simulator .field_advance_draws {
+      font-family: "FSEmericWeb", sans-serif;
+      display: flex;
+      flex-direction: column;
+      background: white;
+      border: 1px solid #EA3F11;
+      box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.3);
+      position: absolute;
+      padding: 24px;
+      top: 25%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+      body.simulator-styles .simulator .field_advance_draws label {
+        order: 1;
+        text-align: center; }
+      body.simulator-styles .simulator .field_advance_draws span.input {
+        order: 2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; }
+        body.simulator-styles .simulator .field_advance_draws span.input button.advance-minus,
+        body.simulator-styles .simulator .field_advance_draws span.input button.advance-plus {
+          background: none;
+          box-shadow: none;
+          font-size: 44px;
+          line-height: 54px;
+          font-weight: bold;
+          text-align: center;
+          padding: 0.75rem 2rem; }
+          body.simulator-styles .simulator .field_advance_draws span.input button.advance-minus:hover, body.simulator-styles .simulator .field_advance_draws span.input button.advance-minus:focus, body.simulator-styles .simulator .field_advance_draws span.input button.advance-minus:active,
+          body.simulator-styles .simulator .field_advance_draws span.input button.advance-plus:hover,
+          body.simulator-styles .simulator .field_advance_draws span.input button.advance-plus:focus,
+          body.simulator-styles .simulator .field_advance_draws span.input button.advance-plus:active {
+            padding: 0.75rem 2rem; }
+          body.simulator-styles .simulator .field_advance_draws span.input button.advance-minus.range_maxed,
+          body.simulator-styles .simulator .field_advance_draws span.input button.advance-plus.range_maxed {
+            pointer-events: none;
+            cursor: not-allowed;
+            color: black !important;
+            opacity: 0.2; }
+      body.simulator-styles .simulator .field_advance_draws input {
+        font-size: 32px;
+        margin: 8px 0;
+        padding: 12px;
+        height: 54px;
+        width: 68px;
+        text-align: center;
+        cursor: default; }
+        body.simulator-styles .simulator .field_advance_draws input:focus, body.simulator-styles .simulator .field_advance_draws input:active {
+          border: 1px solid #dad6be !important;
+          outline: 0; }
+      body.simulator-styles .simulator .field_advance_draws input:disabled {
+        opacity: 0.2; }
+        body.simulator-styles .simulator .field_advance_draws input:disabled ~ label {
+          opacity: 0.2; }
+      body.simulator-styles .simulator .field_advance_draws button.modal-save {
+        order: 3;
+        display: block;
+        width: 100%; }
+      body.simulator-styles .simulator .field_advance_draws button.modal-cancel {
+        order: 4;
+        background-color: gray;
+        display: block;
+        width: 100%;
+        margin-top: 10px; }
+    body.simulator-styles .simulator div.step_description_and_actions {
+      display: flex; }
+    body.simulator-styles .simulator div.step {
+      display: none; }
+      body.simulator-styles .simulator div.step.active {
+        display: block; }
+      body.simulator-styles .simulator div.step div.actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+        justify-content: center;
+        background: white;
+        z-index: 1050;
+        bottom: 0;
+        left: 0;
+        box-sizing: border-box;
+        width: 100%;
+        position: fixed;
+        padding: 1rem 1rem;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px -3px 8px; }
+        @media (max-width: 640px) {
+          body.simulator-styles .simulator div.step div.actions {
+            flex-wrap: nowrap;
+            overflow: auto; } }
+        body.simulator-styles .simulator div.step div.actions > * {
+          margin: 6px; }
+        body.simulator-styles .simulator div.step div.actions span.action_counter {
+          display: flex;
+          align-items: center;
+          font-weight: bold;
+          color: #999; }
+          @media (max-width: 640px) {
+            body.simulator-styles .simulator div.step div.actions span.action_counter {
+              font-size: 12px; } }
+          body.simulator-styles .simulator div.step div.actions span.action_counter #extra_number_check {
+            display: block;
+            border: 1px solid #dad6be;
+            border-radius: 4px;
+            margin-right: 4px;
+            max-width: 18px;
+            min-width: 18px;
+            max-height: 18px;
+            min-height: 18px;
+            position: relative; }
+          body.simulator-styles .simulator div.step div.actions span.action_counter.in_progress {
+            color: #003f56; }
+          body.simulator-styles .simulator div.step div.actions span.action_counter.complete {
+            color: #66AB44; }
+            body.simulator-styles .simulator div.step div.actions span.action_counter.complete #extra_number_check {
+              border-color: #66AB44; }
+              body.simulator-styles .simulator div.step div.actions span.action_counter.complete #extra_number_check:before {
+                content: "X";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%); }
+        body.simulator-styles .simulator div.step div.actions button, body.simulator-styles .simulator div.step div.actions a {
+          transition: all 0.2s ease 0s; }
+          @media (max-width: 1200px) {
+            body.simulator-styles .simulator div.step div.actions button, body.simulator-styles .simulator div.step div.actions a {
+              font-size: 1.4rem;
+              min-height: 3.3rem; } }
+        body.simulator-styles .simulator div.step div.actions button.toggle {
+          display: none; }
+          body.simulator-styles .simulator div.step div.actions button.toggle.current {
+            display: inline-block; }
+        @media (max-width: 1200px) {
+          body.simulator-styles .simulator div.step div.actions a {
+            padding-top: 1rem;
+            min-height: 3.6rem; } }
+        body.simulator-styles .simulator div.step div.actions a:hover, body.simulator-styles .simulator div.step div.actions a:focus {
+          color: white; }
+        body.simulator-styles .simulator div.step div.actions.hol_up button, body.simulator-styles .simulator div.step div.actions.hol_up a {
+          background-color: #999999;
+          opacity: 0.3;
+          pointer-events: none; }
+    body.simulator-styles .simulator div.step_description {
+      display: none;
+      box-sizing: border-box;
+      padding: 4rem 2rem;
+      max-width: 720px;
+      margin: 0 auto;
+      width: 100%;
+      text-align: center; }
+      body.simulator-styles .simulator div.step_description.active {
+        display: block; }
+      body.simulator-styles .simulator div.step_description h2 {
+        margin-bottom: 0.5rem; }
+      body.simulator-styles .simulator div.step_description div.intro {
+        max-width: 640px;
+        margin: 2rem auto; }
+    body.simulator-styles .simulator .ticket {
+      display: none;
+      background: linear-gradient(180deg, #eee 0%, white 15%);
+      position: relative;
+      padding: 6rem 4rem;
+      margin: -3rem auto 10rem auto;
+      max-width: 356px; }
+      body.simulator-styles .simulator .ticket * {
+        /*transition: all 0.5s ease 0.25s;*/ }
+      body.simulator-styles .simulator .ticket:before, body.simulator-styles .simulator .ticket:after {
+        background-position: left bottom;
+        background-repeat: repeat-x;
+        background-size: 16px 16px;
+        content: " ";
+        display: block;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        height: 16px; }
+      body.simulator-styles .simulator .ticket:before {
+        background: linear-gradient(-45deg, white 8px, transparent 0), linear-gradient(45deg, white 8px, transparent 0);
+        background-position: right bottom;
+        background-repeat: repeat-x;
+        background-size: 16px 16px;
+        transform: rotate(180deg);
+        bottom: auto;
+        top: 0; }
+      body.simulator-styles .simulator .ticket.drawing:before {
+        background-image: linear-gradient(-45deg, #003f56 8px, transparent 0), linear-gradient(45deg, #003f56 8px, transparent 0); }
+      body.simulator-styles .simulator .ticket:after {
+        background: linear-gradient(-45deg, #edebdf 8px, transparent 0), linear-gradient(45deg, #edebdf 8px, transparent 0);
+        background-position: left bottom;
+        background-repeat: repeat-x;
+        background-size: 16px 16px; }
+      body.simulator-styles .simulator .ticket .ticket_msg {
+        font-size: 1.1rem;
+        text-align: center;
+        margin: 12px 0; }
+      body.simulator-styles .simulator .ticket .ticket_game_info {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin: 16px 0; }
+        body.simulator-styles .simulator .ticket .ticket_game_info .ticket_game {
+          font-size: 2.8rem;
+          line-height: 1;
+          font-weight: bold; }
+          @media (max-width: 640px) {
+            body.simulator-styles .simulator .ticket .ticket_game_info .ticket_game {
+              font-size: 2rem; } }
+        body.simulator-styles .simulator .ticket .ticket_game_info .ticket_draws {
+          text-align: right;
+          font-size: 1.4rem; }
+          body.simulator-styles .simulator .ticket .ticket_game_info .ticket_draws > span {
+            position: relative;
+            display: block;
+            line-height: 1.1;
+            margin-bottom: 8px; }
+        body.simulator-styles .simulator .ticket .ticket_game_info .ticket_draw_dates {
+          white-space: nowrap; }
+      body.simulator-styles .simulator .ticket .ticket_numbers {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem; }
+        @media (max-width: 640px) {
+          body.simulator-styles .simulator .ticket .ticket_numbers {
+            font-size: 1.4rem; } }
+        body.simulator-styles .simulator .ticket .ticket_numbers .ticket_board {
+          margin-left: 0;
+          margin-right: 8px; }
+        body.simulator-styles .simulator .ticket .ticket_numbers .ticket_number {
+          margin-left: 8px;
+          min-width: 30px;
+          max-width: 30px;
+          min-height: 30px;
+          max-height: 30px;
+          line-height: 30px;
+          text-align: center;
+          border-radius: 50%;
+          border: 2px solid transparent;
+          transition: border 0.25s ease 0.3s; }
+          @media (max-width: 640px) {
+            body.simulator-styles .simulator .ticket .ticket_numbers .ticket_number {
+              min-width: 24px;
+              max-width: 24px;
+              min-height: 24px;
+              max-height: 24px;
+              line-height: 24px; } }
+        body.simulator-styles .simulator .ticket .ticket_numbers .ticket_extra_label {
+          margin-left: 16px; }
+          body.simulator-styles .simulator .ticket .ticket_numbers .ticket_extra_label + .ticket_number {
+            margin: 0 4px; }
+        body.simulator-styles .simulator .ticket .ticket_numbers .ticket_qp {
+          margin-left: 12px; }
+        body.simulator-styles .simulator .ticket .ticket_numbers .ticket_bet_type {
+          margin-left: 12px;
+          line-height: 1.1; }
+        body.simulator-styles .simulator .ticket .ticket_numbers .ticket_bet_amount {
+          margin-left: 12px;
+          line-height: 1.1; }
+        body.simulator-styles .simulator .ticket .ticket_numbers .ticket_bet_type #ticket_bet_type,
+        body.simulator-styles .simulator .ticket .ticket_numbers .ticket_bet_amount .ticket_price {
+          min-height: 30px;
+          max-height: 30px;
+          line-height: 24px; }
+          @media (max-width: 640px) {
+            body.simulator-styles .simulator .ticket .ticket_numbers .ticket_bet_type #ticket_bet_type,
+            body.simulator-styles .simulator .ticket .ticket_numbers .ticket_bet_amount .ticket_price {
+              min-height: 24px;
+              max-height: 24px;
+              line-height: 24px; } }
+      body.simulator-styles .simulator .ticket .ticket_draw_times_and_dates {
+        font-size: 1.3rem;
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        position: relative; }
+        body.simulator-styles .simulator .ticket .ticket_draw_times_and_dates .ticket_draw_time span.tooltip {
+          right: auto;
+          left: -32px;
+          top: -7px; }
+        body.simulator-styles .simulator .ticket .ticket_draw_times_and_dates .ticket_draw_dates_wrapper span.tooltip {
+          top: -7px; }
+      body.simulator-styles .simulator .ticket .ticket_times {
+        color: #666;
+        text-align: center;
+        margin: 18px 0; }
+      body.simulator-styles .simulator .ticket .ezmatch_numbers {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin: 2rem 0 0 0; }
+        body.simulator-styles .simulator .ticket .ezmatch_numbers span.tooltip {
+          right: calc(50% + 55px);
+          transform: translateX(50%);
+          top: 0; }
+        body.simulator-styles .simulator .ticket .ezmatch_numbers::before {
+          content: "EZ Match";
+          font-weight: bold;
+          display: block;
+          margin-bottom: 1rem; }
+        body.simulator-styles .simulator .ticket .ezmatch_numbers p {
+          margin: 0 auto;
+          display: flex;
+          justify-content: center; }
+        body.simulator-styles .simulator .ticket .ezmatch_numbers .num {
+          min-width: 60px;
+          text-align: right;
+          margin-right: 8px; }
+        body.simulator-styles .simulator .ticket .ezmatch_numbers .prz {
+          min-width: 60px;
+          text-align: left;
+          margin-left: 8px; }
+      body.simulator-styles .simulator .ticket.drawing .ticket_numbers .ticket_number.match_plus,
+      body.simulator-styles .simulator .ticket.drawing .ezmatch_numbers p.match {
+        background: rgba(102, 171, 68, 0.33); }
+    body.simulator-styles .simulator .ball_drop_wrapper {
+      background: #003f56;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      position: relative;
+      top: 4rem; }
+      body.simulator-styles .simulator .ball_drop_wrapper.drawing {
+        margin-top: -4rem; }
+      body.simulator-styles .simulator .ball_drop_wrapper p {
+        font-weight: bold;
+        color: white;
+        text-align: center; }
+    body.simulator-styles .simulator #ball_drops,
+    body.simulator-styles .simulator #ball_drops_plus {
+      flex: 0 1 auto;
+      padding: 2rem;
+      margin: 0 1rem 2rem 1rem;
+      min-width: 348px;
+      min-height: 82px; }
+      body.simulator-styles .simulator #ball_drops .balls,
+      body.simulator-styles .simulator #ball_drops_plus .balls {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start; }
+        @media (max-width: 640px) {
+          body.simulator-styles .simulator #ball_drops .balls,
+          body.simulator-styles .simulator #ball_drops_plus .balls {
+            justify-content: center;
+            flex-wrap: wrap; } }
+      body.simulator-styles .simulator #ball_drops .drawn_number,
+      body.simulator-styles .simulator #ball_drops_plus .drawn_number {
+        width: 44px;
+        height: 44px;
+        line-height: 44px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 12px;
+        text-align: center;
+        font-weight: bold;
+        position: relative;
+        top: -15px;
+        opacity: 0;
+        animation: balldrop 0.5s ease 0s forwards;
+        font-family: pragmatica-condensed, "FSEmericWeb", sans-serif;
+        font-weight: bold;
+        font-size: 26px; }
+        @media (max-width: 640px) {
+          body.simulator-styles .simulator #ball_drops .drawn_number,
+          body.simulator-styles .simulator #ball_drops_plus .drawn_number {
+            width: 34px;
+            height: 34px;
+            line-height: 34px;
+            margin-right: 4px;
+            font-size: 22px; } }
+        body.simulator-styles .simulator #ball_drops .drawn_number.drawn_extra_number,
+        body.simulator-styles .simulator #ball_drops_plus .drawn_number.drawn_extra_number {
+          color: white; }
+          body.simulator-styles .simulator #ball_drops .drawn_number.drawn_extra_number:after,
+          body.simulator-styles .simulator #ball_drops_plus .drawn_number.drawn_extra_number:after {
+            content: "EXTRA BALL";
+            font-size: 11px;
+            line-height: 1;
+            position: absolute;
+            top: calc(100% + 10px);
+            width: 100px;
+            left: 50%;
+            transform: translateX(-50%); }
+        body.simulator-styles .simulator #ball_drops .drawn_number.drawn_number_multiplier,
+        body.simulator-styles .simulator #ball_drops_plus .drawn_number.drawn_number_multiplier {
+          margin-left: 18px;
+          font-size: 30px;
+          border: 0 !important;
+          color: white !important;
+          background: transparent !important; }
+          @media (max-width: 640px) {
+            body.simulator-styles .simulator #ball_drops .drawn_number.drawn_number_multiplier,
+            body.simulator-styles .simulator #ball_drops_plus .drawn_number.drawn_number_multiplier {
+              flex: 1 1 100%;
+              margin-top: 18px; } }
+          body.simulator-styles .simulator #ball_drops .drawn_number.drawn_number_multiplier:after,
+          body.simulator-styles .simulator #ball_drops_plus .drawn_number.drawn_number_multiplier:after {
+            content: "MULTIPLIER";
+            font-size: 11px;
+            line-height: 1;
+            position: absolute;
+            top: calc(100% + 10px);
+            width: 100px;
+            left: 50%;
+            transform: translateX(-50%); }
+        body.simulator-styles .simulator #ball_drops .drawn_number:last-child,
+        body.simulator-styles .simulator #ball_drops_plus .drawn_number:last-child {
+          margin-right: 0; }
+    body.simulator-styles .simulator #ball_drops_plus {
+      margin: 0 1rem 4rem 1rem; }
+      @media (max-width: 640px) {
+        body.simulator-styles .simulator #ball_drops_plus {
+          margin-top: -2rem; } }
+      body.simulator-styles .simulator #ball_drops_plus .drawn_number {
+        border: 2px solid white;
+        color: #508735;
+        background: white; }
+        body.simulator-styles .simulator #ball_drops_plus .drawn_number.drawn_extra_number_plus {
+          border-style: solid;
+          color: white;
+          background: #66AB44; }
+    body.simulator-styles .simulator #potential_winnings {
+      padding: 2rem;
+      text-align: center;
+      font-size: 2.4rem;
+      transition: all 0.3s ease 0s;
+      opacity: 1;
+      position: fixed;
+      left: 0;
+      width: 100%;
+      top: 100%;
+      transform: translateY(-100%);
+      background: #02502E;
+      background-image: linear-gradient(-45deg, #02502E 0%, #6CB43F 100%);
+      color: white;
+      padding-bottom: 11rem;
+      z-index: 1020;
+      box-sizing: border-box;
+      box-shadow: rgba(0, 0, 0, 0.2) 0px -2px 3px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      @media (max-width: 1200px) {
+        body.simulator-styles .simulator #potential_winnings {
+          font-size: 1.9rem; } }
+      @media (max-width: 1200px) {
+        body.simulator-styles .simulator #potential_winnings {
+          padding-bottom: 10rem; } }
+      body.simulator-styles .simulator #potential_winnings h3 {
+        color: white;
+        font-weight: bold; }
+        @media (max-width: 1200px) {
+          body.simulator-styles .simulator #potential_winnings h3 {
+            font-size: 1.7rem; } }
+        body.simulator-styles .simulator #potential_winnings h3 small {
+          color: white;
+          display: block; }
+      body.simulator-styles .simulator #potential_winnings:empty {
+        padding: 0;
+        bottom: 0;
+        opacity: 0;
+        z-index: 0; }
+      body.simulator-styles .simulator #potential_winnings p {
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        background: white;
+        border-radius: 6px;
+        padding: 12px 20px;
+        color: #666; }
+        body.simulator-styles .simulator #potential_winnings p strong {
+          color: #508735;
+          font-size: 110%; }
+          body.simulator-styles .simulator #potential_winnings p strong.dollars {
+            letter-spacing: -1px; }
+        body.simulator-styles .simulator #potential_winnings p small {
+          font-size: 1.2rem;
+          display: block; }
+        body.simulator-styles .simulator #potential_winnings p.plus_winnings {
+          font-size: 1.8rem;
+          line-height: 1.3; }
+          @media (max-width: 1200px) {
+            body.simulator-styles .simulator #potential_winnings p.plus_winnings {
+              font-size: 1.5rem; } }
+      body.simulator-styles .simulator #potential_winnings .trigger {
+        cursor: pointer;
+        background: transparent url("https://static.coloradolottery.com/media/filer_public/79/74/79748a60-9c47-4126-aee1-29ff4f92a011/arrow.svg") center no-repeat;
+        background-size: 75% 75%;
+        width: 34px;
+        height: 34px;
+        display: block;
+        margin: 0 auto 2rem auto;
+        transform: rotate(0deg);
+        transition: all 0.3s ease 0s; }
+      body.simulator-styles .simulator #potential_winnings.hidey {
+        bottom: auto;
+        top: calc(100% - 16rem);
+        transform: translateY(0%); }
+        @media (max-width: 1200px) {
+          body.simulator-styles .simulator #potential_winnings.hidey {
+            top: calc(100% - 14.5rem); } }
+        body.simulator-styles .simulator #potential_winnings.hidey .trigger {
+          transform: rotate(180deg); }
+    body.simulator-styles .simulator .ticket_numbers ~ .ticket_barcode_wrapper {
+      margin-top: 32px;
+      display: block; }
+  body.simulator-styles .simulator .is-sticky .simulator_header {
+    z-index: 1001 !important;
+    width: 100% !important;
+    left: 0;
+    top: 42.5px !important; }
+    @media (max-width: 1100px) {
+      body.simulator-styles .simulator .is-sticky .simulator_header {
+        top: 45px !important; } }
+    @media (max-width: 1200px) {
+      body.simulator-styles .simulator .is-sticky .simulator_header {
+        flex-wrap: nowrap; }
+        body.simulator-styles .simulator .is-sticky .simulator_header .title {
+          flex: 1 1 auto;
+          justify-content: center; }
+        body.simulator-styles .simulator .is-sticky .simulator_header .steps {
+          display: none;
+          margin: 0;
+          padding: 0;
+          max-height: 0;
+          opacity: 0;
+          visibility: hidden; } }
+    @media (max-width: 640px) {
+      body.simulator-styles .simulator .is-sticky .simulator_header {
+        flex-wrap: wrap; }
+        body.simulator-styles .simulator .is-sticky .simulator_header .title {
+          flex: 1 1 100%;
+          padding-bottom: 0;
+          justify-content: center; } }
+  body.simulator-styles span.tooltip {
+    cursor: help; }
+    body.simulator-styles span.tooltip:not(.tooltip_text) {
+      position: absolute;
+      top: 0;
+      right: -32px;
+      width: 22px;
+      height: 22px;
+      padding: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease 0s; }
+    body.simulator-styles span.tooltip.tooltip_text {
+      position: relative;
+      top: auto !important;
+      bottom: auto !important;
+      left: auto !important;
+      right: auto !important;
+      border-bottom: dotted 1px #66AB44; }
+      body.simulator-styles span.tooltip.tooltip_text:hover {
+        color: #66AB44; }
+    body.simulator-styles span.tooltip:hover {
+      z-index: 100; }
+      body.simulator-styles span.tooltip:hover span.tooltip_trigger {
+        background: #9ecf86; }
+      body.simulator-styles span.tooltip:hover span.tooltip_content {
+        opacity: 1;
+        visibility: visible;
+        z-index: 100;
+        bottom: 32px; }
+    body.simulator-styles span.tooltip span.tooltip_trigger {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: serif;
+      font-style: italic;
+      font-size: 17px;
+      font-weight: bold;
+      background: #66AB44;
+      color: white;
+      border: 2px solid white;
+      width: 18px;
+      height: 18px;
+      border-radius: 24px; }
+    body.simulator-styles span.tooltip span.tooltip_content {
+      color: #454545;
+      transition: all 0.2s ease 0s;
+      position: absolute;
+      bottom: 28px;
+      left: 18px;
+      max-width: 240px;
+      height: auto;
+      min-width: 120px;
+      text-align: left;
+      border-radius: 12px;
+      padding: 12px;
+      font-size: 14px;
+      font-family: "FSEmericWeb", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      background: white;
+      box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
+      opacity: 0;
+      visibility: hidden; }
+    body.simulator-styles span.tooltip.tooltip_sling_left span.tooltip_content {
+      left: auto;
+      right: 18px; }
+  body.simulator-styles .ticket.drawing span.tooltip:not(.tooltip_text) {
+    display: none; }
+  body.simulator-styles .ticket.drawing span.tooltip.tooltip_text {
+    border: 0 !important;
+    color: #454545 !important;
+    pointer-events: none; }
+  body.simulator-styles .playslip .ticket_barcode_wrapper,
+  body.simulator-styles .ticket:not(.drawing) .ticket_barcode_wrapper {
+    display: block;
+    position: relative; }
+    body.simulator-styles .playslip .ticket_barcode_wrapper span.tooltip,
+    body.simulator-styles .ticket:not(.drawing) .ticket_barcode_wrapper span.tooltip {
+      top: calc(50% - 5px);
+      left: 50%;
+      transform: translate(-50%, -50%); }
+  body.simulator-styles .playslip .ticket_game,
+  body.simulator-styles .ticket:not(.drawing) .ticket_game {
+    position: relative; }
+    body.simulator-styles .playslip .ticket_game span.tooltip,
+    body.simulator-styles .ticket:not(.drawing) .ticket_game span.tooltip {
+      left: -30px; }
+  body.simulator-styles .playslip .ticket_draws span.tooltip,
+  body.simulator-styles .ticket:not(.drawing) .ticket_draws span.tooltip {
+    top: -10px; }
+  body.simulator-styles .playslip .ticket_numbers > span,
+  body.simulator-styles .ticket:not(.drawing) .ticket_numbers > span {
+    position: relative; }
+  body.simulator-styles .playslip .ticket_numbers span.tooltip,
+  body.simulator-styles .ticket:not(.drawing) .ticket_numbers span.tooltip {
+    top: calc(100% - 10px);
+    left: 50%;
+    transform: translateX(-50%); }
+  body.simulator-styles .playslip .ticket_multiplier .ticket_multiplier_inner,
+  body.simulator-styles .ticket:not(.drawing) .ticket_multiplier .ticket_multiplier_inner {
+    position: relative; }
+  body.simulator-styles .playslip .ticket_multiplier span.tooltip,
+  body.simulator-styles .ticket:not(.drawing) .ticket_multiplier span.tooltip {
+    top: -9px;
+    left: -32px; }
+  body.simulator-styles #prize_amount, body.simulator-styles #plus_prize_amount, body.simulator-styles #ticket_draws, body.simulator-styles .ticket_price_wrapper {
+    transform: translateY(0) !important;
+    position: relative;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center; }
+    body.simulator-styles #prize_amount:before, body.simulator-styles #plus_prize_amount:before, body.simulator-styles #ticket_draws:before, body.simulator-styles .ticket_price_wrapper:before {
+      color: white;
+      content: attr(data-before);
+      position: absolute;
+      transform: translate(-50%, -50%) !important;
+      top: 50%;
+      left: 50%;
+      opacity: 1;
+      white-space: nowrap; }
+    body.simulator-styles #prize_amount:after, body.simulator-styles #plus_prize_amount:after, body.simulator-styles #ticket_draws:after, body.simulator-styles .ticket_price_wrapper:after {
+      color: white;
+      content: attr(data-after);
+      position: absolute;
+      transform: translate(-50%, 0%) !important;
+      top: 50%;
+      left: 50%;
+      opacity: 0;
+      white-space: nowrap; }
+  body.simulator-styles #prize_amount,
+  body.simulator-styles #plus_prize_amount,
+  body.simulator-styles #ticket_draws {
+    letter-spacing: -1px; }
+    body.simulator-styles #prize_amount:before, body.simulator-styles #prize_amount:after,
+    body.simulator-styles #plus_prize_amount:before,
+    body.simulator-styles #plus_prize_amount:after,
+    body.simulator-styles #ticket_draws:before,
+    body.simulator-styles #ticket_draws:after {
+      letter-spacing: -1px; }
+  body.simulator-styles .ticket_price_wrapper {
+    background: white;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 6px;
+    padding: 4px 8px;
+    margin-right: 4px;
+    letter-spacing: -2px; }
+    @media (max-width: 1200px) {
+      body.simulator-styles .ticket_price_wrapper {
+        padding: 2px 6px;
+        margin: -4px 4px -4px 0; } }
+    body.simulator-styles .ticket_price_wrapper:before, body.simulator-styles .ticket_price_wrapper:after {
+      color: black;
+      letter-spacing: -2px; }
+  body.simulator-styles .flash {
+    transform: scale(1.3) !important;
+    transition: color transform 0.1s ease 0s; }
+    body.simulator-styles .flash #prize_amount:before, body.simulator-styles .flash #plus_prize_amount:before, body.simulator-styles .flash #ticket_draws:before, body.simulator-styles .flash .ticket_price_wrapper:before {
+      animation: rollupA 0.25s ease 0s 1 forwards; }
+    body.simulator-styles .flash #prize_amount:after, body.simulator-styles .flash #plus_prize_amount:after, body.simulator-styles .flash #ticket_draws:after, body.simulator-styles .flash .ticket_price_wrapper:after {
+      animation: rollupB 0.25s ease 0.25s 1 forwards; }
+  body.simulator-styles .modal {
+    padding: 0 !important; }
+    body.simulator-styles .modal .modal_header {
+      padding: 2rem;
+      color: white;
+      border-radius: 8px 8px 0 0; }
+    body.simulator-styles .modal .modal_content {
+      padding: 2rem; }
+      body.simulator-styles .modal .modal_content ul, body.simulator-styles .modal .modal_content ol {
+        padding-left: 2rem; }
+        body.simulator-styles .modal .modal_content ul li, body.simulator-styles .modal .modal_content ol li {
+          padding: 0.5rem 0; }
+  body.simulator-styles .simulator.simulator_powerball {
+    /* Colors */ }
+    body.simulator-styles .simulator.simulator_powerball .playslip {
+      flex-direction: column; }
+    body.simulator-styles .simulator.simulator_powerball .field_number label,
+    body.simulator-styles .simulator.simulator_powerball .field_extra_number label,
+    body.simulator-styles .simulator.simulator_powerball .field_qp label,
+    body.simulator-styles .simulator.simulator_powerball .field_extra_qp label,
+    body.simulator-styles .simulator.simulator_powerball .field_plus label,
+    body.simulator-styles .simulator.simulator_powerball .field_multiplier label,
+    body.simulator-styles .simulator.simulator_powerball .field_advance label {
+      border-radius: 50%; }
+    body.simulator-styles .simulator.simulator_powerball .field_advance,
+    body.simulator-styles .simulator.simulator_powerball .field_multiplier,
+    body.simulator-styles .simulator.simulator_powerball .field_plus {
+      cursor: pointer;
+      box-sizing: border-box;
+      display: inline-block;
+      border: 1px solid #EA3F11;
+      background: white;
+      color: #EA3F11;
+      font-size: 24px;
+      width: 44px;
+      height: 44px;
+      text-align: center;
+      line-height: 44px;
+      position: relative;
+      background: transparent;
+      border: 0;
+      overflow: visible;
+      min-height: 0;
+      height: auto;
+      margin: 0;
+      padding: 12px;
+      line-height: 1.2; }
+      body.simulator-styles .simulator.simulator_powerball .field_advance span,
+      body.simulator-styles .simulator.simulator_powerball .field_multiplier span,
+      body.simulator-styles .simulator.simulator_powerball .field_plus span {
+        color: white;
+        position: absolute;
+        top: 48px;
+        left: 50%;
+        transform: translateX(-50%); }
+      body.simulator-styles .simulator.simulator_powerball .field_advance span,
+      body.simulator-styles .simulator.simulator_powerball .field_multiplier span,
+      body.simulator-styles .simulator.simulator_powerball .field_plus span {
+        top: 50%;
+        left: 100%;
+        transform: translate(6px, -50%);
+        writing-mode: unset;
+        text-orientation: unset;
+        color: #EA3F11;
+        line-height: 1.2;
+        letter-spacing: 0;
+        white-space: nowrap; }
+      body.simulator-styles .simulator.simulator_powerball .field_advance small,
+      body.simulator-styles .simulator.simulator_powerball .field_multiplier small,
+      body.simulator-styles .simulator.simulator_powerball .field_plus small {
+        display: block;
+        font-weight: normal;
+        font-size: 90%;
+        line-height: 1.2; }
+    body.simulator-styles .simulator.simulator_powerball .field_plus {
+      padding: 12px;
+      border: 1px solid #EA3F11;
+      background: #EA3F11;
+      margin-bottom: 6px;
+      align-items: center;
+      display: flex;
+      justify-content: flex-start;
+      max-width: 310px;
+      min-width: 310px; }
+      @media (max-width: 799px) {
+        body.simulator-styles .simulator.simulator_powerball .field_plus {
+          width: 100%;
+          max-width: 100%; } }
+      body.simulator-styles .simulator.simulator_powerball .field_plus label {
+        color: white; }
+      body.simulator-styles .simulator.simulator_powerball .field_plus span {
+        white-space: nowrap;
+        color: white;
+        text-align: left; }
+    body.simulator-styles .simulator.simulator_powerball .number_matrix_wrapper {
+      max-width: 910px; }
+    body.simulator-styles .simulator.simulator_powerball .number_matrix,
+    body.simulator-styles .simulator.simulator_powerball .extra_number_matrix {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 6px;
+      border: 1px solid #EA3F11; }
+      body.simulator-styles .simulator.simulator_powerball .number_matrix .number_matrix_label,
+      body.simulator-styles .simulator.simulator_powerball .extra_number_matrix .number_matrix_label {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-width: 156px;
+        max-width: 156px;
+        min-height: 44px;
+        max-height: 44px;
+        color: #EA3F11; }
+        body.simulator-styles .simulator.simulator_powerball .number_matrix .number_matrix_label strong,
+        body.simulator-styles .simulator.simulator_powerball .extra_number_matrix .number_matrix_label strong {
+          background: #EA3F11;
+          color: white;
+          width: 100%;
+          text-align: center; }
+        body.simulator-styles .simulator.simulator_powerball .number_matrix .number_matrix_label span,
+        body.simulator-styles .simulator.simulator_powerball .extra_number_matrix .number_matrix_label span {
+          width: 100%;
+          text-align: center; }
+        body.simulator-styles .simulator.simulator_powerball .number_matrix .number_matrix_label small,
+        body.simulator-styles .simulator.simulator_powerball .extra_number_matrix .number_matrix_label small {
+          display: inline; }
+    body.simulator-styles .simulator.simulator_powerball .extra_number_matrix {
+      background: rgba(234, 63, 17, 0.15);
+      border-top: 0; }
+      body.simulator-styles .simulator.simulator_powerball .extra_number_matrix .number_matrix_label {
+        min-width: 100px;
+        max-width: 100px; }
+    body.simulator-styles .simulator.simulator_powerball .field_qp,
+    body.simulator-styles .simulator.simulator_powerball .field_extra_qp {
+      cursor: pointer;
+      box-sizing: border-box;
+      display: inline-block;
+      border: 1px solid #EA3F11;
+      background: white;
+      color: #EA3F11;
+      font-size: 24px;
+      width: 44px;
+      height: 44px;
+      text-align: center;
+      line-height: 44px;
+      position: relative;
+      padding: 0;
+      border: 0;
+      min-height: 0;
+      min-width: 44px;
+      min-height: 44px;
+      order: 999;
+      margin-left: calc(44px + 6px + 6px + 6px);
+      background: transparent; }
+      body.simulator-styles .simulator.simulator_powerball .field_qp span,
+      body.simulator-styles .simulator.simulator_powerball .field_extra_qp span {
+        color: white;
+        position: absolute;
+        top: 48px;
+        left: 50%;
+        transform: translateX(-50%); }
+      body.simulator-styles .simulator.simulator_powerball .field_qp label,
+      body.simulator-styles .simulator.simulator_powerball .field_extra_qp label {
+        background: white; }
+      body.simulator-styles .simulator.simulator_powerball .field_qp span,
+      body.simulator-styles .simulator.simulator_powerball .field_extra_qp span {
+        position: static;
+        color: #EA3F11; }
+      body.simulator-styles .simulator.simulator_powerball .field_qp input:checked ~ label span,
+      body.simulator-styles .simulator.simulator_powerball .field_extra_qp input:checked ~ label span {
+        color: white; }
+    @media (min-width: 641px) {
+      body.simulator-styles .simulator.simulator_powerball #ball_drops {
+        min-width: 422px; } }
+    body.simulator-styles .simulator.simulator_powerball .flash_container {
+      animation: container_powerball 2s ease 0s 1 forwards; }
+    body.simulator-styles .simulator.simulator_powerball .steps .step_marker.active {
+      background: #ed1c24; }
+    body.simulator-styles .simulator.simulator_powerball .ticket .ticket_numbers .ticket_number.match {
+      border-color: #ef343b; }
+    body.simulator-styles .simulator.simulator_powerball .price, body.simulator-styles .simulator.simulator_powerball .draws, body.simulator-styles .simulator.simulator_powerball .prize {
+      border: 0;
+      background: #ed1c24;
+      color: white; }
+    body.simulator-styles .simulator.simulator_powerball #prize_amount, body.simulator-styles .simulator.simulator_powerball #plus_prize_amount, body.simulator-styles .simulator.simulator_powerball #ticket_draws {
+      color: #ed1c24; }
+    body.simulator-styles .simulator.simulator_powerball .field_advance_draws span.input button.advance-minus,
+    body.simulator-styles .simulator.simulator_powerball .field_advance_draws span.input button.advance-plus {
+      color: #ed1c24; }
+    body.simulator-styles .simulator.simulator_powerball .field_advance_draws button.modal-save {
+      background-color: #ed1c24; }
+    body.simulator-styles .simulator.simulator_powerball #ball_drops .drawn_number {
+      background: white;
+      color: #c61017;
+      border: 2px solid white; }
+      body.simulator-styles .simulator.simulator_powerball #ball_drops .drawn_number.drawn_extra_number {
+        background: #ed1c24;
+        color: white; }
+        body.simulator-styles .simulator.simulator_powerball #ball_drops .drawn_number.drawn_extra_number:after {
+          content: "POWERBALL";
+          color: #f14b52; }
+      body.simulator-styles .simulator.simulator_powerball #ball_drops .drawn_number.drawn_number_multiplier:after {
+        content: "POWER PLAY";
+        color: #f14b52; }
+  body.simulator-styles .modal.modal_powerball .modal_header {
+    background-color: #c61017; }
+  body.simulator-styles .simulator.simulator_megamillions {
+    /* Colors */ }
+    body.simulator-styles .simulator.simulator_megamillions .number_matrix,
+    body.simulator-styles .simulator.simulator_megamillions .extra_number_matrix {
+      display: block;
+      margin: 0;
+      padding: 6px; }
+      body.simulator-styles .simulator.simulator_megamillions .number_matrix .number_matrix_label,
+      body.simulator-styles .simulator.simulator_megamillions .extra_number_matrix .number_matrix_label {
+        display: flex;
+        align-items: center;
+        min-height: 44px;
+        max-height: 44px;
+        color: #EA3F11;
+        white-space: nowrap; }
+        body.simulator-styles .simulator.simulator_megamillions .number_matrix .number_matrix_label strong, body.simulator-styles .simulator.simulator_megamillions .number_matrix .number_matrix_label span,
+        body.simulator-styles .simulator.simulator_megamillions .extra_number_matrix .number_matrix_label strong,
+        body.simulator-styles .simulator.simulator_megamillions .extra_number_matrix .number_matrix_label span {
+          padding: 0 12px; }
+        body.simulator-styles .simulator.simulator_megamillions .number_matrix .number_matrix_label strong,
+        body.simulator-styles .simulator.simulator_megamillions .extra_number_matrix .number_matrix_label strong {
+          background: #EA3F11;
+          color: white;
+          width: 100%;
+          text-align: center; }
+        body.simulator-styles .simulator.simulator_megamillions .number_matrix .number_matrix_label small,
+        body.simulator-styles .simulator.simulator_megamillions .extra_number_matrix .number_matrix_label small {
+          display: inline; }
+    body.simulator-styles .simulator.simulator_megamillions .number_matrix_wrapper {
+      max-width: 910px; }
+    body.simulator-styles .simulator.simulator_megamillions .number_matrix {
+      background: rgba(234, 63, 17, 0.15); }
+      body.simulator-styles .simulator.simulator_megamillions .number_matrix .number_matrix_label {
+        min-width: 262px;
+        max-width: 318px;
+        justify-content: space-between; }
+    body.simulator-styles .simulator.simulator_megamillions .extra_number_matrix .number_matrix_label {
+      min-width: 206px;
+      max-width: 206px;
+      justify-content: flex-start; }
+    body.simulator-styles .simulator.simulator_megamillions .field_qp,
+    body.simulator-styles .simulator.simulator_megamillions .field_extra_qp {
+      cursor: pointer;
+      box-sizing: border-box;
+      display: inline-block;
+      border: 1px solid #EA3F11;
+      background: white;
+      color: #EA3F11;
+      font-size: 24px;
+      width: 44px;
+      height: 44px;
+      text-align: center;
+      line-height: 44px;
+      position: relative;
+      padding: 0;
+      border: 0;
+      min-height: 0;
+      min-width: 44px;
+      min-height: 44px;
+      order: 0;
+      margin-left: 12px;
+      background: transparent; }
+      body.simulator-styles .simulator.simulator_megamillions .field_qp span,
+      body.simulator-styles .simulator.simulator_megamillions .field_extra_qp span {
+        color: white;
+        position: absolute;
+        top: 48px;
+        left: 50%;
+        transform: translateX(-50%); }
+      body.simulator-styles .simulator.simulator_megamillions .field_qp label,
+      body.simulator-styles .simulator.simulator_megamillions .field_extra_qp label {
+        background: white; }
+      body.simulator-styles .simulator.simulator_megamillions .field_qp span,
+      body.simulator-styles .simulator.simulator_megamillions .field_extra_qp span {
+        position: static;
+        color: #EA3F11; }
+      body.simulator-styles .simulator.simulator_megamillions .field_qp input:checked ~ label span,
+      body.simulator-styles .simulator.simulator_megamillions .field_extra_qp input:checked ~ label span {
+        color: white; }
+      body.simulator-styles .simulator.simulator_megamillions .field_qp + .field_number,
+      body.simulator-styles .simulator.simulator_megamillions .field_qp + .field_extra_number,
+      body.simulator-styles .simulator.simulator_megamillions .field_extra_qp + .field_number,
+      body.simulator-styles .simulator.simulator_megamillions .field_extra_qp + .field_extra_number {
+        clear: left; }
+    body.simulator-styles .simulator.simulator_megamillions .playslip > .field_group:first-of-type {
+      background: #EA3F11; }
+    body.simulator-styles .simulator.simulator_megamillions .field_advance {
+      border: 0;
+      min-width: 56px;
+      width: 56px;
+      background: #EA3F11;
+      margin: 0; }
+      body.simulator-styles .simulator.simulator_megamillions .field_advance label span {
+        color: white; }
+    body.simulator-styles .simulator.simulator_megamillions .drawing.ball_drop_wrapper {
+      padding-bottom: 3rem; }
+    @media (min-width: 641px) {
+      body.simulator-styles .simulator.simulator_megamillions #ball_drops {
+        min-width: 422px; } }
+    body.simulator-styles .simulator.simulator_megamillions .flash_container {
+      animation: container_megamillions 0.5s ease 0s 1 forwards; }
+    body.simulator-styles .simulator.simulator_megamillions .steps .step_marker.active {
+      background: #dba81b; }
+    body.simulator-styles .simulator.simulator_megamillions .ticket .ticket_numbers .ticket_number.match {
+      border-color: #e8bb41; }
+    body.simulator-styles .simulator.simulator_megamillions .price, body.simulator-styles .simulator.simulator_megamillions .draws, body.simulator-styles .simulator.simulator_megamillions .prize {
+      border: 0;
+      background: #c49718;
+      color: white; }
+    body.simulator-styles .simulator.simulator_megamillions #prize_amount, body.simulator-styles .simulator.simulator_megamillions #plus_prize_amount, body.simulator-styles .simulator.simulator_megamillions #ticket_draws {
+      color: #c49718; }
+    body.simulator-styles .simulator.simulator_megamillions .field_advance_draws span.input button.advance-minus,
+    body.simulator-styles .simulator.simulator_megamillions .field_advance_draws span.input button.advance-plus {
+      color: #dba81b; }
+    body.simulator-styles .simulator.simulator_megamillions .field_advance_draws button.modal-save {
+      background-color: #dba81b; }
+    body.simulator-styles .simulator.simulator_megamillions #ball_drops .drawn_number {
+      background: white;
+      color: #977413;
+      border: 2px solid white; }
+      body.simulator-styles .simulator.simulator_megamillions #ball_drops .drawn_number.drawn_extra_number {
+        background: #dba81b;
+        color: white; }
+        body.simulator-styles .simulator.simulator_megamillions #ball_drops .drawn_number.drawn_extra_number:after {
+          content: "MEGA BALL";
+          color: #e8bb41; }
+      body.simulator-styles .simulator.simulator_megamillions #ball_drops .drawn_number.drawn_number_multiplier:after {
+        content: "MEGAPLIER";
+        color: #e8bb41; }
+  body.simulator-styles .modal.modal_megamillions .modal_header {
+    background-color: #c49718; }
+  body.simulator-styles .simulator.simulator_luckyforlife {
+    /* Colors */ }
+    @media (max-width: 1200px) {
+      body.simulator-styles .simulator.simulator_luckyforlife .simulator_header .price {
+        flex: 1 1 calc(30% - 12px); } }
+    body.simulator-styles .simulator.simulator_luckyforlife .number_matrix,
+    body.simulator-styles .simulator.simulator_luckyforlife .extra_number_matrix {
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      margin: 0; }
+      body.simulator-styles .simulator.simulator_luckyforlife .number_matrix .number_matrix_sidebar,
+      body.simulator-styles .simulator.simulator_luckyforlife .extra_number_matrix .number_matrix_sidebar {
+        box-sizing: border-box;
+        line-height: 1;
+        width: 44px;
+        position: absolute;
+        left: -6px;
+        top: -6px;
+        height: 100%;
+        background: #EA3F11;
+        color: white;
+        text-align: center; }
+        body.simulator-styles .simulator.simulator_luckyforlife .number_matrix .number_matrix_sidebar span,
+        body.simulator-styles .simulator.simulator_luckyforlife .extra_number_matrix .number_matrix_sidebar span {
+          font-size: 18px;
+          line-height: 1;
+          font-family: pragmatica, sans-serif;
+          font-weight: 700;
+          font-style: normal;
+          font-size: 16px; }
+    body.simulator-styles .simulator.simulator_luckyforlife .number_matrix_wrapper {
+      max-width: 910px; }
+    body.simulator-styles .simulator.simulator_luckyforlife .number_matrix {
+      padding: 36px 12px 12px 56px; }
+      body.simulator-styles .simulator.simulator_luckyforlife .number_matrix .number_matrix_sidebar {
+        padding-top: 44px; }
+      body.simulator-styles .simulator.simulator_luckyforlife .number_matrix .number_matrix_label {
+        box-sizing: border-box;
+        margin: 0 0 12px 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #EA3F11;
+        color: white;
+        text-align: center; }
+    body.simulator-styles .simulator.simulator_luckyforlife .extra_number_matrix {
+      padding: 12px 12px 12px 56px;
+      background: rgba(234, 63, 17, 0.15);
+      min-height: 130px; }
+      body.simulator-styles .simulator.simulator_luckyforlife .extra_number_matrix .number_matrix_sidebar {
+        padding-top: 24px;
+        min-height: 130px; }
+      body.simulator-styles .simulator.simulator_luckyforlife .extra_number_matrix .number_matrix_label {
+        display: flex;
+        align-items: center;
+        min-height: 44px;
+        max-height: 44px;
+        min-width: 100px;
+        max-width: 100px;
+        color: #EA3F11;
+        white-space: nowrap; }
+        body.simulator-styles .simulator.simulator_luckyforlife .extra_number_matrix .number_matrix_label strong, body.simulator-styles .simulator.simulator_luckyforlife .extra_number_matrix .number_matrix_label span {
+          padding: 0 12px; }
+        body.simulator-styles .simulator.simulator_luckyforlife .extra_number_matrix .number_matrix_label small {
+          display: inline; }
+    body.simulator-styles .simulator.simulator_luckyforlife .field_qp,
+    body.simulator-styles .simulator.simulator_luckyforlife .field_extra_qp {
+      cursor: pointer;
+      box-sizing: border-box;
+      display: inline-block;
+      border: 1px solid #EA3F11;
+      background: white;
+      color: #EA3F11;
+      font-size: 24px;
+      width: 44px;
+      height: 44px;
+      text-align: center;
+      line-height: 44px;
+      position: relative;
+      padding: 0;
+      border: 0;
+      min-height: 0;
+      min-width: 44px;
+      min-height: 44px;
+      order: 999;
+      background: transparent; }
+      body.simulator-styles .simulator.simulator_luckyforlife .field_qp span,
+      body.simulator-styles .simulator.simulator_luckyforlife .field_extra_qp span {
+        color: white;
+        position: absolute;
+        top: 48px;
+        left: 50%;
+        transform: translateX(-50%); }
+      body.simulator-styles .simulator.simulator_luckyforlife .field_qp label,
+      body.simulator-styles .simulator.simulator_luckyforlife .field_extra_qp label {
+        background: white; }
+      body.simulator-styles .simulator.simulator_luckyforlife .field_qp span,
+      body.simulator-styles .simulator.simulator_luckyforlife .field_extra_qp span {
+        position: static;
+        color: #EA3F11; }
+      body.simulator-styles .simulator.simulator_luckyforlife .field_qp input:checked ~ label span,
+      body.simulator-styles .simulator.simulator_luckyforlife .field_extra_qp input:checked ~ label span {
+        color: white; }
+    body.simulator-styles .simulator.simulator_luckyforlife .field_advance {
+      border: 0;
+      min-width: 56px;
+      width: 56px;
+      background: #EA3F11;
+      margin: 12px 12px 12px 0; }
+      body.simulator-styles .simulator.simulator_luckyforlife .field_advance label span {
+        color: white; }
+    body.simulator-styles .simulator.simulator_luckyforlife .drawing.ball_drop_wrapper {
+      padding-bottom: 3rem; }
+    body.simulator-styles .simulator.simulator_luckyforlife .flash_container {
+      animation: container_luckyforlife 0.5s ease 0s 1 forwards; }
+    body.simulator-styles .simulator.simulator_luckyforlife .steps .step_marker.active {
+      background: #e98024; }
+    body.simulator-styles .simulator.simulator_luckyforlife .ticket .ticket_numbers .ticket_number.match {
+      border-color: #ee9b52; }
+    body.simulator-styles .simulator.simulator_luckyforlife .price, body.simulator-styles .simulator.simulator_luckyforlife .draws, body.simulator-styles .simulator.simulator_luckyforlife .prize {
+      border: 0;
+      background: #dd7316;
+      color: white; }
+    body.simulator-styles .simulator.simulator_luckyforlife #prize_amount, body.simulator-styles .simulator.simulator_luckyforlife #plus_prize_amount, body.simulator-styles .simulator.simulator_luckyforlife #ticket_draws {
+      color: #dd7316; }
+    body.simulator-styles .simulator.simulator_luckyforlife .field_advance_draws span.input button.advance-minus,
+    body.simulator-styles .simulator.simulator_luckyforlife .field_advance_draws span.input button.advance-plus {
+      color: #e98024; }
+    body.simulator-styles .simulator.simulator_luckyforlife .field_advance_draws button.modal-save {
+      background-color: #e98024; }
+    body.simulator-styles .simulator.simulator_luckyforlife #ball_drops .drawn_number {
+      background: white;
+      color: #af5b12;
+      border: 2px solid white; }
+      body.simulator-styles .simulator.simulator_luckyforlife #ball_drops .drawn_number.drawn_extra_number {
+        background: #e98024;
+        color: white; }
+        body.simulator-styles .simulator.simulator_luckyforlife #ball_drops .drawn_number.drawn_extra_number:after {
+          content: "LUCKY BALL";
+          color: #eb8d3b; }
+  body.simulator-styles .modal.modal_luckyforlife .modal_header {
+    background-color: #dd7316; }
+  body.simulator-styles .simulator.simulator_lotto {
+    /* Colors */ }
+    body.simulator-styles .simulator.simulator_lotto .playslip {
+      flex-direction: column; }
+    @media (max-width: 799px) {
+      body.simulator-styles .simulator.simulator_lotto .field_group.field_group_horizontal {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between; } }
+    body.simulator-styles .simulator.simulator_lotto .field_advance {
+      align-self: flex-start; }
+    body.simulator-styles .simulator.simulator_lotto .field_plus {
+      cursor: pointer;
+      box-sizing: border-box;
+      display: inline-block;
+      border: 1px solid #EA3F11;
+      background: white;
+      color: #EA3F11;
+      font-size: 24px;
+      width: 44px;
+      height: 44px;
+      text-align: center;
+      line-height: 44px;
+      position: relative;
+      background: transparent;
+      border: 1px solid #EA3F11;
+      overflow: visible;
+      min-height: 0;
+      height: auto;
+      margin: 0 0 12px 0;
+      padding: 0 12px;
+      line-height: 1.2;
+      padding: 12px;
+      align-items: center;
+      display: flex;
+      justify-content: flex-start; }
+      body.simulator-styles .simulator.simulator_lotto .field_plus span {
+        color: white;
+        position: absolute;
+        top: 48px;
+        left: 50%;
+        transform: translateX(-50%); }
+      @media (max-width: 799px) {
+        body.simulator-styles .simulator.simulator_lotto .field_plus {
+          width: 100%;
+          max-width: 100%; } }
+      body.simulator-styles .simulator.simulator_lotto .field_plus label {
+        border-radius: 50%; }
+      body.simulator-styles .simulator.simulator_lotto .field_plus span {
+        top: 50%;
+        left: 100%;
+        transform: translate(6px, -50%);
+        writing-mode: unset;
+        text-orientation: unset;
+        color: #EA3F11;
+        line-height: 1.2;
+        white-space: nowrap;
+        text-align: left;
+        letter-spacing: 0; }
+      body.simulator-styles .simulator.simulator_lotto .field_plus small {
+        display: block;
+        font-weight: normal;
+        font-size: 90%;
+        line-height: 1.2; }
+    body.simulator-styles .simulator.simulator_lotto .field_qp {
+      background: #EA3F11;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding-top: 310px;
+      min-height: 312px;
+      min-width: 57px;
+      width: 57px; }
+      body.simulator-styles .simulator.simulator_lotto .field_qp .field_qp_sidebar {
+        text-align: center;
+        padding-top: 12px; }
+        body.simulator-styles .simulator.simulator_lotto .field_qp .field_qp_sidebar span {
+          font-size: 18px;
+          line-height: 1;
+          font-family: pragmatica, sans-serif;
+          font-weight: 700;
+          font-style: normal;
+          color: white; }
+      body.simulator-styles .simulator.simulator_lotto .field_qp label span {
+        font-size: 18px;
+        line-height: 1;
+        font-family: pragmatica, sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        color: white;
+        top: -154px;
+        white-space: nowrap;
+        transform: translate(-50%, -50%); }
+    body.simulator-styles .simulator.simulator_lotto .number_matrix_wrapper {
+      max-width: 462px; }
+    body.simulator-styles .simulator.simulator_lotto .number_matrix {
+      margin: -6px 0 auto 12px;
+      position: relative;
+      display: flex;
+      flex-wrap: wrap; }
+      body.simulator-styles .simulator.simulator_lotto .number_matrix .number_matrix_label {
+        max-height: 24px;
+        box-sizing: border-box;
+        margin: 6px;
+        order: 999;
+        width: 100%;
+        background: #EA3F11;
+        color: white;
+        text-align: center; }
+    body.simulator-styles .simulator.simulator_lotto .ticket_multiplier {
+      color: #666;
+      margin: 18px auto; }
+    body.simulator-styles .simulator.simulator_lotto .flash_container {
+      animation: container_lotto 0.5s ease 0s 1 forwards; }
+    body.simulator-styles .simulator.simulator_lotto .steps .step_marker.active {
+      background: #00c0f3; }
+    body.simulator-styles .simulator.simulator_lotto .ticket .ticket_numbers .ticket_number.match {
+      border-color: #27d2ff; }
+    body.simulator-styles .simulator.simulator_lotto .price, body.simulator-styles .simulator.simulator_lotto .draws, body.simulator-styles .simulator.simulator_lotto .prize {
+      border: 0;
+      background: #0098c0;
+      color: white; }
+    body.simulator-styles .simulator.simulator_lotto #prize_amount, body.simulator-styles .simulator.simulator_lotto #plus_prize_amount, body.simulator-styles .simulator.simulator_lotto #ticket_draws {
+      color: #0098c0; }
+    body.simulator-styles .simulator.simulator_lotto .field_advance_draws span.input button.advance-minus,
+    body.simulator-styles .simulator.simulator_lotto .field_advance_draws span.input button.advance-plus {
+      color: #00c0f3; }
+    body.simulator-styles .simulator.simulator_lotto .field_advance_draws button.modal-save {
+      background-color: #00c0f3; }
+    body.simulator-styles .simulator.simulator_lotto #ball_drops .drawn_number {
+      background: white;
+      color: #0084a7;
+      border: 2px solid white; }
+  body.simulator-styles .modal.modal_lotto .modal_header {
+    background-color: #0098c0; }
+  body.simulator-styles .simulator.simulator_cash5 {
+    /* Colors */ }
+    body.simulator-styles .simulator.simulator_cash5 .field_qp {
+      background: #EA3F11;
+      display: flex;
+      flex-direction: column;
+      align-self: stretch;
+      justify-content: flex-start;
+      padding-top: 310px;
+      min-height: 320px; }
+      body.simulator-styles .simulator.simulator_cash5 .field_qp .field_qp_sidebar {
+        text-align: center;
+        padding-top: 12px; }
+        body.simulator-styles .simulator.simulator_cash5 .field_qp .field_qp_sidebar span {
+          font-size: 18px;
+          line-height: 1;
+          font-family: pragmatica, sans-serif;
+          font-weight: 700;
+          font-style: normal;
+          color: white; }
+      body.simulator-styles .simulator.simulator_cash5 .field_qp label span {
+        font-size: 18px;
+        line-height: 1;
+        font-family: pragmatica, sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        color: white;
+        top: -154px;
+        white-space: nowrap;
+        transform: translate(-50%, -50%); }
+    body.simulator-styles .simulator.simulator_cash5 .number_matrix_wrapper {
+      max-width: 416px;
+      align-items: flex-start;
+      border: 1px solid #EA3F11; }
+    body.simulator-styles .simulator.simulator_cash5 .number_matrix {
+      margin: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start; }
+    body.simulator-styles .simulator.simulator_cash5 .field_advance {
+      border-right: 0; }
+    body.simulator-styles .simulator.simulator_cash5 .field_plus {
+      cursor: pointer;
+      box-sizing: border-box;
+      display: inline-block;
+      border: 1px solid #EA3F11;
+      background: white;
+      color: #EA3F11;
+      font-size: 24px;
+      width: 44px;
+      height: 44px;
+      text-align: center;
+      line-height: 44px;
+      position: relative;
+      flex: 0 0 212px;
+      padding: 0;
+      border: 0;
+      min-height: 0;
+      min-width: 180px;
+      min-height: 44px;
+      order: 999;
+      margin-left: 6px;
+      background: #EA3F11;
+      border-radius: 6px 0 0 6px; }
+      body.simulator-styles .simulator.simulator_cash5 .field_plus span {
+        color: white;
+        position: absolute;
+        top: 48px;
+        left: 50%;
+        transform: translateX(-50%); }
+      @media (max-width: 640px) {
+        body.simulator-styles .simulator.simulator_cash5 .field_plus {
+          min-width: 156px;
+          flex: 0 0 156px; } }
+      body.simulator-styles .simulator.simulator_cash5 .field_plus label {
+        float: right; }
+        body.simulator-styles .simulator.simulator_cash5 .field_plus label span {
+          font-style: italic;
+          color: white;
+          writing-mode: unset;
+          text-orientation: unset;
+          letter-spacing: 0;
+          top: 50%;
+          left: auto;
+          right: calc(100% + 36px);
+          transform: translateY(-50%); }
+          @media (max-width: 640px) {
+            body.simulator-styles .simulator.simulator_cash5 .field_plus label span {
+              font-size: 16px;
+              right: calc(100% + 18px); } }
+      body.simulator-styles .simulator.simulator_cash5 .field_plus input:checked ~ label span {
+        color: white; }
+    body.simulator-styles .simulator.simulator_cash5 #ball_drops,
+    body.simulator-styles .simulator.simulator_cash5 #ball_drops_plus {
+      min-width: 288px; }
+    body.simulator-styles .simulator.simulator_cash5 .ticket_plus_wrapper {
+      display: inline-block;
+      margin-bottom: 2rem;
+      position: relative; }
+      body.simulator-styles .simulator.simulator_cash5 .ticket_plus_wrapper span.tooltip {
+        top: -3px; }
+    body.simulator-styles .simulator.simulator_cash5 .drawing.ball_drop_wrapper {
+      padding-bottom: 3rem; }
+    body.simulator-styles .simulator.simulator_cash5 .flash_container {
+      animation: container_cash5 0.5s ease 0s 1 forwards; }
+    body.simulator-styles .simulator.simulator_cash5 .steps .step_marker.active {
+      background: #8bb331; }
+    body.simulator-styles .simulator.simulator_cash5 .ticket .ticket_numbers .ticket_number.match {
+      border-color: #a5cd4a; }
+    body.simulator-styles .simulator.simulator_cash5 .price, body.simulator-styles .simulator.simulator_cash5 .draws, body.simulator-styles .simulator.simulator_cash5 .prize {
+      border: 0;
+      background: #6c8b26;
+      color: white; }
+    body.simulator-styles .simulator.simulator_cash5 #prize_amount, body.simulator-styles .simulator.simulator_cash5 #plus_prize_amount, body.simulator-styles .simulator.simulator_cash5 #ticket_draws {
+      color: #6c8b26; }
+    body.simulator-styles .simulator.simulator_cash5 .field_advance_draws span.input button.advance-minus,
+    body.simulator-styles .simulator.simulator_cash5 .field_advance_draws span.input button.advance-plus {
+      color: #8bb331; }
+    body.simulator-styles .simulator.simulator_cash5 .field_advance_draws button.modal-save {
+      background-color: #8bb331; }
+    body.simulator-styles .simulator.simulator_cash5 #ball_drops .drawn_number {
+      background: white;
+      color: #5c7721;
+      border: 2px solid white; }
+  body.simulator-styles .modal.modal_cash5 .modal_header {
+    background-color: #6c8b26; }
+  body.simulator-styles .simulator.simulator_pick3 {
+    /* Colors */ }
+    body.simulator-styles .simulator.simulator_pick3 .field:not(.field_advance):not(.field_advance_draws) {
+      position: relative; }
+    body.simulator-styles .simulator.simulator_pick3 .field_advance {
+      border: 1px solid #EA3F11;
+      background: rgba(234, 63, 17, 0.15);
+      color: #EA3F11;
+      width: auto;
+      min-width: 0;
+      min-height: 106px;
+      padding: 12px 6px;
+      margin-top: 0; }
+      body.simulator-styles .simulator.simulator_pick3 .field_advance label span {
+        font-family: pragmatica-condensed, "FSEmericWeb", sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+        letter-spacing: 0;
+        writing-mode: unset;
+        text-orientation: unset; }
+    body.simulator-styles .simulator.simulator_pick3 .field_group.field_group_board {
+      border-right: 1px solid #EA3F11; }
+    body.simulator-styles .simulator.simulator_pick3 .field_group.field_group_advance_time {
+      margin-right: 12px;
+      min-width: 80px; }
+    body.simulator-styles .simulator.simulator_pick3 .field_group.field_group_horizontal {
+      align-items: stretch; }
+    body.simulator-styles .simulator.simulator_pick3 .field_group.field_group_type_amount {
+      align-content: flex-start;
+      align-items: flex-start;
+      border-right: 1px solid #EA3F11;
+      margin-right: 6px; }
+    body.simulator-styles .simulator.simulator_pick3 .field_group.field_group_draw_time {
+      border: 1px solid #EA3F11;
+      background: rgba(234, 63, 17, 0.15);
+      color: #EA3F11;
+      padding-top: 12px; }
+    body.simulator-styles .simulator.simulator_pick3 .field.field_label {
+      line-height: 20px;
+      margin-bottom: 12px; }
+    body.simulator-styles .simulator.simulator_pick3 .field_draw_time {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 12px auto 48px auto; }
+      body.simulator-styles .simulator.simulator_pick3 .field_draw_time label {
+        cursor: pointer;
+        box-sizing: border-box;
+        display: inline-block;
+        border: 1px solid #EA3F11;
+        background: white;
+        color: #EA3F11;
+        font-size: 24px;
+        width: 44px;
+        height: 44px;
+        text-align: center;
+        line-height: 44px;
+        position: relative;
+        text-align: left; }
+        body.simulator-styles .simulator.simulator_pick3 .field_draw_time label span {
+          color: white;
+          position: absolute;
+          top: 48px;
+          left: 50%;
+          transform: translateX(-50%); }
+        body.simulator-styles .simulator.simulator_pick3 .field_draw_time label span {
+          color: #EA3F11;
+          font-family: pragmatica-condensed, "FSEmericWeb", sans-serif;
+          font-weight: bold;
+          font-size: 16px;
+          letter-spacing: 0;
+          writing-mode: unset;
+          text-orientation: unset;
+          width: auto;
+          height: auto;
+          line-height: 16px;
+          position: absolute;
+          top: calc(100% + 12px);
+          left: 50%;
+          transform: translate(-50%, 0%); }
+      body.simulator-styles .simulator.simulator_pick3 .field_draw_time input {
+        position: absolute;
+        left: -999rem; }
+        body.simulator-styles .simulator.simulator_pick3 .field_draw_time input:checked ~ label {
+          background: black;
+          color: white;
+          box-shadow: inset white 0px 0px 0px 2px; }
+        body.simulator-styles .simulator.simulator_pick3 .field_draw_time input:disabled ~ label {
+          cursor: not-allowed;
+          opacity: 0.2;
+          background: white;
+          color: black;
+          border-color: black; }
+    body.simulator-styles .simulator.simulator_pick3 .field_bet_type,
+    body.simulator-styles .simulator.simulator_pick3 .field_bet_amount {
+      padding-right: 12px;
+      display: flex;
+      flex-direction: row-reverse;
+      min-width: 130px;
+      max-width: 130px;
+      margin-bottom: 6px; }
+      body.simulator-styles .simulator.simulator_pick3 .field_bet_type span.tooltip,
+      body.simulator-styles .simulator.simulator_pick3 .field_bet_amount span.tooltip {
+        right: auto;
+        left: 46px;
+        top: 50%;
+        transform: translateY(-50%); }
+        body.simulator-styles .simulator.simulator_pick3 .field_bet_type span.tooltip span.tooltip_content,
+        body.simulator-styles .simulator.simulator_pick3 .field_bet_amount span.tooltip span.tooltip_content {
+          min-width: 220px;
+          max-width: 300px; }
+          body.simulator-styles .simulator.simulator_pick3 .field_bet_type span.tooltip span.tooltip_content img,
+          body.simulator-styles .simulator.simulator_pick3 .field_bet_amount span.tooltip span.tooltip_content img {
+            display: block;
+            margin: 0 auto 8px auto;
+            max-height: 44px; }
+      body.simulator-styles .simulator.simulator_pick3 .field_bet_type label,
+      body.simulator-styles .simulator.simulator_pick3 .field_bet_amount label {
+        cursor: pointer;
+        box-sizing: border-box;
+        display: inline-block;
+        border: 1px solid #EA3F11;
+        background: white;
+        color: #EA3F11;
+        font-size: 24px;
+        width: 44px;
+        height: 44px;
+        text-align: center;
+        line-height: 44px;
+        position: relative;
+        text-align: left; }
+        body.simulator-styles .simulator.simulator_pick3 .field_bet_type label span,
+        body.simulator-styles .simulator.simulator_pick3 .field_bet_amount label span {
+          color: white;
+          position: absolute;
+          top: 48px;
+          left: 50%;
+          transform: translateX(-50%); }
+        body.simulator-styles .simulator.simulator_pick3 .field_bet_type label span,
+        body.simulator-styles .simulator.simulator_pick3 .field_bet_amount label span {
+          color: #EA3F11;
+          font-family: pragmatica-condensed, "FSEmericWeb", sans-serif;
+          font-weight: bold;
+          font-size: 16px;
+          letter-spacing: 0;
+          writing-mode: unset;
+          text-orientation: unset;
+          width: auto;
+          max-width: 50px;
+          height: auto;
+          line-height: 16px;
+          position: absolute;
+          top: 50%;
+          left: -86px;
+          transform: translate(0%, -50%); }
+      body.simulator-styles .simulator.simulator_pick3 .field_bet_type input,
+      body.simulator-styles .simulator.simulator_pick3 .field_bet_amount input {
+        position: absolute;
+        left: -999rem; }
+        body.simulator-styles .simulator.simulator_pick3 .field_bet_type input:checked ~ label,
+        body.simulator-styles .simulator.simulator_pick3 .field_bet_amount input:checked ~ label {
+          background: black;
+          color: white;
+          box-shadow: inset white 0px 0px 0px 2px; }
+        body.simulator-styles .simulator.simulator_pick3 .field_bet_type input:disabled ~ label,
+        body.simulator-styles .simulator.simulator_pick3 .field_bet_amount input:disabled ~ label {
+          cursor: not-allowed;
+          opacity: 0.2;
+          background: white;
+          color: black;
+          border-color: black; }
+    body.simulator-styles .simulator.simulator_pick3 .field_qp {
+      cursor: pointer;
+      box-sizing: border-box;
+      display: inline-block;
+      border: 1px solid #EA3F11;
+      background: white;
+      color: #EA3F11;
+      font-size: 24px;
+      width: 44px;
+      height: 44px;
+      text-align: center;
+      line-height: 44px;
+      position: relative;
+      padding: 0;
+      border: 0;
+      min-height: 0;
+      min-width: 44px;
+      min-height: 44px;
+      order: 999;
+      margin-left: 6px;
+      background: transparent; }
+      body.simulator-styles .simulator.simulator_pick3 .field_qp span {
+        color: white;
+        position: absolute;
+        top: 48px;
+        left: 50%;
+        transform: translateX(-50%); }
+      body.simulator-styles .simulator.simulator_pick3 .field_qp label {
+        background: white; }
+      body.simulator-styles .simulator.simulator_pick3 .field_qp span {
+        position: static;
+        color: #EA3F11; }
+      body.simulator-styles .simulator.simulator_pick3 .field_qp input:checked ~ label span {
+        color: white; }
+    body.simulator-styles .simulator.simulator_pick3 .number_matrix_wrapper {
+      align-items: flex-start;
+      padding-right: 6px; }
+    body.simulator-styles .simulator.simulator_pick3 .number_matrix {
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column; }
+    body.simulator-styles .simulator.simulator_pick3 .number_matrix > div {
+      margin: 0 6px 12px 6px; }
+    body.simulator-styles .simulator.simulator_pick3 .number_matrix_label {
+      color: white;
+      background: #EA3F11;
+      margin-bottom: 12px;
+      width: 100%; }
+    body.simulator-styles .simulator.simulator_pick3 .field_bet_type + .number_matrix_label {
+      margin-top: 24px; }
+    body.simulator-styles .simulator.simulator_pick3 #ball_drops {
+      min-width: 168px; }
+    body.simulator-styles .simulator.simulator_pick3 .drawing.ball_drop_wrapper {
+      padding-bottom: 3rem; }
+    body.simulator-styles .simulator.simulator_pick3 .flash_container {
+      animation: container_pick3 0.5s ease 0s 1 forwards; }
+    body.simulator-styles .simulator.simulator_pick3 .steps .step_marker.active {
+      background: #593283; }
+    body.simulator-styles .simulator.simulator_pick3 .ticket .ticket_numbers .ticket_number.match {
+      border-color: #7f48b9; }
+    body.simulator-styles .simulator.simulator_pick3 .price, body.simulator-styles .simulator.simulator_pick3 .draws, body.simulator-styles .simulator.simulator_pick3 .prize {
+      border: 0;
+      background: #7f48b9;
+      color: white; }
+    body.simulator-styles .simulator.simulator_pick3 #prize_amount, body.simulator-styles .simulator.simulator_pick3 #plus_prize_amount, body.simulator-styles .simulator.simulator_pick3 #ticket_draws {
+      color: #40245e; }
+    body.simulator-styles .simulator.simulator_pick3 .field_advance_draws span.input button.advance-minus,
+    body.simulator-styles .simulator.simulator_pick3 .field_advance_draws span.input button.advance-plus {
+      color: #593283; }
+    body.simulator-styles .simulator.simulator_pick3 .field_advance_draws button.modal-save {
+      background-color: #593283; }
+    body.simulator-styles .simulator.simulator_pick3 #ball_drops .drawn_number {
+      background: white;
+      color: #331d4c;
+      border: 2px solid white; }
+  body.simulator-styles .modal.modal_pick3 .modal_header {
+    background-color: #7f48b9; }
+
+/* Background Animations */
+@keyframes container_powerball {
+  0% {
+    background: #fcddde; }
+  100% {
+    background: #ed1c24; } }
+@keyframes container_megamillions {
+  0% {
+    background: #e2cb8c; }
+  100% {
+    background: #c49718; } }
+@keyframes container_luckyforlife {
+  0% {
+    background: #eeb98b; }
+  100% {
+    background: #dd7316; } }
+@keyframes container_lotto {
+  0% {
+    background: #80cce0; }
+  100% {
+    background: #0098c0; } }
+@keyframes container_cash5 {
+  0% {
+    background: #b6c593; }
+  100% {
+    background: #6c8b26; } }
+@keyframes container_pick3 {
+  0% {
+    background: #bfa4dc; }
+  100% {
+    background: #7f48b9; } }
+@keyframes balldrop {
+  0% {
+    top: -15px;
+    opacity: 0; }
+  30% {
+    opacity: 0; }
+  70% {
+    top: 6px;
+    opacity: 1; }
+  90%,100% {
+    top: 0px;
+    opacity: 1; } }
+@keyframes rollupA {
+  0% {
+    transform: translate(-50%, -50%);
+    opacity: 1; }
+  100% {
+    transform: translate(-50%, -100%);
+    opacity: 0; } }
+@keyframes rollupB {
+  0% {
+    transform: translate(-50%, 0%);
+    opacity: 0; }
+  100% {
+    transform: translate(-50%, -50%);
+    opacity: 1; } }
+
+/*# sourceMappingURL=htp-styles.css.map */

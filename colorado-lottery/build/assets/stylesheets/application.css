@@ -2416,6 +2416,20 @@ background: #d9e021;
 cursor: default;
 color: #000;
 }
+body.home>nav>a.item.home:hover,
+body.explore>nav>a.item.explore:hover,
+body.region>nav>a.item.projects:hover,
+body.virtual-reality>nav>a.item.virtual-reality:hover,
+body.projects>nav>a.item.projects:hover,
+body.faq>nav>a.item.faq:hover,
+body.home>nav>a.item.home:focus,
+body.explore>nav>a.item.explore:focus,
+body.region>nav>a.item.projects:focus,
+body.virtual-reality>nav>a.item.virtual-reality:focus,
+body.projects>nav>a.item.projects:focus,
+body.faq>nav>a.item.faq:focus {
+text-decoration: underline; /* For Accessibility (Keyboard Focus State) */
+}
 body>nav>a:active:before,
 body.home>nav>a.item.home:before,
 body.explore>nav>a.item.explore:before,
@@ -2847,6 +2861,10 @@ display: block
 	font-family: FSEmeric-Bold;
 }
 
+.carousel-cards .slick-slide {
+   margin: 25px;
+}
+
 .project-card {
 	border-radius: 4px;
 	overflow: hidden;
@@ -2854,12 +2872,23 @@ display: block
 	box-shadow: rgba(0,0,0,0.2) 0px 0px 16px;
 	max-width: 300px;
 	min-width: 300px;
-	margin: 0 25px 50px 25px;
+	margin: 0;
 	text-decoration: none;
+}
+
+.project-card .project-card-body .notification {
+  position: absolute;
+  font-family: FSEmeric-Bold, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  z-index: 10;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%,-50%);
 }
 
 .featured-projects .project-card {
 	flex: 1;
+  margin: 25px;
 }
 
 a.project-card,
@@ -2882,6 +2911,7 @@ a.project-card .project-card-image {
 	padding: 20px 30px;
 	color: black;
 	text-align: center;
+  position: relative;
 }
 
 .project-card .project-card-body .project-feature {
@@ -3126,19 +3156,17 @@ section.featured-project-carousel > .h2 {
 	max-width: none;
 }
 
-section.featured-project-carousel .carousel-cards .project-card {
-	opacity: 0.5;
+.carousel-cards .slick-slide {
+  opacity: 0.5;
 }
 
-section.featured-project-carousel .carousel-cards .project-card:hover,
-section.featured-project-carousel .carousel-cards .project-card:focus {
-	opacity: 0.75;
+.carousel-cards .slick-slide:hover,
+.carousel-cards .slick-slide:focus {
+  opacity: 0.75;
 }
 
-section.featured-project-carousel .carousel-cards .project-card:active,
-section.featured-project-carousel .carousel-cards .project-card:focus,
-section.featured-project-carousel .carousel-cards .project-card.slick-current {
-	opacity: 1;
+.carousel-cards .slick-slide.slick-current {
+  opacity: 1;
 	outline: 0 !important;
 }
 

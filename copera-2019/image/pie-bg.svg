@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="216px" height="108px" viewBox="0 0 216 108" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>pie-bg</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M216,108 C216,48.353247 167.646753,0 108,0 C48.353247,0 5.1651467e-15,48.353247 0,108 C72.1266333,108 144.5,108 216,108 Z" id="path-1"></path>
+    </defs>
+    <g id="Wireframes-(v2)" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Funding" transform="translate(-329.000000, -2300.000000)">
+            <g id="pie-copy" transform="translate(329.000000, 2300.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="pie" fill="#F68024" xlink:href="#path-1"></use>
+                <polygon id="Path-3" fill="#85BD3B" mask="url(#mask-2)" points="109 -22 109 115 285 115 216 -16.9882813 145.1 -22"></polygon>
+                <polygon id="Path-3" fill="#1C89A5" mask="url(#mask-2)" points="21.7226563 -42 109 115 186.992188 -37.5"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

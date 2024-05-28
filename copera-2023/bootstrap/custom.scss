@@ -127,6 +127,11 @@ header.header-top {
   }
 }
 
+svg.hr {
+  display: block;
+  margin: 2rem auto;
+}
+
 
 /* Main Content */
 
@@ -139,13 +144,8 @@ header.header-top {
 
     div.text.text-wide {
       position: relative;
-      width: calc(100% + 400px);
-      left: -200px;
-
-      @media (max-width: 1200px) {
-        width: calc(100% + 200px);
-        left: -100px;
-      }
+      width: calc(100% + 200px);
+      left: -100px;
 
       @media (max-width: 1000px) {
         width: 100%;
@@ -157,10 +157,8 @@ header.header-top {
 
 /* Section Headers */
 .content-section-header {
-  display: flex;
-  justify-content: flex-start;
-  overflow: hidden;
   position: relative;
+  padding: 12rem 50% 12rem 4rem;
 
   @include bp(sm) {
     height: 300px;
@@ -168,223 +166,29 @@ header.header-top {
     overflow: visible;
   }
 
-  // Background photo for each header
-  &:before {
-    content: "";
-    background-size: cover;
-    background-repeat: repeat-x;
-    background-position: center;
+  h1 {
+    color: theme-color("blue");
+    font-size: 4rem;
+    line-height: 1;
+  }
+
+  h2 {
+    color: theme-color("blue");
+    line-height: 1.1;
+  }
+
+  .fg {
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 65%;
-    height: 100%;
-
-    @include bp(lg) {
-      width: 62.5%;
-    }
-
-    @include bp(md) {
-      width: 60;
-    }
-
-    @include bp(sm) {
-      height: 300px;
-      width: 100%;
-    }
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
-  &:after {
-    content: "";
-    background: linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.0));
+  .bg-faint {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    @include bp(sm) {
-      display: none;
-    }
-  }
-
-  div.arrow-header {
-    display: inline-block;
-    padding: 14rem 12rem 14rem 4rem;
-    position: relative;
-    width: auto;
-    min-width: 50vw;
-    max-width: 80vw;
-
-    @include bp(lg) {
-      padding: 12rem 8rem 12rem 4rem;
-    }
-
-    @include bp(md) {
-      padding: 10rem 6rem 10rem 3rem;
-    }
-
-    @include bp(sm) {
-      top: -300px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0;
-      max-width: 100%;
-      width: 100%;
-      overflow: hidden;
-      border-bottom: 8px solid white;
-    }
-
-    * {
-      position: relative;
-      z-index: 100;
-    }
-
-    h1 {
-      z-index: 200;
-      margin: 0;
-
-      @include bp(sm) {
-        text-align: center;
-      }
-    }
-
-    div.header-image-arrow {
-      position: absolute;
-      top: 0;
-      right: -40vw;
-      width: 100%;
-      height: 100%;
-      z-index: 20;
-
-      @include bp(lg) {
-        right: -36vw;
-      }
-
-      @include bp(md) {
-        right: -30vw;
-      }
-
-      @include bp(sm) {
-        right: 0;
-      }
-
-      + div.header-image-arrow {
-        right: -20vw;
-
-        @include bp(lg) {
-          right: -18vw;
-        }
-
-        @include bp(md) {
-          right: -15vw;
-        }
-      }
-
-      &:before, &:after {
-        content: "";
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        top: 0;
-        left: 0;
-        clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0% 0%);
-        @include bp(sm) {
-          clip-path: none;
-        }
-      }
-
-      &:before {
-        background-size: contain;
-        background-position: right center;
-        z-index: 15;
-      }
-
-      &:after {
-        left: 10px;
-        background: white;
-        z-index: 10;
-      }
-    }
-
-    &:before, &:after {
-      content: "";
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      top: 0;
-      left: 0;
-      clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 0% 0%);
-      @include bp(sm) {
-        clip-path: none;
-      }
-    }
-
-    &:before {
-      z-index: 80;
-    }
-
-    &:after {
-      left: 10px;
-      background: white;
-      z-index: 40;
-    }
-
-    .c {
-      position: absolute;
-      width: auto;
-      height: 100%;
-      top: 0;
-      right: 100%;
-      opacity: 0;
-      animation: 1s ease-out 0s infinite forwards slide-right;
-    }
-  }
-
-  &.arrow-header-right {
-    justify-content: flex-end;
-
-    &:after {
-      background: linear-gradient(to left, rgba(0,0,0,0.5), rgba(0,0,0,0.0));
-      left: auto;
-      right: 0;
-    }
-
-    &:before {
-      right: auto;
-      left: 0;
-    }
-
-    div.arrow-header {
-      padding-left: 16rem;
-      padding-right: 8rem;
-
-      @include bp(lg) {
-        padding-left: 8rem;
-        padding-right: 4rem;
-      }
-
-      @include bp(md) {
-        padding-left: 6rem;
-        padding-right: 4rem;
-      }
-
-      &:before, &:after {
-        clip-path: polygon(100% 0%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
-        left: auto;
-        right: 0;
-      }
-
-      &:after {
-        right: 10px;
-      }
-
-      .c {
-        left: 100%;
-        animation-name: slide-left;
-      }
-    }
+    right: -10rem;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 
@@ -449,23 +253,23 @@ $chevrons: 60;
 
 #message {
   div.content-section-header:before {
-    background-image: url("../../image/header-message-3-edit.jpg");
+    background-image: url("");
     background-size: contain;
     background-position: right center;
     @include bp(sm) {
-      background-image: url("../../image/header-message-combined.jpg");
+      background-image: url("");
       background-position: center;
       background-size: cover;
     }
   }
   div.header-image-arrow.image-message-1:before {
-    background-image: url("../../image/header-message-1-edit.jpg");
+    background-image: url("");
     @include bp(sm) {
       display: none;
     }
   }
   div.header-image-arrow.image-message-2:before {
-    background-image: url("../../image/header-message-2-edit.jpg");
+    background-image: url("");
     @include bp(sm) {
       display: none;
     }
@@ -478,7 +282,7 @@ $chevrons: 60;
 
 #review {
   div.content-section-header:before {
-    background-image: url("../../image/header-finance.jpg");
+    background-image: url("");
     @include bp(sm) {
       background-position: center 20%;
     }
@@ -491,7 +295,7 @@ $chevrons: 60;
 
 #investments {
   div.content-section-header:before {
-    background-image: url("../../image/header-investments.jpg");
+    background-image: url("");
     background-position: center 30%;
   }
   div.arrow-header {
@@ -502,7 +306,7 @@ $chevrons: 60;
 
 #funding {
   div.content-section-header:before {
-    background-image: url("../../image/header-funding-edit.jpg");
+    background-image: url("");
     background-position: center 50%;
   }
   div.arrow-header {
@@ -513,7 +317,7 @@ $chevrons: 60;
 
 #membership {
   div.content-section-header:before {
-    background-image: url("../../image/header-membership.jpg");
+    background-image: url("");
     background-position: center 30%;
   }
   div.arrow-header {
@@ -524,7 +328,7 @@ $chevrons: 60;
 
 #financials {
   div.content-section-header:before {
-    background-image: url("../../image/header-in-review.jpg");
+    background-image: url("");
     background-position: center 20%;
   }
   div.arrow-header {
@@ -535,7 +339,7 @@ $chevrons: 60;
 
 #impact {
   div.content-section-header:before {
-    background-image: url("../../image/header-impact.jpg");
+    background-image: url("");
     background-position: center 10%;
   }
   div.arrow-header {
@@ -546,7 +350,7 @@ $chevrons: 60;
 
 #resources {
   div.content-section-header:before {
-    background-image: url("../../image/header-additional-resources-edit.jpg");
+    background-image: url("");
     background-position: center 15%;
   }
   div.arrow-header {
@@ -811,7 +615,7 @@ $chevrons: 60;
 .grid-nav {
   text-transform: uppercase;
   text-align: center;
-  margin: 0 auto 80px auto;
+  margin: 0 auto;
 
   a {
     display: block;
@@ -1751,7 +1555,7 @@ img.headshot {
 }
 
 .hero-title {
-  min-height: 80vh;
+  min-height: 68vh;
   padding: 60px;
   display: flex;
   align-items: flex-end;

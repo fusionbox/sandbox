@@ -126,8 +126,15 @@
     <div class="main-content">
 
       <div class="content-section" id="top" data-section="top">
+
         <div class="hero-title">
           <h1>Evolve. <br>Innovate. <br>Invest.</h1>
+
+          <img class="hero bg-faint" src="image/bg-faint.svg" alt="" />
+          <img class="hero fg-dark" src="image/fg-dots-dark.svg" alt="" />
+          <img class="hero fg-circles" src="image/fg-circles.svg" alt="" />
+          <img class="hero fg-lines" src="image/fg-lines.svg" alt="" />
+          <img class="hero fg-light" src="image/fg-dots-light.svg" alt="" />
         </div>
       </div>
 
@@ -932,7 +939,8 @@
             <h1 class="fade-in">FINANCIALS</h1>
             <p>PERA receives contributions as a percentage of payroll from active employees and employers and invests the money in a diversified, low-cost portfolio. At retirement, members will receive a lifetime monthly benefit from PERA. The <em>financials at a glance</em> shows the inflows (contributions, investment income) and outflows (benefits paid, plan administration costs) during the year, and the net assets available to pay future benefit payments.</p>
             <img class="bg-faint" src="image/bg-faint.svg" alt="" />
-            <img class="fg" style="left:60%" src="image/fg-circles.svg" alt="" />
+            <img class="fg" style="left:60%" src="image/fg-dots-dark.svg" alt="" />
+            <img class="fg" style="left:70%" src="image/fg-lines.svg" alt="" />
           </div>
         </div>
 
@@ -1332,6 +1340,7 @@
 
       let mainNavLinks = Array.prototype.slice.call(document.querySelectorAll(".side-nav a"), 0);
       let dataSections = Array.prototype.slice.call(document.querySelectorAll("*[data-section]"), 0);
+      let foregroundGraphics = Array.prototype.slice.call(document.querySelectorAll(".fg"), 0);
 
       /* Smooth Scroll */
       mainNavLinks.forEach(function(link) {
@@ -1359,6 +1368,21 @@
               $(getRelatedNavigation($(element))).addClass('active');
               $('body').removeClass().addClass('section-' + $(element).attr('data-section'));
               //console.log('Entered triggered with direction ' + direction)
+            }
+          });
+        });
+
+        /* Foreground Graphics */
+        foregroundGraphics.forEach(function(element){
+          var inview = new Waypoint.Inview({
+            element: $(element)[0],
+            enter: function(direction) {
+              $('.fg').addClass('active');
+            },
+            entered: function(direction) {
+            },
+            exited: function(direction) {
+              $('.fg').removeClass('active');
             }
           });
         });

@@ -157,6 +157,7 @@ svg.hr {
 
 /* Section Headers */
 .content-section-header {
+  overflow: hidden;
   position: relative;
   padding: 12rem 50% 12rem 4rem;
 
@@ -169,7 +170,9 @@ svg.hr {
   h1 {
     color: theme-color("blue");
     font-size: 4rem;
+    font-weight: 300;
     line-height: 1;
+    margin-bottom: 1rem;
   }
 
   h2 {
@@ -178,6 +181,8 @@ svg.hr {
   }
 
   .fg {
+    max-height: 100%;
+    width: auto;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -185,6 +190,8 @@ svg.hr {
   }
 
   .bg-faint {
+    max-height: 100%;
+    width: auto;
     position: absolute;
     right: -10rem;
     top: 50%;
@@ -221,143 +228,6 @@ svg.hr {
   }
 }
 
-@function random-decimal($max) {
-  @return random($max) / 10;
-}
-
-@function random-translateY($max) {
-  @return random($max) - $max/2;
-}
-
-@function random-translateX($max) {
-  @return random($max) - $max/2;
-}
-
-@mixin random-animation-delay( $delay: random-decimal(50) ) {
-  animation-delay: $delay + s !important;
-}
-
-@mixin random-animation-duration( $duration: random-decimal(5) ) {
-  animation-duration: $duration + 3 + s !important;
-}
-
-$chevrons: 60;
-
-@for $i from 1 through $chevrons {
-  .content-section-header .arrow-header .c:nth-of-type(#{$i}) {
-    transform: scale( random-decimal(5) ) translate( random-translateX(800)#{"%"}, random-translateY(500)#{"%"} );
-    @include random-animation-duration();
-    @include random-animation-delay();
-  }
-}
-
-#message {
-  div.content-section-header:before {
-    background-image: url("");
-    background-size: contain;
-    background-position: right center;
-    @include bp(sm) {
-      background-image: url("");
-      background-position: center;
-      background-size: cover;
-    }
-  }
-  div.header-image-arrow.image-message-1:before {
-    background-image: url("");
-    @include bp(sm) {
-      display: none;
-    }
-  }
-  div.header-image-arrow.image-message-2:before {
-    background-image: url("");
-    @include bp(sm) {
-      display: none;
-    }
-  }
-  div.arrow-header {
-    color: white;
-    &:before { background-color: $logo; }
-  }
-}
-
-#review {
-  div.content-section-header:before {
-    background-image: url("");
-    @include bp(sm) {
-      background-position: center 20%;
-    }
-  }
-  div.arrow-header {
-    color: white;
-    &:before { background-color: $review; }
-  }
-}
-
-#investments {
-  div.content-section-header:before {
-    background-image: url("");
-    background-position: center 30%;
-  }
-  div.arrow-header {
-    color: white;
-    &:before { background-color: $investments; }
-  }
-}
-
-#funding {
-  div.content-section-header:before {
-    background-image: url("");
-    background-position: center 50%;
-  }
-  div.arrow-header {
-    color: white;
-    &:before { background-color: $funding; }
-  }
-}
-
-#membership {
-  div.content-section-header:before {
-    background-image: url("");
-    background-position: center 30%;
-  }
-  div.arrow-header {
-    color: white;
-    &:before { background-color: $membership; }
-  }
-}
-
-#financials {
-  div.content-section-header:before {
-    background-image: url("");
-    background-position: center 20%;
-  }
-  div.arrow-header {
-    color: white;
-    &:before { background-color: $financials; }
-  }
-}
-
-#impact {
-  div.content-section-header:before {
-    background-image: url("");
-    background-position: center 10%;
-  }
-  div.arrow-header {
-    color: white;
-    &:before { background-color: $impact; }
-  }
-}
-
-#resources {
-  div.content-section-header:before {
-    background-image: url("");
-    background-position: center 15%;
-  }
-  div.arrow-header {
-    color: white;
-    &:before { background-color: $resources; }
-  }
-}
 
 /* Side Nav */
 .side-nav {

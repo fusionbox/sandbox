@@ -96,9 +96,11 @@ am4core.ready(function() {
   series.dataFields.valueY = "rate_of_return";
   series.dataFields.categoryX = "year";
   series.name = "Total Fund Rate of Return";
+  series.itemReaderText = "Assumed Investment Rate of Return: {assumed}%\n{valueY}% {categoryX}\nPolicy Benchmark Return: {benchmark}%, Assumed Investment: Rate of Return: {assumed}%, {categoryX}: {valueY}%, Policy Benchmark Return: {benchmark}%";
   series.fontSize="14px";
   series.dataFields.benchmark = "benchmark";
   series.dataFields.assumed = "assumed";
+  series.columns.template.hoverOnFocus = true;
   series.columns.template.propertyFields.fill = "color";
   series.columns.template.fillOpacity = .8;
   series.columns.template.tooltipText = 'Assumed Investment Rate of Return: {assumed}%\n{valueY}% {categoryX}\nPolicy Benchmark Return: {benchmark}%';
@@ -115,6 +117,7 @@ am4core.ready(function() {
   series.tooltip.strokeWidth=0;
   series.tooltip.strokeOpacity=0;
   series.tooltip.hoverable=true;
+  series.tooltip.focusable=true;
   series.tooltip.pointerOrientation = "vertical";
 
   var columnTemplate = series.columns.template;
@@ -123,5 +126,7 @@ am4core.ready(function() {
 
   var hoverState = series.columns.template.states.create("hover");
   hoverState.properties.fillOpacity = 1;
+
+  title.readerTitle = "A bar chart displaying rates of return over the last ten years";
 
 }); // end am4core.ready()

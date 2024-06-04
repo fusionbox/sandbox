@@ -79,6 +79,9 @@ am4core.ready(function() {
   columnTemplate.strokeWidth = 0;
   columnTemplate.strokeOpacity = 0;
 
+  series.columns.template.hoverOnFocus = true;
+  series.tooltip.focusable=true;
+
   var hoverState = series.columns.template.states.create("hover");
   hoverState.properties.fillOpacity = 1;
 

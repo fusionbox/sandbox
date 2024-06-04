@@ -81,6 +81,8 @@ am4core.ready(function() {
 
 	chart.legend.valueLabels.template.align = "top";
 
+  pieSeries.slices.template.hoverOnFocus = true;
+  pieSeries.slices.focusable=true;
   pieSeries.slices.template.tooltipText = '{category}\n2023 Return: {last_years_return}%';
   pieSeries.slices.template.tooltipHTML =
 	'<div style="font-size:14px"><strong>{category}</strong></div>'+

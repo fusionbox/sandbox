@@ -85,6 +85,9 @@ am4core.ready(function() {
   series.tooltip.togglable=true;
   series.tooltip.pointerOrientation = "vertical";
 
+  series.columns.template.hoverOnFocus = true;
+  series.columns.focusable=true;
+
   var columnTemplate = series.columns.template;
   columnTemplate.strokeWidth = 0;
   columnTemplate.strokeOpacity = 0;

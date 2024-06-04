@@ -111,6 +111,14 @@ am4core.ready(function() {
 	level2.slices.template.strokeWidth = 6;
 	level2.slices.template.strokeOpacity = 1;
 
+  level0.slices.template.hoverOnFocus = true;
+  level0.slices.focusable=true;
+
+  level1.slices.template.hoverOnFocus = true;
+  level1.slices.focusable=true;
+
+  level2.slices.template.hoverOnFocus = true;
+  level2.slices.focusable=true;
 
   level0.slices.template.tooltipText = '{tooltipTitle}';
   level0.slices.template.tooltipHTML =

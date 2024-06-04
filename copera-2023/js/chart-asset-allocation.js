@@ -92,4 +92,6 @@ am4core.ready(function() {
   '</div>';
   pieSeries.slices.template.tooltip.togglable=true;
 
+  title.readerTitle = "A pie chart displaying the allocation of funds to each asset class";
+
 }); // end am4core.ready()

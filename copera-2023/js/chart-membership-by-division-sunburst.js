@@ -135,4 +135,6 @@ am4core.ready(function() {
 	'<div class="text-center" style="font-size:13px;color:#ffffff;"><strong>{tooltipTitle}</strong></div>'+
   '<div class="py-1 text-center" style="font-size:25px;line-height:1;color:#ffffff;">{tooltipNumber}</div>';
 
+  title.readerTitle = "A sunburst chart displaying membership numbers by division";
+
 }); // end am4core.ready()

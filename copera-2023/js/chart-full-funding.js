@@ -85,4 +85,6 @@ am4core.ready(function() {
   var hoverState = series.columns.template.states.create("hover");
   hoverState.properties.fillOpacity = 1;
 
+  title.readerTitle = "A bar chart displaying the years remaining to reach full funding for each category";
+
 }); // end am4core.ready()

@@ -95,4 +95,6 @@ am4core.ready(function() {
   var hoverState = series.columns.template.states.create("hover");
   hoverState.properties.fillOpacity = 1;
 
+  title.readerTitle = "A bar chart displaying Colorado-based investment dollars in each category";
+
 }); // end am4core.ready()

@@ -7,34 +7,34 @@ am4core.ready(function() {
   // Add data
   chart.data = [
 	{
-		"color": am4core.color("#82A8ED"),
+		"color": am4core.color("#2C90CC"),
 		"asset_class": "Bonds",
-		"dollars": 21300000,
-	  "percentage_of_investments": "2.2"
+		"dollars": 25500000,
+	  "percentage_of_investments": "3.2"
 	},
 	{
-		"color": am4core.color("#82A8ED"),
+		"color": am4core.color("#2C90CC"),
 	  "asset_class": "Public Equity",
-	  "dollars": 138600000,
-	  "percentage_of_investments": "14.6"
+	  "dollars": 89300000,
+	  "percentage_of_investments": "11.3"
 	},
 	{
-		"color": am4core.color("#82A8ED"),
+		"color": am4core.color("#2C90CC"),
 	  "asset_class": "Real Estate",
-	  "dollars": 224600000,
-	  "percentage_of_investments": "23.7"
+	  "dollars": 171300000,
+	  "percentage_of_investments": "21.7"
 	},
 	{
-		"color": am4core.color("#82A8ED"),
+		"color": am4core.color("#2C90CC"),
     "asset_class": "Private Equity",
-    "dollars": 271000000,
-    "percentage_of_investments": "28.6"
+    "dollars": 251000000,
+    "percentage_of_investments": "31.8"
   },
 	{
-		"color": am4core.color("#82A8ED"),
+		"color": am4core.color("#2C90CC"),
 	   "asset_class": "Alternatives",
-	   "dollars": 293400000,
-	   "percentage_of_investments": "30.9"
+	   "dollars": 252300000,
+	   "percentage_of_investments": "32.0"
 	}];
 
   // Create axes
@@ -44,10 +44,10 @@ am4core.ready(function() {
   categoryAxis.dataFields.category = "asset_class";
   categoryAxis.renderer.grid.template.location = 0;
   categoryAxis.renderer.minGridDistance = 10;
-  categoryAxis.renderer.labels.template.fontSize = "12px";
+  categoryAxis.renderer.labels.template.fontSize = "15px";
 
   var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
-  valueAxis.renderer.labels.template.fontSize = "12px";
+  valueAxis.renderer.labels.template.fontSize = "15px";
   valueAxis.renderer.minGridDistance = 100;
   valueAxis.min = 0;
   valueAxis.max = 300000000;
@@ -67,7 +67,7 @@ am4core.ready(function() {
   series.dataFields.categoryY = "asset_class";
 
   series.name = "Years to Reach Full Funding";
-  series.fontSize="13px";
+  series.fontSize="15px";
   series.columns.template.propertyFields.fill = "color";
   series.columns.template.fillOpacity = .8;
   series.columns.template.tooltipText = '{categoryY} | {valueX}\n{percentage}% of Colorado-Based Investments';
@@ -79,7 +79,7 @@ am4core.ready(function() {
   series.tooltip.getFillFromObject=false;
   series.tooltip.background.fill=am4core.color("#3E3E3E");
   series.tooltip.background.filters.clear();
-  series.tooltip.fontSize='13px';
+  series.tooltip.fontSize='15px';
   series.tooltip.strokeWidth=0;
   series.tooltip.strokeOpacity=0;
   series.tooltip.togglable=true;

@@ -12,41 +12,41 @@ am4core.ready(function() {
 
   // Add data
   chart.data = [{
-		"color": am4core.color("#0088A4"),
+		"color": am4core.color("#1F2A59"),
     "asset_class": "Global Equity",
-    "percentage_of_portfolio": 52.8,
-    "last_years_return": "-20.6",
-    "benchmark_return": "-18.2"
+    "percentage_of_portfolio": 55.0,
+    "last_years_return": "23.8",
+    "benchmark_return": "21.9"
   }, {
-		"color": am4core.color("#82A8ED"),
+		"color": am4core.color("#2C90CC"),
     "asset_class": "Fixed Income",
-    "percentage_of_portfolio": 19.4,
-    "last_years_return": "-12.8",
-    "benchmark_return": "-13.0"
+    "percentage_of_portfolio": 18.9,
+    "last_years_return": "6.2",
+    "benchmark_return": "5.5"
   }, {
 		"color": am4core.color("#D94D26"),
     "asset_class": "Private Equity",
-    "percentage_of_portfolio": 9.2,
-    "last_years_return": "-6.7",
-    "benchmark_return": "-16.7"
+    "percentage_of_portfolio": 8.7,
+    "last_years_return": "4.7",
+    "benchmark_return": "23.4"
   }, {
 		"color": am4core.color("#BA9B22"),
     "asset_class": "Real Estate",
-    "percentage_of_portfolio": 11.9,
-    "last_years_return": "13.4",
-    "benchmark_return": "7.0"
+    "percentage_of_portfolio": 10.1,
+    "last_years_return": "-9.9",
+    "benchmark_return": "-12.2"
   }, {
 		"color": am4core.color("#7A9117"),
     "asset_class": "Alternatives",
-    "percentage_of_portfolio": 6.3,
-    "last_years_return": "7.6",
-    "benchmark_return": "-0.7"
+    "percentage_of_portfolio": 6.9,
+    "last_years_return": "7.8",
+    "benchmark_return": "9.4"
   }, {
 		"color": am4core.color("#DE751C"),
     "asset_class": "Cash & Short Term",
     "percentage_of_portfolio": 0.4,
-    "last_years_return": "1.7",
-    "benchmark_return": "1.5"
+    "last_years_return": "5.2",
+    "benchmark_return": "5.0"
   }];
 
   // Add and configure Series
@@ -81,11 +81,11 @@ am4core.ready(function() {
 
 	chart.legend.valueLabels.template.align = "top";
 
-  pieSeries.slices.template.tooltipText = '{category}\n2020 Return: {last_years_return}%';
+  pieSeries.slices.template.tooltipText = '{category}\n2023 Return: {last_years_return}%';
   pieSeries.slices.template.tooltipHTML =
 	'<div style="font-size:14px"><strong>{category}</strong></div>'+
   '<div class="d-flex">'+
-  '<div class="mx-1 py-1 text-center"><div style="font-size:30px;line-height:1;">{last_years_return}%</div><div style="font-size:13px">2022 Return</div></div>'+
+  '<div class="mx-1 py-1 text-center"><div style="font-size:30px;line-height:1;">{last_years_return}%</div><div style="font-size:13px">2023 Return</div></div>'+
   '<div class="mx-1 py-1 text-center"><div style="font-size:30px;line-height:1;">{benchmark_return}%</div><div style="font-size:13px">Benchmark Return</div></div>'+
   '</div>';
   pieSeries.slices.template.tooltip.togglable=true;

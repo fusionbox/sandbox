@@ -1,5 +1,5 @@
 /* Theme Overrides */
-$body-bg: #E0E8EB;
+$body-bg: mix(#E0E8EB,white);
 $body-color: #111111;
 $link-color: rgb(139,182,132);
 $link-hover-color: lighten(rgb(139,182,132),10%);
@@ -12,14 +12,14 @@ $message: #DEDBC9;      // tan
 $review: #BA9B22;       // gold
 $investments: darken(#2C90CC,13%);  // light blue (2023)
 $funding: #1F2A59;      // dark blue (2023)
-$membership: darken(#DE751C,14%);   // orange
-$financials: darken(#7A9117,8%);   // green
-$impact: #534C89;       // purple
+$membership: #A85915;   // orange
+$financials: #357F15;   // green
+$impact: #6F64AA;       // purple
 $resources: #D94D26;    // red
 
 $all-members: #1A2944;
 $state: #1F2A59; // dark blue (2023)
-$school: darken(#DE751C,12%);
+$school: #A85915; // orange
 $local: darken(#7A9117,6%);
 $judicial: darken(#2C90CC,10%); // light blue (2023)
 $dps: darken(#D94D26,8%);
@@ -28,12 +28,12 @@ $dps: darken(#D94D26,8%);
 
 $theme-colors: (
   "primary": #78bab0,
-  "secondary": darken(#51b591,20%),
+  "secondary": #337A61,
   "success": $funding,
   "danger": $impact,
   "warning": #BA9B22,
   "info": $investments,
-  "blue": #1F2A69,
+  "blue": #1E73A4,
   "orange": $membership,
   "purple": $impact,
   "green": $financials,
@@ -261,6 +261,7 @@ svg.hr {
   text-align: right;
   background: transparent;
 
+  /*
   body.section-message & {
     .nav-link.active,
     .nav-link:not(.active):hover,
@@ -397,6 +398,7 @@ svg.hr {
       fill: $resources;
     }
   }
+  */
 
   a.menu {
     margin-left: auto;
@@ -465,21 +467,21 @@ svg.hr {
     }
 
     &.active {
-      color: $message;
+      color: #E0E8EB;
 
       &:after {
-        background: $message;
-        border-color: $message;
+        background: #E0E8EB;
+        border-color: #E0E8EB;
       }
     }
 
     &:not(.active) {
      &:hover, &:focus {
-        color: rgba($message,0.8);
+        color: rgba(#E0E8EB,0.8);
 
         &:after {
-          background: $message;
-          border-color: $message;
+          background: #E0E8EB;
+          border-color: #E0E8EB;
         }
       }
     }
@@ -1419,7 +1421,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .display-1, .display-2, .d
 }
 
 .text-lightpurple {
-  color: lighten(theme-color("purple"),5%) !important;
+  color: $purple !important;
 }
 
 .text-all-members { color: $all-members !important; }

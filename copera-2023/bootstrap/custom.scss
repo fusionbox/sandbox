@@ -142,6 +142,10 @@ svg.hr {
   color: theme-color("dark");
   padding-top: 70px;
 
+  @media (max-width: 640px) {
+    padding-top: 55px;
+  }
+
   .container-fluid:not(.grid-nav) {
     max-width: 1200px;
 
@@ -163,12 +167,6 @@ svg.hr {
   overflow: hidden;
   position: relative;
   padding: 12rem 50% 12rem 4rem;
-
-  @include bp(sm) {
-    height: 300px;
-    margin-top: 340px;
-    overflow: visible;
-  }
 
   h1 {
     color: theme-color("blue");
@@ -1421,7 +1419,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .display-1, .display-2, .d
 }
 
 .text-lightpurple {
-  color: lighten(theme-color("purple"),10%) !important;
+  color: lighten(theme-color("purple"),5%) !important;
 }
 
 .text-all-members { color: $all-members !important; }
@@ -1452,12 +1450,13 @@ img.headshot {
 
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), radial-gradient(44.89% 90.19% at 100% 100%, rgba(35, 148, 209, 0.2) 0%, rgba(35, 148, 209, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, radial-gradient(48.43% 91.41% at 0% 0%, #2794D1 0%, rgba(39, 148, 209, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, radial-gradient(46.85% 94.8% at 96.83% 5.52%, #1F2A59 0%, rgba(33, 35, 85, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, radial-gradient(38.81% 86.68% at 2.6% 96.01%, #1F2A59 0%, rgba(0, 0, 0, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, #2394D1;
 
-
   h1 {
     color: white;
     font-size: 5rem;
     line-height: 1;
     text-transform: none;
+    position: relative;
+    z-index: 100;
   }
 
   img.hero {

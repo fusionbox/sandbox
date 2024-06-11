@@ -12,31 +12,31 @@ am4core.ready(function() {
 
   // Add data
   chart.data = [{
-		"color": am4core.color("#1F2A59"),
+		"color": am4core.color("#109DBA"),
     "asset_class": "Global Equity",
     "percentage_of_portfolio": 55.0,
     "last_years_return": "23.8",
     "benchmark_return": "21.9"
   }, {
-		"color": am4core.color("#2C90CC"),
+		"color": am4core.color("#E78736"),
     "asset_class": "Fixed Income",
     "percentage_of_portfolio": 18.9,
     "last_years_return": "6.2",
     "benchmark_return": "5.5"
   }, {
-		"color": am4core.color("#D94D26"),
+		"color": am4core.color("#8EA52B"),
     "asset_class": "Private Equity",
     "percentage_of_portfolio": 8.7,
     "last_years_return": "4.7",
     "benchmark_return": "23.4"
   }, {
-		"color": am4core.color("#BA9B22"),
+		"color": am4core.color("#99B8F1"),
     "asset_class": "Real Estate",
     "percentage_of_portfolio": 10.1,
     "last_years_return": "-9.9",
     "benchmark_return": "-12.2"
   }, {
-		"color": am4core.color("#7A9117"),
+		"color": am4core.color("#6f42c1"),
     "asset_class": "Alternatives",
     "percentage_of_portfolio": 6.9,
     "last_years_return": "7.8",

@@ -1,0 +1,61 @@
+---
+layout: base.liquid
+title: VR | Giving Back | Colorado Lottery
+body_class: virtual-reality
+---
+
+<header>
+  <h1>Experience Colorado in 360&nbsp;VR</h1>
+  <article class="cards" data-bindable="virtual-cards">
+    <div class="card">
+      <a class="vr-overlay" title="Start VR Video: Ski Jump Howelson" href="/en/vr/#!skiing">
+        <img alt="Start VR Video: Ski Jump Howelson" height="266" src="/assets/images/cards/mountain.jpg" width="276" />
+      </a>
+      <a class="btn rounded" href="/en/vr/#!skiing">Ski Jump Howelson</a>
+    </div>
+    <div class="card">
+      <a class="vr-overlay" title="Start VR Video: Bike Fruita" href="/en/vr/#!biking">
+        <img alt="Start VR Video: Bike Fruita" height="266" src="/assets/images/cards/western-slope.jpg" width="276" />
+      </a>
+      <a class="btn rounded" href="/en/vr/#!biking">Bike Fruita</a>
+    </div>
+    <div class="card">
+      <a class="vr-overlay" title="Start VR Video: Climb Eldorado" href="/en/vr/#!climbing">
+        <img alt="Start VR Video: Climb Eldorado" height="266" src="/assets/images/cards/northern-front-range.jpg" width="276" />
+      </a>
+      <a class="btn rounded" href="/en/vr/#!climbing">Climb Eldorado</a>
+    </div>
+    <div class="card">
+
+      <a class="vr-overlay" title="Start VR Video: Mustang Pavilion" href="/en/vr/#!mustang">
+        <img alt="Start VR Video: Mustang Pavilion" height="266" src="/assets/images/mustang.webp" width="276" />
+      </a>
+      <a class="btn rounded" href="/en/vr/#!mustang">Mustang Pavilion</a>
+    </div>
+    <div class="card">
+
+      <a class="vr-overlay" title="Start VR Video: Ice Climb Ouray" href="/en/vr/#!ouray">
+        <img alt="Start VR Video: Ice Climb Ouray" height="266" src="/assets/images/ouray-square.webp" width="276" />
+      </a>
+      <a class="btn rounded" href="/en/vr/#!ouray">Ice Climb Ouray</a>
+    </div>
+  </article>
+  <article class="vr-error">
+    <div>
+      <p>Internet explorer does not currently support VR videos. If you would like to try the experience, we would recommend using Google Chrome or Firefox.</p>
+      <div>
+        <a class="btn rounded" href="https://www.google.com/chrome/">Get Google Chrome</a>
+        <a class="btn rounded" href="https://www.mozilla.org/firefox/new/">Get Firefox</a>
+      </div>
+    </div>
+  </article>
+</header>
+<article>
+  <p>In 39 years, the Colorado Lottery has given $3.9 billion dollars back to various parks, trials, and open spaces across the state. Gear up, head out and experience some of the most thrilling proceed destinations in 360 VR right where you're at. <span class="vr-only">Want to just have a fun time? <a href="/en/vr/#!game">Play the Proceeds minigame</a>.</a>
+  </p>
+</article>
+
+<script>
+  $(".modal-trigger").on("click", function(e){ e.preventDefault(); $("#modalVideo").show().addClass("show"); });
+  $(".modal-close").on("click", function(e){ e.preventDefault(); $("#modalVideo").hide().removeClass("show"); });
+</script>

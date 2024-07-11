@@ -3240,6 +3240,10 @@ section.featured-project-carousel .featured-project.carousel-slide {
 	padding: 40px 30px 30px;
 }
 
+section.featured-project-carousel .featured-project.carousel-slide:focus {
+  background: rgba(255,255,255,0.15)
+}
+
 section.more-projects {
 	padding: 100px 0 0 0;
 	width: 80%;

@@ -15,4 +15,4 @@ npx @11ty/eleventy
 
 **Upload:**
 TODO: This is clunky.
-Place the contents of the _site/giving-back folder (assets, en, es) into a new folder named "build". Compress the build folder into a single .zip file for upload. The uploading looks for a single folder called "build" and unpacks its contents into the /giving-back/ directory.
+Rename the _site/giving-back folder (assets, en, es) to "_site/build". Compress the **build** folder into a single .zip file for upload. The uploading looks for a single folder called "build" and unpacks its contents into the /giving-back/ directory.

@@ -1,17 +1,48 @@
 /*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */html {
-line-height: 1.15;
+font-size: 62.5%;
+line-height: 1.5;
 -ms-text-size-adjust: 100%;
 -webkit-text-size-adjust: 100%
 }
 body {
-margin: 0
+margin: 0;
+font-size: 1.6rem;
+}
+a.skip-main {
+  left:-999px;
+  position:absolute;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+  z-index:-999;
+}
+a.skip-main:hover,
+a.skip-main:focus,
+a.skip-main:active {
+  color: #fff;
+  background-color:rgb(0, 63, 86);
+  left: auto;
+  top: auto;
+  width: 30%;
+  height: auto;
+  overflow:auto;
+  margin: 10px 35%;
+  padding:5px;
+  border-radius: 15px;
+  border:4px solid #66AB44;
+  text-align:center;
+  font-size:1.6rem;
+  font-weight: bold;
+  z-index:10500;
 }
 article,aside,footer,header,nav,section {
 display: block
 }
 h1,.h1 {
-font-size: 2em;
-margin: 0.67em 0
+font-size: 2rem;
+margin: 0.67em 0;
+line-height: 1.15;
 }
 figcaption,figure {
 display: block
@@ -30,7 +61,7 @@ display: block
 }
 pre {
 font-family: monospace, monospace;
-font-size: 1em
+font-size: 1.6rem
 }
 a {
 background-color: transparent;
@@ -50,7 +81,7 @@ font-weight: bolder
 }
 code,kbd,samp {
 font-family: monospace, monospace;
-font-size: 1em
+font-size: 1.6rem
 }
 dfn {
 font-style: italic
@@ -60,7 +91,7 @@ background-color: #ff0;
 color: #000
 }
 small {
-font-size: 80%
+font-size: 80%;
 }
 sub,sup {
 font-size: 75%;
@@ -214,12 +245,12 @@ margin-right: auto;
 margin-left: auto
 }
 p {
-font-size: 21px;
-line-height: 30px
+font-size: 2.1rem;
+line-height: 1.5;
 }
 li {
-font-size: 21px;
-line-height: 30px
+font-size: 2.1rem;
+line-height: 1.5;
 }
 a {
 color: #053F55
@@ -237,8 +268,8 @@ vertical-align: middle;
 -moz-user-select: none;
 -ms-user-select: none;
 user-select: none;
-padding: 15px 40px 14px;
-font-size: 14px;
+padding: 13px 40px 14px;
+font-size: 1.4rem;
 text-transform: uppercase;
 font-family: FSEmeric-SemiBold, Helvetica, Arial, sans-serif;
 color: #053f55;
@@ -282,7 +313,7 @@ margin-bottom: 10px;
 color: #fff;
 background: #32769D;
 border-radius: 8px;
-font-size: 12px;
+font-size: 1.4rem;
 border: 0;
 -webkit-box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.14);
 box-shadow: 0px 3px 0px 0px rgba(0,0,0,0.14)
@@ -450,7 +481,7 @@ max-width: 780px
 
 }
 @media screen and (max-width: 679px) {article.vr-error p {
-font-size: 14px
+font-size: 1.4rem;
 }
 
 }
@@ -540,11 +571,11 @@ text-transform: uppercase
 header h2,
 header .h2 {
 margin-bottom: 10px;
-font-size: 36px
+font-size: 3.6rem;
 }
 header h4,
 header .h4 {
-font-size: 13px
+font-size: 1.3rem;
 }
 @media screen and (min-width: 640px) {header.blue,header.yellow,header.image {
 padding: 70px 30px;
@@ -555,11 +586,11 @@ margin: 70px auto 140px
 }
 header h2,
 header .h2 {
-font-size: 88px
+font-size: 8.8rem;
 }
 header h4,
 header .h4 {
-font-size: 19px
+font-size: 1.9rem;
 }
 
 }
@@ -1584,7 +1615,7 @@ a.region-article div.details .h5 {
 color: #32769D;
 margin: 0;
 text-transform: uppercase;
-font-size: 17px
+font-size: 1.7rem;
 }
 a.region-article div.details h1,
 a.region-article div.details .h1 {
@@ -1607,7 +1638,7 @@ a.region-article div.details div.btn span.notification {
 	position: absolute;
 	top: -10px;
 	left: 100%;
-	font-size: 12px;
+	font-size: 1.2rem;
 	padding: 4px 6px 2px;
 	transform: translateX(-90%);
 }
@@ -1626,7 +1657,7 @@ margin-right: 30px
 }
 a.region-article div.details h1,
 a.region-article div.details .h1 {
-font-size: 50px;
+font-size: 5rem;
 margin-bottom: 20px
 }
 
@@ -1634,7 +1665,7 @@ margin-bottom: 20px
 @media screen and (min-width: 800px) {
 a.region-article div.details h1,
 a.region-article div.details .h1 {
-font-size: 66px
+font-size: 6.6rem;
 }
 a.region-article div.details div.btn {
 padding-left: 40px;
@@ -1938,8 +1969,8 @@ body.explore div.intro h1,
 body.explore div.intro .h1 {
 margin-top: 0.5em;
 margin-bottom: -11px;
-font-size: 4em;
-line-height: 1em
+font-size: 4rem;
+line-height: 1.15;
 }
 
 }
@@ -2041,7 +2072,7 @@ padding-top: 80px
 body.virtual-reality>section.content>header h1,
 body.virtual-reality>section.content>header .h1 {
 margin-top: 10%;
-font-size: 88px
+font-size: 8.8rem;
 }
 
 }
@@ -2104,7 +2135,7 @@ body.region header.image+article.cards .h5,
 header.yellow article.cards .h5,
 .regional-slideshow article.cards .h5 {
 margin: 0 10px 10px;
-font-size: 16px;
+font-size: 1.6rem;
 text-transform: uppercase;
 color: #053f55
 }
@@ -2115,7 +2146,7 @@ body.region header.image+article.cards .h3,
 header.yellow article.cards .h3,
 .regional-slideshow article.cards .h3 {
 margin: 0 10px;
-font-size: 32px;
+font-size: 3.2rem;
 font-family: FSEmeric-Bold;
 }
 @media screen and (max-width: 640px) {
@@ -2152,13 +2183,14 @@ position: absolute;
 left: 0;
 top: 2px;
 width: 3em;
-font-size: 23px;
+font-size: 2.3rem;
 content: counter(customlistcounter) " "
 }
 body.region article.data-sheet ol h2,
 body.region article.data-sheet ol .h2 {
 margin: 20px -24px 5px 0;
-color: #053f55
+color: #053f55;
+line-height: 1.15;
 }
 @media screen and (min-width: 640px) {body.region>section.content>header a {
 display: block;
@@ -2167,8 +2199,8 @@ float: right
 body.region>section.content>header h1,
 body.region>section.content>header .h1 {
 margin-top: calc(33% + 1em);
-font-size: 88px;
-line-height: 1em
+font-size: 8.8rem;
+line-height: 1;
 }
 body.region header+article.slideshow {
 margin-top: -70px
@@ -2253,8 +2285,8 @@ float: right
 body.home>section.content>header h1,
 body.home>section.content>header .h1 {
 margin-top: 33%;
-font-size: 88px;
-line-height: 1em
+font-size: 8.8rem;
+line-height: 1;
 }
 article.partner {
 border: 1px solid #f3f3f3;
@@ -2310,22 +2342,22 @@ color: #fff
 }
 body.error div.error h1,
 body.error div.error .h1 {
-font-size: 100px;
+font-size: 10.0rem;
 margin: 0 auto
 }
 body.error div.error h2,
 body.error div.error .h2 {
-font-size: 30px;
+font-size: 3.0rem;
 margin: 0 auto 40px
 }
 @media screen and (min-width: 640px) {
 body.error div.error h1,
 body.error div.error .h1 {
-font-size: 300px
+font-size: 30.0rem;
 }
 body.error div.error h2,
 body.error div.error .h2 {
-font-size: 50px
+font-size: 5rem;
 }
 
 }
@@ -2385,13 +2417,14 @@ color: #053f55;
 -webkit-transition: background-color 1s cubic-bezier(0.23, 1, 0.32, 1);
 transition: background-color 1s cubic-bezier(0.23, 1, 0.32, 1);
 position: relative;
+line-height: 1.15;
 }
 .notification {
 	border-radius: 50px;
 	background: #DD0000;
 	color: white;
 	font-weight: bold;
-	font-size: 12px;
+	font-size: 1.2rem;
 	line-height: 1;
 	padding: 3px 4px 2px
 }
@@ -2509,7 +2542,7 @@ body>nav>a.item div.flyout {
 	transform: translate(-5%,-50%);
 	font-family: "FSEmeric-Book";
 	font-weight: 400;
-	font-size: 14px;
+	font-size: 1.4rem;
 	visibility: hidden;
 	opacity: 0;
 	transition: all 0.2s ease 0s;
@@ -2546,7 +2579,7 @@ body>nav button.lang {
   color: #053f55;
   cursor: pointer;
 	font-family: "FSEmeric-Book";
-	font-size: 14px;
+	font-size: 1.4rem;
   font-weight: 400;
   text-align: center;
   padding: 12px 0;
@@ -2562,7 +2595,7 @@ body>nav button.lang:focus {
 
 body>nav>a.accessibility {
 	font-family: "FSEmeric-Book";
-  font-size: 12px;
+  font-size: 1.2rem;
   padding: 12px 0;
   width: 100%;
   height: auto;
@@ -2607,7 +2640,7 @@ body>nav>a.accessibility:before {
 		transform: translateX(-50%);
 	}
 	body>nav>a {
-		font-size: 14px;
+		font-size: 1.4rem;
 		display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2717,7 +2750,7 @@ background-color: #fff;
 border-radius: 0% 30px 30px 0%;
 -webkit-box-shadow: inset 5px 0px 2px rgba(0,0,0,0.05);
 box-shadow: inset 5px 0px 2px rgba(0,0,0,0.05);
-font-size: 15px;
+font-size: 1.5rem;
 width: 80%;
 -webkit-transition: all ease .5s;
 transition: all ease .5s;
@@ -2853,7 +2886,7 @@ display: block
 
 .featured-projects h2,
 .featured-projects .h2 {
-	font-size: 38px;
+	font-size: 3.8rem;
 	margin-bottom: 50px;
 	margin-top: 0;
 	flex: 0 0 100%;
@@ -2917,7 +2950,7 @@ a.project-card .project-card-image {
 .project-card .project-card-body .project-feature {
 	display: block;
 	text-shadow: 2px 2px 0px white;
-	font-size: 14px;
+	font-size: 1.4rem;
 	text-transform: uppercase;
 	font-family: FSEmeric-Bold;
 	margin-bottom: 8px;
@@ -2925,7 +2958,7 @@ a.project-card .project-card-image {
 
 .project-card .project-card-body .project-name {
 	display: block;
-	font-size: 26px;
+	font-size: 2.6rem;
 }
 
 @media (max-width: 1020px), (max-height: 800px) {
@@ -2934,7 +2967,7 @@ a.project-card .project-card-image {
 		max-height: 90px;
 	}
 	.project-card .project-card-body .project-name {
-		font-size: 18px;
+		font-size: 1.8rem;
 	}
 }
 
@@ -3032,7 +3065,7 @@ a.project-card .project-card-image {
 }
 
 .more-card-body {
-	font-size: 20px;
+	font-size: 2rem;
 	padding: 15px 20px;
 }
 
@@ -3105,7 +3138,7 @@ a.more-card .more-card-image {
 .subtitle {
 	text-align: center;
 	font-family: FSEmeric-Bold;
-	font-size: 32px;
+	font-size: 3.2rem;
 }
 
 section.featured-project-carousel {
@@ -3134,7 +3167,7 @@ section.featured-project-carousel > h2,
 section.featured-project-carousel > .h2 {
 	text-align: center;
 	font-family: FSEmeric-Bold;
-	font-size: 60px;
+	font-size: 6rem;
 	margin: 0 auto;
 	padding: 120px 30px 40px 30px;
 	color: black;
@@ -3257,7 +3290,7 @@ section.more-projects {
 section.more-projects h3,
 section.more-projects .h3 {
 	color: #32769D;
-	font-size: 20px;
+	font-size: 2rem;
 	margin-bottom: 30px;
 	margin-top: 0;
 	flex: 0 0 100%;
@@ -3296,11 +3329,11 @@ section.more-projects .project-card {
 .project-card.project-card-basic .project-card-body .project-name {
 	font-family: FSEmeric-Bold;
 	color: black;
-	font-size: 17px;
+	font-size: 1.7rem;
 }
 
 .project-card.project-card-basic .project-card-body .project-city {
-	font-size: 14px;
+	font-size: 1.4rem;
 	color: #32769D;
 }
 
@@ -3378,7 +3411,7 @@ header.regional-slideshow .h4 {
 	border-left: 3px solid #d9e021;
 	font-family: FSEmeric-Bold;
 	color: black;
-	font-size: 20px;
+	font-size: 2rem;
 }
 
 div.accordion {
@@ -3404,7 +3437,7 @@ div.accordion .trigger:before {
 	transform: rotate(0deg);
 	transition: all 0.1s ease 0s;
 	text-align: center;
-	font-size: 14px;
+	font-size: 1.4rem;
 	width: 14px;
 	height: 14px;
 	display: block;
@@ -3465,10 +3498,10 @@ span.tooltip:before {
   color: #053f55;
   content: attr(data-content);
   text-align: center;
-  font-size: 18px;
+  font-size: 1.8rem;
 	font-family: FSEmeric-Regular;
 	font-weight: normal;
-  line-height: 1.4;
+  line-height: 1.5;
   white-space: normal;
 	box-shadow: rgba(0,0,0,0.2) 0px 2px 4px;
 	box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
@@ -3623,7 +3656,7 @@ span.tooltip:focus:after {
 
 .modal .scavenger-hunt p {
   font-size: 18px;
-  line-height: 1.4;
+  line-height: 1.5;
   margin: 0;
   padding: 0;
 }
@@ -3634,7 +3667,7 @@ span.tooltip:focus:after {
 
 .modal .scavenger-hunt p small {
   font-size: 12px;
-  line-height: 1.4;
+  line-height: 1.5;
   opacity: 0.7;
 }
 

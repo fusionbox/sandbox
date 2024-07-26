@@ -394,10 +394,15 @@ if ($("body").hasClass("simulator-styles")) {
 
   /* Pick 3: Draw Times (Midday/Evening/Both) */
   $(".field_draw_time input").change(function(e){
+    $(".field_advance_draws .advance-plus").removeClass("range_maxed");
+    $("#advance_draws").attr("max",28);
+    advance_play_max = 28;
     if (!pick3_both_modifier && $(this).attr("value") == "both") {
       pick3_both_modifier = true;
       updateDraws(true);
       updateTicketPrice(true);
+      $("#advance_draws").attr("max",56);
+      advance_play_max = 56;
     } else if (pick3_both_modifier && $(this).attr("value") != "both") {
       pick3_both_modifier = false;
       updateTicketPrice(true);
@@ -410,10 +415,68 @@ if ($("body").hasClass("simulator-styles")) {
     $("div.actions").removeClass("hol_up");
   });
 
-  var fiddy_cent_flag = false; /* Pick 3 */
-
   /* Pick 3: Bet Type */
+  var fiddy_cent_flag = false;
+  var front_flag = false;
+  var back_flag = false;
+
   $(".field_bet_type input").change(function(e){
+
+    max_numbers = 3;
+    fiddy_cent_flag = false;
+    front_flag = false;
+    back_flag = false;
+
+    /* Front or Back Pair Special Rules */
+    if ( !$('#number_qp').prop("checked") ) {
+      /* Enable the number columns if unchecked */
+
+      console.log($('.field_number_left input:checked').length);
+
+      if ( $('.field_number_left input:checked').length > 0 ) {
+        $('.field_number_left input:not(:checked)').prop('disabled',true);
+      } else {
+        $('.field_number_left input').prop('disabled',false);
+      }
+
+      if ( $('.field_number_middle input:checked').length > 0 ) {
+        $('.field_number_middle input:not(:checked)').prop('disabled',true);
+      } else {
+        $('.field_number_middle input').prop('disabled',false);
+      }
+
+      if ( $('.field_number_right input:checked').length > 0 ) {
+        $('.field_number_right input:not(:checked)').prop('disabled',true);
+      } else {
+        $('.field_number_right input').prop('disabled',false);
+      }
+    }
+
+    if ($(this).val() == "front") {
+
+      front_flag = true;
+      back_flag = false;
+      max_numbers = 2;
+      /* Clear the 3rd number, if selected */
+      $(".field_number_right input").prop("checked", false);
+
+      /* Disable the 3rd number column */
+      $(".field_number_right input").prop( "disabled", true );
+
+    } else if ( $(this).val() == "back" ) {
+
+      back_flag = true;
+      front_flag = false;
+      max_numbers = 2;
+      /* Clear the 1st number, if selected */
+      $(".field_number_left input").prop("checked", false);
+
+      /* Disable the 1st number column */
+      $(".field_number_left input").prop( "disabled", true );
+    }
+
+    /* Exact Any Special Rules */
+
     if ($(this).val() == "exact_any") {
 
       if ( $("#bet_amount_50").prop("checked") ) {
@@ -423,9 +486,9 @@ if ($("body").hasClass("simulator-styles")) {
       }
 
       $("#bet_amount_50").prop( "disabled", true );
-      $("#bet_amount_50").parents(".field").addClass("fade_me_bro");
 
       updateTicketPrice(true);
+
     } else {
 
       if (fiddy_cent_flag) {
@@ -434,11 +497,14 @@ if ($("body").hasClass("simulator-styles")) {
       }
 
       $("#bet_amount_50").prop( "disabled", false );
-      $("#bet_amount_50").parents(".field").removeClass("fade_me_bro");
       $("div.actions").addClass("hol_up");
 
       updateTicketPrice(false);
     }
+
+    current_number_count = $(".number_matrix_pick3 input:checked").length;
+    $("#current_number_count").text( current_number_count );
+    $("#max_numbers").text(max_numbers);
 
     if ( $(".field_bet_amount input:checked").length > 0 && (current_number_count == max_numbers || $("#number_qp:checked").length > 0 ) ) {
       $("div.actions").removeClass("hol_up");
@@ -747,13 +813,8 @@ if ($("body").hasClass("simulator-styles")) {
       $("#current_number_count").text(current_number_count);
       $("#current_number_counter").addClass("in_progress");
 
-      /* If this is the second number selected AND those numbers are the same AND the user has selected "Any Order", disallow the same 3rd number on the remaining number columns */
-      if (current_number_count == 2) {
-
-      }
-
-      /* If this is the third number selected AND all three numbers are the same */
-      if (current_number_count == max_numbers && ( $(".number_matrix_left .field_number input:checked").val() == $(".number_matrix_middle .field_number input:checked").val() && $(".number_matrix_middle .field_number input:checked").val() == $(".number_matrix_right .field_number input:checked").val() ) ) {
+      /* If this is the third number selected AND all three numbers are the same and it's not a front/back pair bet type */
+      if (!back_flag && !front_flag && current_number_count == max_numbers && ( $(".number_matrix_left .field_number input:checked").val() == $(".number_matrix_middle .field_number input:checked").val() && $(".number_matrix_middle .field_number input:checked").val() == $(".number_matrix_right .field_number input:checked").val() ) ) {
         if ($("#bet_type_any:checked").length == 0) {
           /* AND the user has not selected "Any Order" bet type, disable "Any Order" */
           $("#bet_type_any").prop( "disabled", true );
@@ -864,7 +925,7 @@ if ($("body").hasClass("simulator-styles")) {
       $(".ticket_plus_wrapper").hide();
     }
 
-    /* QP */
+    /* QP/Quick Pick */
     if ( $(".field_qp input").prop("checked") ) {
 
       /* Clear previous selections */
@@ -886,9 +947,9 @@ if ($("body").hasClass("simulator-styles")) {
           selected_right = (selected_right + 1) % 10;
         }
 
-        $(".field_number_left input[value=" + selected_left + "]").prop("checked", true);
+        if (!back_flag) { $(".field_number_left input[value=" + selected_left + "]").prop("checked", true); }
         $(".field_number_middle input[value=" + selected_middle + "]").prop("checked", true);
-        $(".field_number_right input[value=" + selected_right + "]").prop("checked", true);
+        if (!front_flag) { $(".field_number_right input[value=" + selected_right + "]").prop("checked", true); }
 
       } else {
         /* Build and randomize array of possible numbers, select the required count, check them off the board */
@@ -941,9 +1002,24 @@ if ($("body").hasClass("simulator-styles")) {
         $(".ticket_extra_label").before('<span class="ticket_number" data-value="' + $(this).get(0).value + '">' + (parseInt($(this).get(0).value)<10 ? '0' : '') + $(this).get(0).value + '</span>');
       });
     } else if (currentgame == "pick3") {
-      $(".field_number input:checked").each(function(index){
-        $(".ticket_bet_type").before('<span class="ticket_number" data-position="' + index + '" data-value="' + $(this).get(0).value + '">' + $(this).get(0).value + '</span>');
-      });
+      if (back_flag) {
+        $(".ticket_bet_type").before('<span class="ticket_number" data-position="0" data-value="X">X</span>');
+
+        $(".field_number input:checked").each(function(index){
+          $(".ticket_bet_type").before('<span class="ticket_number" data-position="' + eval(index+1) + '" data-value="' + $(this).get(0).value + '">' + $(this).get(0).value + '</span>');
+        });
+      } else if (front_flag) {
+        $(".field_number input:checked").each(function(index){
+          $(".ticket_bet_type").before('<span class="ticket_number" data-position="' + index + '" data-value="' + $(this).get(0).value + '">' + $(this).get(0).value + '</span>');
+        });
+
+        $(".ticket_bet_type").before('<span class="ticket_number" data-position="2" data-value="X">X</span>');
+      } else {
+        $(".field_number input:checked").each( function(index) {
+          $(".ticket_bet_type").before('<span class="ticket_number" data-position="' + index + '" data-value="' + $(this).get(0).value + '">' + $(this).get(0).value + '</span>');
+        });
+      }
+
     } else {
       $(".field_number input:checked").each(function(){
         $(".ticket_qp").before('<span class="ticket_number" data-value="' + $(this).get(0).value + '">' + (parseInt($(this).get(0).value)<10  ? '0' : '') + $(this).get(0).value + '</span>');
@@ -1178,6 +1254,14 @@ if ($("body").hasClass("simulator-styles")) {
     updateTicketPrice(true);
     updateDraws(true);
     updatePrize(false);
+    fiddy_cent_flag = false;
+    front_flag = false;
+    back_flag = false;
+    current_number_count = 0;
+    max_numbers = game['max_numbers'];
+    $("#current_number_count").text(current_number_count);
+    $("#current_number_counter").addClass("in_progress").removeClass("complete");
+    $("#max_numbers").text(max_numbers);
   }
 
   function runTheDraws() {

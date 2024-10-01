@@ -11,7 +11,7 @@ cd build-11ty
 npm init -y
 
 **Build:**
-npx @11ty/eleventy
+npx @11ty/eleventy --watch
 
 **Upload:**
 TODO: This is clunky.

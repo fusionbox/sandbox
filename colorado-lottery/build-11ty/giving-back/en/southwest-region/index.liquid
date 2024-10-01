@@ -22,6 +22,9 @@ body_class: region
       .project-image-southwest-2:before {
       	background-image: url('/giving-back/assets/images/HorseGulch.webp');
       }
+      .project-image-southwest-3:before {
+      	background-image: url('/giving-back/assets/images/Chimney Rock Wildlife Crossing.webp');
+      }
     </style>
 
     <div class="carousel-card-wrapper">
@@ -35,7 +38,7 @@ body_class: region
           <div class="project-card-body">
             <span class="project-feature">FEATURED PROJECT</span>
             <span class="project-name">Ouray Ice Park</span>
-            <span>1 of 2</span>
+            <span>1 of 3</span>
           </div>
         </div>
         <div class="project-card">
@@ -44,25 +47,17 @@ body_class: region
           <div class="project-card-body">
             <span class="project-feature">FEATURED PROJECT</span>
             <span class="project-name">Horse Gulch</span>
-            <span>2 of 2</span>
+            <span>2 of 3</span>
           </div>
         </div>
         <div class="project-card">
-          <div class="project-card-image project-image-southwest-1">
+          <div class="project-card-image project-image-southwest-3">
           </div>
           <div class="project-card-body">
+            <span class="notification">NEW</span>
             <span class="project-feature">FEATURED PROJECT</span>
-            <span class="project-name">Ouray Ice Park</span>
-            <span>1 of 2</span>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="project-card-image project-image-southwest-2">
-          </div>
-          <div class="project-card-body">
-            <span class="project-feature">FEATURED PROJECT</span>
-            <span class="project-name">Horse Gulch</span>
-            <span>2 of 2</span>
+            <span class="project-name">Chimney Rock Wildlife Crossing</span>
+            <span>3 of 3</span>
           </div>
         </div>
       </div>
@@ -80,7 +75,7 @@ body_class: region
 
         <article class="video-container"><div class="wrapped"><iframe width="560" height="315" title="Vimeo Video" src="https://player.vimeo.com/video/791278977?h=6bce19d947&color=0F1E8C&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe></div></article>
 
-        <article class="cards large" data-bindable="virtual-cards"><div class="card wrapped"><a class="vr-overlay" title="Start VR Video" href="/giving-back/en/vr/index.html#!ouray"><img alt="Start VR Video" src="/giving-back/assets/images/ouray.webp" width="100%" /></a><a class="btn" href="/giving-back/en/vr/index.html#!ouray">Go Ice Climbing in VR</a></div></article>
+        <article class="cards large" data-bindable="virtual-cards"><div class="card wrapped"><a class="vr-overlay" title="Start VR Video" href="/giving-back/en/vr/#!ouray"><img alt="Start VR Video" src="/giving-back/assets/images/ouray.webp" width="100%" /></a><a class="btn" href="/giving-back/en/vr/#!ouray">Go Ice Climbing in VR</a></div></article>
 
         <p>
           The Colorado Lottery is helping fund this magnificent ice park so that Colorado can still have this iconic attraction for years to come. <a href="http://www.ourayicepark.com/" target="_blank">Visit ourayicepark.com</a> for more information about the park.
@@ -100,7 +95,25 @@ body_class: region
           Horse Gulch, sometimes called Durango’s Central Park, is a dreamscape for hikers, bicyclists, athletes in training, equestrians, runners, and commuters. Nearly $1.7 million in Lottery proceeds helped fund the Horse Gulch acquisition and preservation project which helped preserve 223 acres of open space. The area rises from an open meadow to a ridge with technical trails for advanced mountain bikers. Durango offers 300 miles of trails within 30 minutes of its downtown area.
         </p>
 
-        <article class="image-container"><div class="wrapped"><img src="/giving-back/assets/images/HorseGulch.webp" alt=" Horse Gulch" /></div></article>
+        <article class="image-container"><div class="wrapped"><img src="/giving-back/assets/images/HorseGulch.webp" alt="Horse Gulch" /></div></article>
+
+        <p class="project-lead">
+          <a href="#" class="project-next">NEXT PROJECT: Chimney Rock Wildlife Crossing</a>
+        </p>
+      </div>
+
+      <div class="featured-project carousel-slide">
+        <p class="project-lead">
+          Chimney Rock Wildlife Crossing
+        </p>
+
+        <p>
+          This $11.3 million project features a wildlife overpass and underpass, two miles of exclusion fencing, escape ramps, and road improvements on U.S. Highway 160 at the Colorado Highway 151 junction, near Chimney Rock National Monument.
+        </p>
+        <article class="video-container"><div class="wrapped"><iframe width="560" height="315" title="Youtube Video" src="https://www.youtube.com/embed/-ySjStLq7_M?si=MUxcj-PQH1gCGUPZ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe></div></article>
+        <p>
+          Before its completion in summer 2022, over 60% of crashes in the area involved wildlife. The location is a key migration point for elk and deer. GPS data and video surveillance showed elk using the crossings even before construction finished. In its first fall migration season, cameras recorded 1,334 mule deer and 603 elk using the structures, keeping them off the highway and reducing collisions. The project is expected to decrease wildlife-vehicle collisions by 80-90%, protecting both animals and motorists.
+        </p>
 
         <p class="project-lead">
           <a href="#" class="project-next">BACK TO: Ouray Ice Park</a>
@@ -113,6 +126,7 @@ body_class: region
     $('.carousel-slides').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
+      initialSlide: 2,
       arrows: false,
       fade: true,
       infinite: true,
@@ -129,6 +143,7 @@ body_class: region
       centerMode: false,
       slidesToShow: 2,
       slidesToScroll: 1,
+      initialSlide: 2,
       infinite: true,
       swipeToSlide: true,
       responsive: [
@@ -155,21 +170,7 @@ body_class: region
     <a id="project-list"></a>
     <div class="regional-project-slides">
       <div class="regional-project-slide" style="background-image: url('/giving-back/assets/images/southwest-slider-1.jpg');"></div>
-      <div class="regional-project-slide" style="background-image: url('/giving-back/assets/images/southwest-slider-2.jpg');"></div>
-      <div class="regional-project-slide" style="background-image: url('/giving-back/assets/images/southwest-slider-3.jpg');"></div>
     </div>
-    <script>
-    $('.regional-project-slides').slick({
-      autoplay: true,
-      arrows: false,
-      dots: false,
-      speed: 500,
-      autoplaySpeed: 2000,
-      fade: true,
-      cssEase: 'linear',
-      pauseOnHover: false
-    });
-    </script>
     <h2>Regional Projects</h2>
     <p class="h4">Information at a glance</p>
     <article class="cards">
@@ -179,7 +180,7 @@ body_class: region
     </article>
   </header>
   <article class="data-sheet" data-bindable="data-sheet" data-region="southwest"></article>
-  <a class="region-article mountain" href="/giving-back/en/mountain-region/index.html">
+  <a class="region-article mountain" href="/giving-back/en/mountain-region/">
     <div class="image"></div>
     <div class="details">
       <p class="h5">Next Project</p>

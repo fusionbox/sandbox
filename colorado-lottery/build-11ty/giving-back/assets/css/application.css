@@ -2245,7 +2245,7 @@ margin: 0 auto
 }
 article.partner div.image:before {
 	display: block;
-	background-image: url(../images/partners-2020.png);
+	background-image: url(../images/partners-2024.png);
 	background-repeat: no-repeat;
 	content: "";
 	-webkit-transform: scale(0.5);
@@ -2274,6 +2274,12 @@ article.partner.best div.image:before {
   height: 158px;
   margin: -44px -91px;
   background-position: -5px -10px;
+}
+article.partner.oegp div.image:before {
+	width: 368px;
+  height: 380px;
+  margin: -90px -91px;
+  background-position: 100% 100%;
 }
 @media screen and (min-width: 640px) {body.home>section.content:before {
 background: rgba(5,63,85,0.7)
@@ -3142,8 +3148,7 @@ a.more-card .more-card-image {
 }
 
 section.featured-project-carousel {
-	background: #4ABDFE url("../images/icons/design-flair-yellow-2.png") no-repeat center 80px;
-	background-size: 37px 298px;
+	background-color: #4ABDFE;
 	width: calc(100% + 60px);
 	position: relative;
 	left: -30px;
@@ -3151,14 +3156,29 @@ section.featured-project-carousel {
 	margin-top: 60px;
 }
 
+section.featured-project-carousel:before {
+  content: "";
+  display: block;
+  background: url("../images/icons/design-flair-yellow-2.png") no-repeat center center;
+  background-size: 37px 239px;
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 37px;
+  height: 298px;
+  z-index: 1;
+}
+
 section.featured-project-carousel:after {
+	content: "";
+  display: block;
 	background: url("../images/icons/design-flair-yellow-1.png");
 	position: absolute;
 	top: 16px;
 	left: 50%;
 	width: 116px;
 	height: 116px;
-	content: "";
 	-webkit-transform: scale(0.5) translateX(-116px);
 	transform: scale(0.5) translateX(-116px);
 }

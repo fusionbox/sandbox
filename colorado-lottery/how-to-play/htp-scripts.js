@@ -397,19 +397,21 @@ if ($("body").hasClass("simulator-styles")) {
     $(".field_advance_draws .advance-plus").removeClass("range_maxed");
     $("#advance_draws").attr("max",28);
     advance_play_max = 28;
-    if (!pick3_both_modifier && $(this).attr("value") == "both") {
+    temp_price_flag = false;
+
+    /* If we're switch to or from "Both", set a flag to update the ticket price */
+    if (!pick3_both_modifier && $(this).attr("value") == "both" || pick3_both_modifier && $(this).attr("value") != "both") {
+      temp_price_flag = true;
+    }
+
+    if ($(this).attr("value") == "both") {
       pick3_both_modifier = true;
-      updateDraws(true);
-      updateTicketPrice(true);
-      $("#advance_draws").attr("max",56);
-      advance_play_max = 56;
-    } else if (pick3_both_modifier && $(this).attr("value") != "both") {
-      pick3_both_modifier = false;
-      updateTicketPrice(true);
-      updateDraws(true);
     } else {
-      updateTicketPrice(false);
-      updateDraws(false);
+      pick3_both_modifier = false;
+    }
+
+    if (temp_price_flag) {
+      updateTicketPrice(true);
     }
 
     $("div.actions").removeClass("hol_up");
@@ -675,11 +677,6 @@ if ($("body").hasClass("simulator-styles")) {
 
   function updateDraws(shouldThisFlash) {
     var newDraws = advance_play_modifier == 0 ? 1 : advance_play_modifier;
-
-    /* Pick 3 "BOTH" draws */
-    if ( pick3_both_modifier ) {
-      newDraws = newDraws * 2;
-    }
 
     $("#ticket_draws").text( newDraws );
     $("#ticket_draws").attr('data-after', newDraws);
@@ -1069,7 +1066,7 @@ if ($("body").hasClass("simulator-styles")) {
     }
 
     if (parseInt(advance_play_modifier) > 1 && pick3_both_modifier) {
-      $(".ticket_draw_count").text(parseInt(advance_play_modifier * 2));
+      $(".ticket_draw_count").text(parseInt(advance_play_modifier));
       $(".ticket_draw_count_plurality").show();
     } else if ( parseInt(advance_play_modifier) == 0 && pick3_both_modifier ) {
       $(".ticket_draw_count").text(2);

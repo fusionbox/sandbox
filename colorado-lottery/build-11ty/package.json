@@ -1,7 +1,7 @@
 {
   "name": "build-11ty",
   "version": "1.0.0",
-  "description": "",
+  "description": "This version of the Colorado Lottery giving back section is templated using 11ty (https://www.11ty.dev/docs/):",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,5 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "@11ty/eleventy": "^2.0.1"
-  }
+  },
+  "devDependencies": {}
 }

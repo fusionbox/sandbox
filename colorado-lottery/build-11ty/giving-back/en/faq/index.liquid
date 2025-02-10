@@ -9,7 +9,7 @@ body_class: faq
 </header>
 <article>
   <p>
-    At its core, the Colorado Lottery is a conservation organization. In fact, it's the only Lottery in the country dedicated to funding the great outdoors. Since 1983, the Colorado Lottery has given more than $4 billion back to parks, trails, open spaces and recreation projects across the state. Profits from the sale of Lottery games in the state are distributed to voter-selected beneficiaries who use those funds to preserve and protect Colorado.
+    At its core, the Colorado Lottery is a conservation organization. In fact, it's the only Lottery in the country dedicated to funding the great outdoors. Since 1983, the Colorado Lottery has given more than $4.3 billion back to parks, trails, open spaces and recreation projects across the state. Profits from the sale of Lottery games in the state are distributed to voter-selected beneficiaries who use those funds to preserve and protect Colorado.
   </p>
 
   <div class="accordion">
@@ -139,17 +139,20 @@ body_class: faq
   </div>
 
   <script>
-    var allPanels = $('.accordion > .response').hide();
+    var allPanels = $('.accordion > .response');
+    allPanels.hide();
+    allPanels.attr("aria-hidden","true");
 
     $('.accordion .trigger').on('click', function(e){
       e.preventDefault();
       if ( $(this).hasClass('active') ) {
         allPanels.slideUp().siblings('.trigger').removeClass('active');
+        allPanels.attr("aria-hidden","true");
       }
       else {
         allPanels.slideUp().siblings('.trigger').removeClass('active');
         $(this).addClass('active');
-        $(this).siblings('div.response').slideDown();
+        $(this).siblings('div.response').slideDown().attr("aria-hidden","false");
       }
     });
   </script>
@@ -189,8 +192,8 @@ body_class: faq
 
 </article>
 <script>
-  $(".modal-trigger").on("click", function(e){ e.preventDefault(); $("#modalVideo").show().addClass("show"); });
-  $(".modal-close").on("click", function(e){ e.preventDefault(); $("#modalVideo").hide().removeClass("show"); });
+  $(".modal-trigger").on("click", function(e){ e.preventDefault(); $("#modalVideo").show().addClass("show").attr("aria-hidden","false"); });
+  $(".modal-close").on("click", function(e){ e.preventDefault(); $("#modalVideo").hide().removeClass("show").attr("aria-hidden","true"); });
   $("input[name=sh-gb]").on("click", function(e){ $(".sh-response").fadeIn(); });
   $(".sh-response").hide();
 </script>

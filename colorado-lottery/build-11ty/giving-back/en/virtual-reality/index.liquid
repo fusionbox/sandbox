@@ -51,11 +51,12 @@ body_class: virtual-reality
   </article>
 </header>
 <article>
-  <p>In 39 years, the Colorado Lottery has given $3.9 billion dollars back to various parks, trials, and open spaces across the state. Gear up, head out and experience some of the most thrilling proceed destinations in 360 VR right where you're at. <span class="vr-only">Want to just have a fun time? <a href="/giving-back/en/vr/#!game">Play the Proceeds minigame</a>.</a>
+  <p>Thanks to our players, the Lottery has invested billions in parks, trails, and open spaces since the very first ticket was sold in 1983. Every ticket you buy helps preserve Colorado’s iconic landscapes, build community spaces, and ensure future generations can experience the same awe-inspiring views and adventures. Together, we’re not just playing a game—we’re investing in the heart of what makes Colorado home.</p>
+  <p>Gear up, head out and experience some of the most thrilling proceeds destinations in 360 VR right where you're at. Want to just have a fun time? <a href="/giving-back/en/vr/#!game">Play the Proceeds minigame</a>.</p>
   </p>
 </article>
 
-<script>
-  $(".modal-trigger").on("click", function(e){ e.preventDefault(); $("#modalVideo").show().addClass("show"); });
-  $(".modal-close").on("click", function(e){ e.preventDefault(); $("#modalVideo").hide().removeClass("show"); });
+<script>>
+  $(".modal-trigger").on("click", function(e){ e.preventDefault(); $("#modalVideo").show().addClass("show").attr("aria-hidden","false"); });
+  $(".modal-close").on("click", function(e){ e.preventDefault(); $("#modalVideo").hide().removeClass("show").attr("aria-hidden","true"); });
 </script>

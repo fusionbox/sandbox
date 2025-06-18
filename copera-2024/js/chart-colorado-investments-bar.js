@@ -7,34 +7,34 @@ am4core.ready(function() {
   // Add data
   chart.data = [
 	{
-		"color": am4core.color("#2C90CC"),
-		"asset_class": "Bonds",
-		"dollars": 25500000,
-	  "percentage_of_investments": "3.2"
+		"color": am4core.color("#4A83B4"),
+	   "asset_class": "Alternatives",
+	   "dollars": 280200000,
+	   "percentage_of_investments": "36.5"
 	},
 	{
-		"color": am4core.color("#2C90CC"),
-	  "asset_class": "Public Equity",
-	  "dollars": 89300000,
-	  "percentage_of_investments": "11.3"
-	},
-	{
-		"color": am4core.color("#2C90CC"),
-	  "asset_class": "Real Estate",
-	  "dollars": 171300000,
-	  "percentage_of_investments": "21.7"
-	},
-	{
-		"color": am4core.color("#2C90CC"),
+		"color": am4core.color("#4A83B4"),
     "asset_class": "Private Equity",
-    "dollars": 251000000,
-    "percentage_of_investments": "31.8"
+    "dollars": 159000000,
+    "percentage_of_investments": "20.7"
   },
 	{
-		"color": am4core.color("#2C90CC"),
-	   "asset_class": "Alternatives",
-	   "dollars": 252300000,
-	   "percentage_of_investments": "32.0"
+		"color": am4core.color("#4A83B4"),
+	  "asset_class": "Real Estate",
+	  "dollars": 250800000,
+	  "percentage_of_investments": "32.6"
+	},
+	{
+		"color": am4core.color("#4A83B4"),
+		"asset_class": "Fixed Income",
+		"dollars": 12700000,
+	  "percentage_of_investments": "7.1"
+	},
+	{
+		"color": am4core.color("#4A83B4"),
+	  "asset_class": "Public Equity",
+	  "dollars": 65700000,
+	  "percentage_of_investments": "8.6"
 	}];
 
   // Create axes

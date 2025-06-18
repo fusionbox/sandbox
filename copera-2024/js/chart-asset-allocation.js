@@ -12,48 +12,48 @@ am4core.ready(function() {
 
   // Add data
   chart.data = [{
-		"color": am4core.color("#109DBA"),
+		"color": am4core.color("#4A83B4"),
     "asset_class": "Global Equity",
-    "percentage_of_portfolio": 55.0,
-    "last_years_return": "23.8",
-    "benchmark_return": "21.9"
+    "percentage_of_portfolio": 55.5,
+    "last_years_return": "17.1",
+    "benchmark_return": "16.7"
   }, {
-		"color": am4core.color("#E78736"),
+		"color": am4core.color("#B2653D"),
     "asset_class": "Fixed Income",
-    "percentage_of_portfolio": 18.9,
-    "last_years_return": "6.2",
-    "benchmark_return": "5.5"
+    "percentage_of_portfolio": 19.7,
+    "last_years_return": "1.7",
+    "benchmark_return": "1.3"
   }, {
-		"color": am4core.color("#8EA52B"),
+		"color": am4core.color("#1D2240"),
     "asset_class": "Private Equity",
-    "percentage_of_portfolio": 8.7,
-    "last_years_return": "4.7",
-    "benchmark_return": "23.4"
+    "percentage_of_portfolio": 7.7,
+    "last_years_return": "6.4",
+    "benchmark_return": "18.2"
   }, {
-		"color": am4core.color("#99B8F1"),
+		"color": am4core.color("#85ACBB"),
     "asset_class": "Real Estate",
-    "percentage_of_portfolio": 10.1,
-    "last_years_return": "-9.9",
-    "benchmark_return": "-12.2"
+    "percentage_of_portfolio": 9.2,
+    "last_years_return": "-0.6",
+    "benchmark_return": "-1.8"
   }, {
-		"color": am4core.color("#6f42c1"),
+		"color": am4core.color("#B68365"),
     "asset_class": "Alternatives",
-    "percentage_of_portfolio": 6.9,
-    "last_years_return": "7.8",
-    "benchmark_return": "9.4"
+    "percentage_of_portfolio": 7.2,
+    "last_years_return": "8.0",
+    "benchmark_return": "8.6"
   }, {
-		"color": am4core.color("#DE751C"),
+		"color": am4core.color("#E2ECF3"),
     "asset_class": "Cash & Short Term",
-    "percentage_of_portfolio": 0.4,
-    "last_years_return": "5.2",
-    "benchmark_return": "5.0"
+    "percentage_of_portfolio": 0.7,
+    "last_years_return": "5.4",
+    "benchmark_return": "5.3"
   }];
 
   // Add and configure Series
   var pieSeries = chart.series.push(new am4charts.PieSeries());
   pieSeries.dataFields.value = "percentage_of_portfolio";
   pieSeries.dataFields.category = "asset_class";
-  pieSeries.slices.template.stroke = am4core.color("#eef1f2");
+  pieSeries.slices.template.stroke = am4core.color("#ffffff");
   pieSeries.slices.template.strokeWidth = 2;
   pieSeries.slices.template.strokeOpacity = 1;
   pieSeries.slices.template.propertyFields.fill = "color";

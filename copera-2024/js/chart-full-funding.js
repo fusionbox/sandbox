@@ -6,25 +6,25 @@ am4core.ready(function() {
 
   // Add data
   chart.data = [{
-		"color": am4core.color("#1F2A59"),
+		"color": am4core.color("#4A83B4"),
     "division": "DPS",
-    "years": 9
+    "years": 10
   },{
-		"color": am4core.color("#1F2A59"),
+		"color": am4core.color("#4A83B4"),
     "division": "Judicial",
-    "years": 8
+    "years": 5
   },{
-		"color": am4core.color("#1F2A59"),
+		"color": am4core.color("#4A83B4"),
     "division": "Local Govt.",
-    "years": 14
+    "years": 11
   },{
-		"color": am4core.color("#1F2A59"),
+		"color": am4core.color("#4A83B4"),
     "division": "School",
-    "years": 27
+    "years": 28
   },{
-		"color": am4core.color("#1F2A59"),
+		"color": am4core.color("#4A83B4"),
     "division": "State",
-    "years": 23
+    "years": 19
   }
   ];
 

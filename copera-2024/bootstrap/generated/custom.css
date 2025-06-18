@@ -8920,14 +8920,14 @@ svg.hr {
   display: block;
 }
 .content-section-header h1 {
-  color: white;
+  color: white !important;
   font-size: 3.2rem;
   font-weight: 300;
   line-height: 1;
   margin-bottom: 1rem;
 }
 .content-section-header h2 {
-  color: #4A83B4;
+  color: #B68365 !important;
   line-height: 1.1;
 }
 .content-section-header p {
@@ -9181,7 +9181,7 @@ svg.hr {
   }
 }
 .icon-metric div + div p.h1 {
-  font-size: 64px;
+  font-size: 56px;
   line-height: 1;
   margin: 0;
   font-weight: bold;
@@ -9627,10 +9627,10 @@ span.bullet {
   margin: 0 0.5rem 0 0;
 }
 span.bullet.bullet-group-1 {
-  background: #85ACBB;
+  background: #333745;
 }
 span.bullet.bullet-group-2 {
-  background: #6497B6;
+  background: #B68365;
 }
 span.bullet.bullet-group-3 {
   background: #4A83B4;
@@ -9642,7 +9642,7 @@ span.bullet.bullet-group-5 {
   background: #1D2240;
 }
 span.bullet.bullet-group-6 {
-  background: #B68365;
+  background: #B2653D;
 }
 
 /* County Map */
@@ -9673,27 +9673,27 @@ span.bullet.bullet-group-6 {
 }
 
 .county-group-1 {
-  fill: #85ACBB;
+  fill: #333745;
 }
 
 .county-group-1:hover {
-  fill: #9fbeca;
+  fill: #444a5c;
 }
 
 .county-group-1.active {
-  fill: #b6cdd6;
+  fill: #545a71;
 }
 
 .county-group-2 {
-  fill: #6497B6;
+  fill: #B68365;
 }
 
 .county-group-2:hover {
-  fill: #80aac3;
+  fill: #c39981;
 }
 
 .county-group-2.active {
-  fill: #98bace;
+  fill: #cfad99;
 }
 
 .county-group-3 {
@@ -9733,15 +9733,15 @@ span.bullet.bullet-group-6 {
 }
 
 .county-group-6 {
-  fill: #B68365;
+  fill: #B2653D;
 }
 
 .county-group-6:hover {
-  fill: #c39981;
+  fill: #c47a54;
 }
 
 .county-group-6.active {
-  fill: #cfad99;
+  fill: #cd8f6e;
 }
 
 .county.active {

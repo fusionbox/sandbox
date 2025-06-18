@@ -183,7 +183,7 @@ svg.hr {
   }
 
   h1 {
-    color: white;
+    color: white !important;
     font-size: 3.2rem;
     font-weight: 300;
     line-height: 1;
@@ -191,7 +191,7 @@ svg.hr {
   }
 
   h2 {
-    color: theme-color("blue");
+    color: $terracotta-subtle !important;
     line-height: 1.1;
   }
 
@@ -476,7 +476,7 @@ svg.hr {
     }
 
     p.h1 {
-      font-size: 64px;
+      font-size: 56px;
       line-height: 1;
       margin: 0;
       font-weight: bold;
@@ -917,12 +917,12 @@ div.bullet-wrapper {
 }
 
 
-$group1: $seafoam-subtle;
-$group2: $seafoam;
+$group1: $dark-subtle;
+$group2: $terracotta-subtle;
 $group3: $blue;
 $group4: $blue-subtle;
 $group5: $dark;
-$group6: $terracotta-subtle;
+$group6: $terracotta;
 
 /* Bullet */
 span.bullet {

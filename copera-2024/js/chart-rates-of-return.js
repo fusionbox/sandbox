@@ -6,64 +6,64 @@ am4core.ready(function() {
 
   // Add data
   chart.data = [{
-		"color": am4core.color("#2C90CC"),
-    "year": "2014",
-    "rate_of_return": 5.7,
-    "benchmark": 5.7,
-    "assumed": 7.50
-  }, {
-		"color": am4core.color("#2C90CC"),
+		"color": am4core.color("#4A83B4"),
     "year": "2015",
     "rate_of_return": 1.5,
     "benchmark": 0.5,
     "assumed": 7.50
   }, {
-		"color": am4core.color("#2C90CC"),
+		"color": am4core.color("#4A83B4"),
     "year": "2016",
     "rate_of_return": 7.3,
     "benchmark": 7.3,
     "assumed": 7.25
   }, {
-		"color": am4core.color("#2C90CC"),
+		"color": am4core.color("#4A83B4"),
     "year": "2017",
     "rate_of_return": 18.1,
     "benchmark": 16.0,
     "assumed": 7.25
   }, {
-		"color": am4core.color("#2C90CC"),
+		"color": am4core.color("#4A83B4"),
     "year": "2018",
     "rate_of_return": -3.5,
     "benchmark": -3.6,
     "assumed": 7.25
   },{
-		"color": am4core.color("#2C90CC"),
+		"color": am4core.color("#4A83B4"),
     "year": "2019",
     "rate_of_return": 20.3,
     "benchmark": 19.8,
     "assumed": 7.25
   },{
-		"color": am4core.color("#2C90CC"),
+		"color": am4core.color("#4A83B4"),
     "year": "2020",
     "rate_of_return": 17.4,
     "benchmark": 14.1,
     "assumed": 7.25
   },{
-		"color": am4core.color("#2C90CC"),
+		"color": am4core.color("#4A83B4"),
     "year": "2021",
     "rate_of_return": 16.1,
     "benchmark": 13.7,
     "assumed": 7.25
   },{
-		"color": am4core.color("#2C90CC"),
+		"color": am4core.color("#4A83B4"),
     "year": "2022",
     "rate_of_return": -13.4,
     "benchmark": -13.7,
     "assumed": 7.25
   },{
-		"color": am4core.color("#2C90CC"),
+		"color": am4core.color("#4A83B4"),
     "year": "2023",
     "rate_of_return": 13.4,
     "benchmark": 14.4,
+    "assumed": 7.25
+  },{
+		"color": am4core.color("#4A83B4"),
+    "year": "2024",
+    "rate_of_return": 10.8,
+    "benchmark": 11.1,
     "assumed": 7.25
   }];
 

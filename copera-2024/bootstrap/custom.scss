@@ -173,6 +173,14 @@ svg.hr {
       text-align: right;
       clip-path: polygon(0 35%, 100% 0, 100% 100%, 0 65%);
       background: theme-color("dark") !important;
+
+      @include bp(md) {
+        padding-left: 6rem;
+      }
+      @include bp(sm) {
+        clip-path: polygon(0 25%, 100% 0, 100% 100%, 0 75%);
+        padding: 10rem 3rem;
+      }
     }
   }
 
@@ -180,6 +188,14 @@ svg.hr {
     width: auto;
     height: 1000px;
     display: block;
+
+    @include bp(md) {
+      height: 750px;
+    }
+
+    @include bp(sm) {
+      height: 600px;
+    }
   }
 
   h1 {
@@ -1327,8 +1343,12 @@ img.headshot {
   background: url('../../image/pattern.png') repeat center top;
   background-size: 480px 960px;
 
-  @include bp(sm) {
+  @include bp(md) {
     grid-template-columns: 240px 240px;
+  }
+
+  @include bp(sm) {
+    grid-template-columns: 50% 50%;
   }
 
   > div:not(.hero-title) {
@@ -1348,7 +1368,7 @@ img.headshot {
       grid-column-start: 3;
       grid-column-end: 5;
 
-      @include bp(sm) {
+      @include bp(md) {
         grid-column-start: 1;
         grid-column-end: 3;
       }
@@ -1374,6 +1394,16 @@ img.headshot {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100px);
     background: theme-color("dark") !important;
     text-align: right;
+
+    @include bp(md) {
+      padding: 6rem 6rem 28rem 6rem;
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 0 200px);
+    }
+
+    @include bp(sm) {
+      padding: 6rem 3rem 20rem 3rem;
+      clip-path: polygon(0 0, 100% 0, 100% 80%, 0 200px);
+    }
   }
 
   h1 {

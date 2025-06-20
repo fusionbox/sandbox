@@ -8914,10 +8914,31 @@ svg.hr {
   clip-path: polygon(0 35%, 100% 0, 100% 100%, 0 65%);
   background: #1D2240 !important;
 }
+@media (max-width: 1200px) {
+  .content-section-header > div div.inner {
+    padding-left: 6rem;
+  }
+}
+@media (max-width: 800px) {
+  .content-section-header > div div.inner {
+    clip-path: polygon(0 25%, 100% 0, 100% 100%, 0 75%);
+    padding: 10rem 3rem;
+  }
+}
 .content-section-header > img {
   width: auto;
   height: 1000px;
   display: block;
+}
+@media (max-width: 1200px) {
+  .content-section-header > img {
+    height: 750px;
+  }
+}
+@media (max-width: 800px) {
+  .content-section-header > img {
+    height: 600px;
+  }
 }
 .content-section-header h1 {
   color: white !important;
@@ -10064,9 +10085,14 @@ img.headshot {
   background: url("../../image/pattern.png") repeat center top;
   background-size: 480px 960px;
 }
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
   #top {
     grid-template-columns: 240px 240px;
+  }
+}
+@media (max-width: 800px) {
+  #top {
+    grid-template-columns: 50% 50%;
   }
 }
 #top > div:not(.hero-title) {
@@ -10086,7 +10112,7 @@ img.headshot {
   grid-column-start: 3;
   grid-column-end: 5;
 }
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
   #top > div:not(.hero-title):nth-child(2) {
     grid-column-start: 1;
     grid-column-end: 3;
@@ -10111,6 +10137,18 @@ img.headshot {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100px);
   background: #1D2240 !important;
   text-align: right;
+}
+@media (max-width: 1200px) {
+  .hero-title .hero-title-inner {
+    padding: 6rem 6rem 28rem 6rem;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 200px);
+  }
+}
+@media (max-width: 800px) {
+  .hero-title .hero-title-inner {
+    padding: 6rem 3rem 20rem 3rem;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 200px);
+  }
 }
 .hero-title h1 {
   color: white;

@@ -8841,6 +8841,10 @@ html {
   scroll-behavior: smooth;
 }
 
+h2, .h2 {
+  font-size: 1.1rem;
+}
+
 /* Header */
 header.header-top {
   background: #1D2240;
@@ -8948,7 +8952,7 @@ svg.hr {
   margin-bottom: 1rem;
 }
 .content-section-header h2 {
-  color: #B68365 !important;
+  color: white !important;
   line-height: 1.1;
 }
 .content-section-header p {
@@ -9962,83 +9966,13 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .display-1, .display-2, .d
   letter-spacing: -0.5px;
 }
 
-#message h2, #message h3, #message h4, #message h5, #message h6, #message .h1, #message .h2, #message .h3, #message .h4, #message .h5, #message .h6, #message .display-1, #message .display-2, #message .display-3, #message .display-4, #message .display-5, #message .display-6 {
+.content-section h2, .content-section h3, .content-section h4, .content-section h5, .content-section h6, .content-section .h1, .content-section .h2, .content-section .h3, .content-section .h4, .content-section .h5, .content-section .h6, .content-section .display-1, .content-section .display-2, .content-section .display-3, .content-section .display-4, .content-section .display-5, .content-section .display-6 {
   color: #1D2240;
 }
-#message .chart {
+.content-section .chart {
   border-color: #B68365;
 }
-#message ul.nav-tabs:not(.aa-dial) {
-  background: #B2653D;
-}
-
-#review h2, #review h3, #review h4, #review h5, #review h6, #review .h1, #review .h2, #review .h3, #review .h4, #review .h5, #review .h6, #review .display-1, #review .display-2, #review .display-3, #review .display-4, #review .display-5, #review .display-6 {
-  color: #1D2240;
-}
-#review .chart {
-  border-color: #B68365;
-}
-#review ul.nav-tabs:not(.aa-dial) {
-  background: #B2653D;
-}
-
-#investments h2, #investments h3, #investments h4, #investments h5, #investments h6, #investments .h1, #investments .h2, #investments .h3, #investments .h4, #investments .h5, #investments .h6, #investments .display-1, #investments .display-2, #investments .display-3, #investments .display-4, #investments .display-5, #investments .display-6 {
-  color: #1D2240;
-}
-#investments .chart {
-  border-color: #B68365;
-}
-#investments ul.nav-tabs:not(.aa-dial) {
-  background: #B2653D;
-}
-
-#funding h2, #funding h3, #funding h4, #funding h5, #funding h6, #funding .h1, #funding .h2, #funding .h3, #funding .h4, #funding .h5, #funding .h6, #funding .display-1, #funding .display-2, #funding .display-3, #funding .display-4, #funding .display-5, #funding .display-6 {
-  color: #1D2240;
-}
-#funding .chart {
-  border-color: #B68365;
-}
-#funding ul.nav-tabs:not(.aa-dial) {
-  background: #B2653D;
-}
-
-#membership h2, #membership h3, #membership h4, #membership h5, #membership h6, #membership .h1, #membership .h2, #membership .h3, #membership .h4, #membership .h5, #membership .h6, #membership .display-1, #membership .display-2, #membership .display-3, #membership .display-4, #membership .display-5, #membership .display-6 {
-  color: #1D2240;
-}
-#membership .chart {
-  border-color: #B68365;
-}
-#membership ul.nav-tabs:not(.aa-dial) {
-  background: #B2653D;
-}
-
-#financials h2, #financials h3, #financials h4, #financials h5, #financials h6, #financials .h1, #financials .h2, #financials .h3, #financials .h4, #financials .h5, #financials .h6, #financials .display-1, #financials .display-2, #financials .display-3, #financials .display-4, #financials .display-5, #financials .display-6 {
-  color: #1D2240;
-}
-#financials .chart {
-  border-color: #B68365;
-}
-#financials ul.nav-tabs:not(.aa-dial) {
-  background: #B2653D;
-}
-
-#impact h2, #impact h3, #impact h4, #impact h5, #impact h6, #impact .h1, #impact .h2, #impact .h3, #impact .h4, #impact .h5, #impact .h6, #impact .display-1, #impact .display-2, #impact .display-3, #impact .display-4, #impact .display-5, #impact .display-6 {
-  color: #1D2240;
-}
-#impact .chart {
-  border-color: #B68365;
-}
-#impact ul.nav-tabs:not(.aa-dial) {
-  background: #B2653D;
-}
-
-#resources h2, #resources h3, #resources h4, #resources h5, #resources h6, #resources .h1, #resources .h2, #resources .h3, #resources .h4, #resources .h5, #resources .h6, #resources .display-1, #resources .display-2, #resources .display-3, #resources .display-4, #resources .display-5, #resources .display-6 {
-  color: #1D2240;
-}
-#resources .chart {
-  border-color: #B68365;
-}
-#resources ul.nav-tabs:not(.aa-dial) {
+.content-section ul.nav-tabs:not(.aa-dial) {
   background: #B2653D;
 }
 
@@ -10159,7 +10093,7 @@ img.headshot {
   position: relative;
   z-index: 100;
 }
-.hero-title p {
+.hero-title h2 {
   color: white;
 }
 

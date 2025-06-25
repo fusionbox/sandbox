@@ -43,7 +43,7 @@ am4core.ready(function() {
     "benchmark_return": "8.6"
   }, {
 		"color": am4core.color("#E2ECF3"),
-    "asset_class": "Cash & Short Term",
+    "asset_class": "Cash & Cash Equivalents",
     "percentage_of_portfolio": 0.7,
     "last_years_return": "5.4",
     "benchmark_return": "5.3"
@@ -83,11 +83,11 @@ am4core.ready(function() {
 
   pieSeries.slices.template.hoverOnFocus = true;
   pieSeries.slices.focusable=true;
-  pieSeries.slices.template.tooltipText = '{category}\n2023 Return: {last_years_return}%';
+  pieSeries.slices.template.tooltipText = '{category}\n2024 Return: {last_years_return}%';
   pieSeries.slices.template.tooltipHTML =
 	'<div style="font-size:14px"><strong>{category}</strong></div>'+
   '<div class="d-flex">'+
-  '<div class="mx-1 py-1 text-center"><div style="font-size:30px;line-height:1;">{last_years_return}%</div><div style="font-size:13px">2023 Return</div></div>'+
+  '<div class="mx-1 py-1 text-center"><div style="font-size:30px;line-height:1;">{last_years_return}%</div><div style="font-size:13px">2024 Return</div></div>'+
   '<div class="mx-1 py-1 text-center"><div style="font-size:30px;line-height:1;">{benchmark_return}%</div><div style="font-size:13px">Benchmark Return</div></div>'+
   '</div>';
   pieSeries.slices.template.tooltip.togglable=true;

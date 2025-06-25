@@ -98,6 +98,10 @@ html {
   scroll-behavior: smooth;
 }
 
+h2,.h2 {
+  font-size: 1.1rem;
+}
+
 /* Header */
 
 header.header-top {
@@ -207,7 +211,7 @@ svg.hr {
   }
 
   h2 {
-    color: $terracotta-subtle !important;
+    color: white !important;
     line-height: 1.1;
   }
 
@@ -1220,91 +1224,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .display-1, .display-2, .d
   letter-spacing: -0.5px;
 }
 
-#message {
-  h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
-    color: theme-color("dark");
-  }
-  .chart {
-    border-color: theme-color("secondary-subtle");
-  }
-  ul.nav-tabs:not(.aa-dial) {
-    background: theme-color("secondary");
-  }
-}
-
-#review {
-  h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
-    color: theme-color("dark");
-  }
-  .chart {
-    border-color: theme-color("secondary-subtle");
-  }
-  ul.nav-tabs:not(.aa-dial) {
-    background: theme-color("secondary");
-  }
-}
-
-#investments {
-  h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
-    color: theme-color("dark");
-  }
-  .chart {
-    border-color: theme-color("secondary-subtle");
-  }
-  ul.nav-tabs:not(.aa-dial) {
-    background: theme-color("secondary");
-  }
-}
-
-#funding {
-  h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
-    color: theme-color("dark");
-  }
-  .chart {
-    border-color: theme-color("secondary-subtle");
-  }
-  ul.nav-tabs:not(.aa-dial) {
-    background: theme-color("secondary");
-  }
-}
-
-#membership {
-  h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
-    color: theme-color("dark");
-  }
-  .chart {
-    border-color: theme-color("secondary-subtle");
-  }
-  ul.nav-tabs:not(.aa-dial) {
-    background: theme-color("secondary");
-  }
-}
-
-#financials {
-  h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
-    color: theme-color("dark");
-  }
-  .chart {
-    border-color: theme-color("secondary-subtle");
-  }
-  ul.nav-tabs:not(.aa-dial) {
-    background: theme-color("secondary");
-  }
-}
-
-#impact {
-  h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
-    color: theme-color("dark");
-  }
-  .chart {
-    border-color: theme-color("secondary-subtle");
-  }
-  ul.nav-tabs:not(.aa-dial) {
-    background: theme-color("secondary");
-  }
-}
-
-#resources {
+.content-section {
   h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
     color: theme-color("dark");
   }
@@ -1415,7 +1335,7 @@ img.headshot {
     position: relative;
     z-index: 100;
   }
-  p {
+  h2 {
     color: white;
   }
 }

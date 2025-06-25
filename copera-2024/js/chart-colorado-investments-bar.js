@@ -28,13 +28,13 @@ am4core.ready(function() {
 		"color": am4core.color("#4A83B4"),
 		"asset_class": "Fixed Income",
 		"dollars": 12700000,
-	  "percentage_of_investments": "7.1"
+	  "percentage_of_investments": "1.7"
 	},
 	{
 		"color": am4core.color("#4A83B4"),
 	  "asset_class": "Public Equity",
 	  "dollars": 65700000,
-	  "percentage_of_investments": "8.6"
+	  "percentage_of_investments": "8.5"
 	}];
 
   // Create axes
@@ -51,7 +51,7 @@ am4core.ready(function() {
   valueAxis.renderer.minGridDistance = 100;
   valueAxis.min = 0;
   valueAxis.max = 300000000;
-	valueAxis.numberFormatter.numberFormat = "$#,###.#a";
+	valueAxis.numberFormatter.numberFormat = "$#,###.0a";
 	valueAxis.renderer.labels.template.rotation = -60;
 	valueAxis.renderer.labels.template.verticalCenter = "middle";
 	valueAxis.renderer.labels.template.horizontalCenter = "right";

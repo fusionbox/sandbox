@@ -37,7 +37,7 @@ $dps: darken(#D94D26,8%);
 
 $theme-colors: (
   "primary": #1D2240,
-  "secondary": #B2653D,
+  "secondary": darken(#B2653D,10%),
   "secondary-subtle": #B68365,
   "success": $funding,
   "danger": $impact,
@@ -276,7 +276,9 @@ svg.hr {
   a.menu {
     margin-left: auto;
     display: inline-block;
-    padding: 8px 0;
+    padding: 8px;
+    width: 2rem;
+    border-radius: 3px;
 
     svg {
       width: 16px;
@@ -292,9 +294,11 @@ svg.hr {
     }
 
     &:hover, &:focus {
+      background: white;
+      color: $dark;
       svg {
         path {
-          fill: $message;
+          fill: $dark;
         }
       }
     }
@@ -340,7 +344,8 @@ svg.hr {
     }
 
     &.active {
-      color: #E0E8EB;
+      color: white;
+      font-weight: bold;
 
       &:after {
         background: #E0E8EB;
@@ -350,7 +355,12 @@ svg.hr {
 
     &:not(.active) {
      &:hover, &:focus {
-        color: rgba(#E0E8EB,0.8);
+        color: white;
+        span{ 
+          color: white;
+          text-decoration: underline !important;
+          overflow: visible;
+        }
 
         &:after {
           background: #E0E8EB;
@@ -399,7 +409,7 @@ svg.hr {
     font-weight: 600;
     font-size: 16px;
     line-height: 1.2;
-    color: theme-color("blue");
+    color: theme-color("dark");
 
     @include bp(sm) {
       flex-basis: 33%;
@@ -845,7 +855,7 @@ div.chart-balls {
     &:nth-child(5n-1) span.ball, span.ball.ball-color4 { background-color: #1C89A5;}
     &:nth-child(5n-2) span.ball, span.ball.ball-color3 { background-color: #249F52;}
     &:nth-child(5n-3) span.ball, span.ball.ball-color2 { background-color: #21988D;}
-    &:nth-child(5n-4) span.ball, span.ball.ball-color1 { background-color: #94C946;}
+    &:nth-child(5n-4) span.ball, span.ball.ball-color1 { background-color: mix($seafoam,green);}
   }
 
   + div.chart-balls,
@@ -855,7 +865,7 @@ div.chart-balls {
       &:nth-child(5n-1) span.ball { background-color: #21988D;}
       &:nth-child(5n-2) span.ball { background-color: #94C946;}
       &:nth-child(5n-3) span.ball { background-color: #177236;}
-      &:nth-child(5n-4) span.ball { background-color: #1C89A5;}
+      &:nth-child(5n-4) span.ball { background-color: $blue;}
     }
   }
 

@@ -14,16 +14,16 @@ am4core.ready(function() {
 	},
 	{
 		"color": am4core.color("#4A83B4"),
-    "asset_class": "Private Equity",
-    "dollars": 159000000,
-    "percentage_of_investments": "20.7"
-  },
-	{
-		"color": am4core.color("#4A83B4"),
 	  "asset_class": "Real Estate",
 	  "dollars": 250800000,
 	  "percentage_of_investments": "32.6"
 	},
+	{
+		"color": am4core.color("#4A83B4"),
+    "asset_class": "Private Equity",
+    "dollars": 159000000,
+    "percentage_of_investments": "20.7"
+  },
 	{
 		"color": am4core.color("#4A83B4"),
 		"asset_class": "Fixed Income",

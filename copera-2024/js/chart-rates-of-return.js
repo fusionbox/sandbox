@@ -107,7 +107,7 @@ am4core.ready(function() {
   series.columns.template.tooltipHTML =
   '<div>Assumed Investment <br>Rate of Return: <strong>{assumed}%</strong></div>'+
   '<div class="d-flex">'+
-  '<div class="mx-1 pb-1"><div style="font-size:30px;">{valueY}%</div><div>{categoryX}</div></div>'+
+  '<div class="mx-1 pb-1"><div style="font-size:30px;">{valueY}%</div><div>{categoryX}<br>Return</div></div>'+
   '<div class="mx-1 pb-1"><div style="font-size:30px;">{benchmark}%</div><div>Policy Benchmark<br>Return</div></div></div>'+
   '</div>';
   series.tooltip.getFillFromObject=false;

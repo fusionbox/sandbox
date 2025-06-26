@@ -8841,7 +8841,7 @@ html {
   scroll-behavior: smooth;
 }
 
-h2, .h2 {
+h2.reduced, .h2.reduced {
   font-size: 1.1rem;
 }
 

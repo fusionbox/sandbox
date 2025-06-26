@@ -99,7 +99,9 @@ html {
 }
 
 h2,.h2 {
-  font-size: 1.1rem;
+  &.reduced {
+    font-size: 1.1rem;
+  }
 }
 
 /* Header */
